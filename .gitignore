@@ -1,0 +1,9 @@
+*.aux
+*.log
+*.toc
+*.out
+*.tmp
+*.bak
+fosalrs_main.pdf
+*.swp
+

@@ -1,0 +1,49 @@
+% coding:utf-8
+
+%FOSALRS, a LaTeX-Code for a electrical summary of control theory
+%Copyright (C) 2013, Daniel Winz, Ervin Mazlagic
+
+%This program is free software; you can redistribute it and/or
+%modify it under the terms of the GNU General Public License
+%as published by the Free Software Foundation; either version 2
+%of the License, or (at your option) any later version.
+
+%This program is distributed in the hope that it will be useful,
+%but WITHOUT ANY WARRANTY; without even the implied warranty of
+%MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%GNU General Public License for more details.
+%----------------------------------------
+
+\section{Signale und Systeme}
+% \emph{Steuerung: }Vorgang zur Beeinflussung einer Grösse \\
+% \emph{Regelung: }Steuerung + Messung + Rückkopplung \\
+% Nichtlinearität + Rückkopplung = Chaos \\
+% $\rightarrow$ Linearität wichtig \\
+% Typische Steuerung: \\
+% Bild 1\\
+% Blöcke sind Systeme: \\
+% System: \\
+% Gesetzmässigkeit, mit der eine Grösse u(t) eine Grösse v(t) beeinflusst. \\
+% ("`u steuert v"')\\
+% Bild 2
+
+\subsection{Mathematische Modellierung}
+\emph{Signal: }Funktion $u(t)$ der Zeit $t$\\
+Bsp: 
+\begin{itemize}
+  \item Konstantes Signal: \\
+        $u(t) = u_0$ \\
+        Bild Konstantes Signal
+  \item Harmonische Schwingungen: \\
+        $u(t) = A \cdot \cos(\omega t + \varphi)$ \\
+        Bild Sinussignal
+  \item Einheitssprung \\
+        $\sigma(t) = 
+        \left\lbrace 
+        \begin{array}{l}
+        0, t<0 \\
+        1, t \geq 0
+        \end{array} 
+        \right. $\\
+        Bild Einheitssprung
+\end{itemize}

@@ -77,10 +77,10 @@ Graphisch\\
 \[ \boxed{\int\limits_{-\infty}^{\infty} \delta(t) \cdot f(t) ~ dt = f(0)} \]
 
 \section{Systeme}
-\begin{figure}
+\begin{figure}[h!]
     \centering
     >>>FOSA: Grafik zu Systemen
-    \caption{System $\mathcal{H}$}
+    \caption{$v(t) = \mathcal{H}\lbrace u(t) \rbrace$}
     \label{fig:system}
 \end{figure}
 Bsp: 
@@ -92,3 +92,44 @@ Bsp:
   \item Überlagerung / Superposition \\
         $v(t) = \mathcal{H} \lbrace u_1(t), u_2(t) \rbrace = u_1(t) + u_2(t)$
 \end{itemize}
+
+\subsection{Lineare zeitinvariante Systeme (LZI Systeme, LTI systems)}
+\subsubsection{Linearität}
+\begin{figure}[h!]
+    \centering
+    >>>FOSA: Grafik zu Linearität von Systemen
+    \caption{}
+    \label{fig:linsystem}
+\end{figure}
+\[ \boxed{\mathcal{H} \lbrace c \cdot u(t) \rbrace 
+= c \cdot \mathcal{H} \lbrace u(t) \rbrace} \]
+\begin{figure}[h!]
+    \centering
+    >>>FOSA: Grafik zu Linearität von Systemen2
+%     \caption{}
+    \label{fig:linsystem2}
+\end{figure}
+\[ \boxed{\mathcal{H} \lbrace u_1(t) + u_2(t) \rbrace 
+= \mathcal{H} \lbrace u(t) \rbrace + \mathcal{H} \lbrace u(t) \rbrace} \]
+
+\subsubsection{Zeitinvarianz}
+\begin{figure}[h!]
+    \centering
+    >>>FOSA: Grafik zu Zeitinvarianz von Systemen
+    \caption{}
+    \label{fig:timesystem}
+\end{figure}
+\[ \boxed{\mathcal{H} \lbrace u(t-t_0) \rbrace 
+= v(t - t_0)} \]
+\\\\
+Wichtige Systeme sind durch DGL gegeben, hier: lineare DGL mit konstanten 
+Koeffizienten. 
+
+\section{Laplace-Transformation}
+\[ \boxed{\mathcal{L} \lbrace u(t) \rbrace 
+= \int\limits_{0}^{\infty} u(t) \cdot e^{-st} ~ dt \qquad , s \in \mathbb{C} 
+= U(s)} \]
+\[ \boxed{\begin{array}{rcl}
+\text{Zeitbereich} &  & \text{Bildbereich} \\
+u(t) & \laplace & U(s)
+\end{array}} \]

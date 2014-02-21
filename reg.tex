@@ -1,0 +1,90 @@
+% coding:utf-8
+
+%FOSALRS, a LaTeX-Code for a electrical summary of control theory
+%Copyright (C) 2013, Daniel Winz, Ervin Mazlagic
+
+%This program is free software; you can redistribute it and/or
+%modify it under the terms of the GNU General Public License
+%as published by the Free Software Foundation; either version 2
+%of the License, or (at your option) any later version.
+
+%This program is distributed in the hope that it will be useful,
+%but WITHOUT ANY WARRANTY; without even the implied warranty of
+%MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%GNU General Public License for more details.
+%----------------------------------------
+
+\section{Systemtheorie}
+
+\subsection{Steuerung}
+\begin{figure}[h!]
+    \centering
+    >>>FOSA: Grafik zu Steuerung
+    \caption{Steuerung}
+    \label{fig:control}
+\end{figure}
+Einfach zu Implementieren
+keine Korrektur von Störungen
+
+\subsection{Regelung}
+\begin{figure}[h!]
+    \centering
+    >>>FOSA: Grafik zu Systemtheorie
+    \caption{Regelkreis}
+    \label{fig:regsystem}
+\end{figure}
+\begin{tabular}{@{}ll}
+$r$ & Sollwert, Führungsgrösse (manchmal $w$) \\
+$e$ & Regeldifferenz \\
+$u$ & Stellgrösse \\
+$y$ & Regelgrösse, Ausgangsgrösse \\
+\end{tabular}
+\[ \boxed{e = r - y} \]
+\[ \boxed{e(t) = r(t) - y(t)} \]
+\begin{figure}[h!]
+    \centering
+    >>>FOSA: Grafik zu Regelkreis mit Feed forward
+    \caption{Regelkreis mit Feed forward}
+    \label{fig:feedforward}
+\end{figure}
+2 Degrees of freedom
+
+\section{Eigenschaften eines Regelkreises}
+Ein Regler kann nur entweder für das Führungsverhalten oder für das 
+Störverhalten optimiert werden. 
+
+\subsection{Führungsverhalten}
+\begin{figure}[h!]
+    \centering
+    >>>FOSA: Grafik zu Führungsverhalten
+    \caption{Führungsverhalten}
+    \label{fig:fhr}
+\end{figure}
+\begin{itemize}
+  \item maximales Überschwingen
+  \item stationäre Genauigkeit
+  \item Anregelzeit (Anstiegszeit (Reaktionszeit))
+\end{itemize}
+
+\subsection{Störverhalten}
+\begin{figure}[h!]
+    \centering
+    >>>FOSA: Grafik zu Störverhalten
+    \caption{Störverhalten}
+    \label{fig:str}
+\end{figure}
+\begin{itemize}
+  \item maximales Unterschwingen
+  \item Ausregelzeit
+  \item Stationäre Regelabweichung
+\end{itemize}
+
+\section{LZI -- Lineare zeitinvariante Elemente}
+bounded Input $\rightarrow$ bounded output -- BIBO\\
+P-Anteil: Grundsätzliche Stabilisierung \\
+I-Anteil: Reduktion der Regeldifferenz auf 0 \\
+D-Anteil: Becshleunigung des Reglers
+
+
+\[ \boxed{} \]
+\[ \boxed{} \]

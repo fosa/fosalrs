@@ -1,9 +1,19 @@
 \chapter{Grundlegende Funktionen}
 
+\newpage
+
 \section{Signale}
+Als Signal bezeichnet man eine reelle Funktion $u$, welche jedem Element
+$x$ der Definitionsmenge $\mathbb{R}$ genau ein Element $y$ zur
+Zielmenge $\mathbb{R}$ zuweist. 
+Die allgemeine Definition einer Funktion 
+$f : D \rightarrow Z, x \mapsto y$ kann für ein Signal $u(x)$ geschrieben 
+werden als
+\[ u : \mathbb{R} \rightarrow \mathbb{R}, x \mapsto y \]
 
-\subsection{Sprungfunktion}
-
+\subsection{Sprungfunktion (Einheitssprung)}
+Die Sprungfunktion $\sigma(t)$ (auch \emph{Einheitssprung}) ist eine 
+Funktion, welche definiert ist als
 \[ 
 	\sigma(t) := \left\{
 		\begin{array}{c c}
@@ -33,6 +43,36 @@
 	\label{fig:sprungfunktion}
 \end{figure}
 
+Diese allgemeine Definition kann verwendet werden um die Funktion für
+ein Signal anzupassen. Beispielsweise kann die Amplitude 1 mit einem 
+reellen Faktor $A$ multipliziert oder die Sprungstelle bei $t=0$ um 
+$t_1$ verschoben werden.
+
+\[  
+	u(t) = A \cdot \sigma(t-t_1)
+\]
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		% zeichne Koordinatensystem
+		\draw[->] (-2,0) -- (4,0) node[anchor=north] {$t$};
+		\draw[->] (0,0) -- (0,2) node[anchor=east] {$u(t)$};
+		
+		% zeichne Labels
+		\draw (0,0) node[anchor=north] {$0$};
+		\draw (0,1) node[anchor=east] {$A$};
+		\draw (1,0) node[anchor=north] {$t_1$};
+			
+		% Zeichne Singalverlauf
+		\draw[-, thick, red] (-1.5,0) -- (1,0) {};
+		\draw[-, thick, red] (1,0) -- (1,1) {};
+		\draw[-, thick, red] (1,1) -- (3.5,1) {};
+	\end{tikzpicture}
+	\caption{Sprungfunktion mit 
+			$u(t) = A \cdot \sigma(t-t_1)$}
+	\label{fig:sprungfunktion2}
+\end{figure}
 
 \subsection{Rechteckimpuls}
 
@@ -98,6 +138,39 @@
 \end{figure}
 
 \subsection{Dirac-Delta Funktion}
+Die Dirac-Delta Funktion $\delta(t)$ ist das Ergebnis der abgeleiteten
+Sprungfunktion $\sigma(t)$.
+\[  
+	\frac{d \widetilde{\sigma}(t)}{dt} 
+		= \widetilde{\delta}(t) 
+		\xrightarrow{\Delta t \rightarrow 0}
+		\delta(t) 
+	\quad \text{wobei} \quad 
+	\delta(t) = \left\{ 
+		\begin{array}{c c}
+			\infty & t=0 \\
+			0 & t \neq 0
+		\end{array}
+		\right.
+\]
+Die Dirac-Delta Funktion $\delta(t)$ hat die Eigenschaft, dass deren 
+Integration stets $1$ ergibt.
+\[  
+	\int\limits_{-\infty}^{+\infty} \delta(t)\,dt = 1
+\]
+Diese Eigenschaft macht die Dirac-Delta Funktion zu einem Filter, welcher
+alle Werte zu $t \neq t_0$ ausblended bzw. zu $0$ transformiert.
+\[  
+	u_0 = \int\limits_{-\infty}^{+\infty} \underbrace{u(t)}_{u(t_0)} 
+		\cdot \underbrace{\delta(t-t_0)}_{1}\,dt 
+	\quad \Rightarrow \quad 
+	u_0 = u(t_0) \cdot 1
+\]
+
+Die Herleitung der Dirac-Delta Funktion ist anschaulich mittels eines
+Plots der Sprungfunktion. Nähert man eine Funktion an den Verlauf der
+Sprungfunktion an, so ergibt deren Ableitung eine Rechteckfunktion.
+Die Fläche $A$ unter dem Rechteck ist dabei stets $1$.
 
 \[ 
 	\widetilde{\sigma}(t, \Delta t) = \left\{

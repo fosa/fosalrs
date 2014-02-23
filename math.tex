@@ -78,10 +78,19 @@ Graphisch\\
 
 \section{Systeme}
 \begin{figure}[h!]
-    \centering
-    >>>FOSA: Grafik zu Systemen
-    \caption{$v(t) = \mathcal{H}\lbrace u(t) \rbrace$}
-    \label{fig:system}
+	\centering
+
+	\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+		\node [input] (in) {};
+		\node [block, right of=in] (sys) {System $\mathcal{H}$};
+		\node [output,right of=sys] (out) {};
+
+		\draw [->] (in) -- node {$u(t)$} (sys);
+		\draw [->] (sys) -- node {$v(t)$} (out);
+	\end{tikzpicture}
+
+	\caption{$v(t) = \mathcal{H}\lbrace u(t) \rbrace$}
+	\label{fig:system}
 \end{figure}
 Bsp: 
 \begin{itemize}

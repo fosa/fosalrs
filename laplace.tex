@@ -17,6 +17,47 @@
 \chapter{Laplace Transformation}
 
 \section{Laplace-Transformation}
+Sei $u(t)$ ein Signal. \\
+Falls das Integral 
+\[ U(s) = \int\limits_{0}^{\infty} u(t) \cdot e^{-st} ~ dt \]
+konvergiert, so heisst 
+\[ \boxed{\mathcal{L} \lbrace u(t) \rbrace = U(s)} \]
+die Laplace-Transformierte von $u(t)$. \\
+Erklärungen: 
+\begin{itemize}
+  \item $s \in \mathbb{C}$
+  \item $\int\limits_{0^-}^{\infty} u(t) \cdot e^{-st} ~ dt 
+  = \lim_{a \nearrow 0} \int\limits_{a}^{\infty} u(t) \cdot e^{-st} ~ dt $
+  \item Falls $u(t)$ sprungstetig in $t = 0$ ist, kann man$0^-$ durch $0$ 
+        ersetzen. \\
+        $u(t)$ heisst sprungstetig, wenn es nur endliche Sprünge macht. 
+  \item Wenn $u(t)$ sprungstetig ist und höchstens exponentiell wächst, 
+        dann konvergiert das Integral für alle $s \in \mathbb{C}$ mit 
+        $\text{Re}(s) > \sigma_0$\\
+        % >>> Grafik Konvergenzbereich
+\end{itemize}
+\[ s = \sigma + \omega \cdot j, \qquad Re(s) = \sigma 
+\qquad \sigma, \omega \in \mathbb{R} \]
+Die Menge 
+\[ KB = \lbrace s \in \mathbb{C} | (*) konvergiert \rbrace 
+= \lbrace s \in \mathbb{R} | \text{Re}(s) > \sigma_0 \rbrace \]
+heisst Konvergenzbereich. \\
+Bsp: 
+\[ u(t) = \sigma(t) \]
+\[ \mathcal{L} \lbrace \sigma(t) \rbrace 
+= \int\limits_{0^-}^{\infty} \underbrace{\sigma(t) \cdot e^{-st}}_
+{\text{sprungstetig in }t = 0} ~ dt = \int\limits_{0}^{\infty} e^{-st} ~ dt 
+= \left. -\frac{1}{s} e^{-st} \right|_{t = 0}^{t = \infty} 
+= -\frac{1}{s} \underbrace{\lim_{t \to \infty} \cdot e^{-st}}_
+{0 \text{ falls Re}(s) > 0} + \frac{1}{s} \]
+Also
+\[ \mathcal{L} \lbrace \sigma(t) \rbrace = \frac{1}{s} \]
+Andere Notation: 
+\[ \sigma(t) ~ \laplace ~ \frac{1}{s} \qquad \text{KB: Re}(s) > 0\]
+
+
+
+
 \[ \boxed{\mathcal{L} \lbrace u(t) \rbrace 
 = \int\limits_{0}^{\infty} u(t) \cdot e^{-st} ~ dt \qquad , s \in \mathbb{C} 
 = U(s)} \]

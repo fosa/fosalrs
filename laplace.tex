@@ -14,13 +14,14 @@
 %GNU General Public License for more details.
 %----------------------------------------
 
-\part{Mathematik}
-\newpage
-\input{tikz-systems}
-\input{math}
-\input{funktionen}
-\input{laplace}
+\chapter{Laplace Transformation}
 
-\part{Regelungstechnik}
-\newpage
-\input{reg}
+\section{Laplace-Transformation}
+\[ \boxed{\mathcal{L} \lbrace u(t) \rbrace 
+= \int\limits_{0}^{\infty} u(t) \cdot e^{-st} ~ dt \qquad , s \in \mathbb{C} 
+= U(s)} \]
+\[ \boxed{\begin{array}{rcl}
+\text{Zeitbereich} &  & \text{Bildbereich} \\
+u(t) & \laplace & U(s)
+\end{array}} \]
+

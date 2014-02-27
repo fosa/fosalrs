@@ -74,3 +74,34 @@ u(t) & \laplace & U(s)
 = c \cdot \mathcal{L}\lbrace u(t) \rbrace} \]
 \[ \boxed{\mathcal{L}\lbrace u_1(t) \cdot u2(t) \rbrace 
 = \mathcal{L}\lbrace u1(t) \rbrace + \mathcal{L}\lbrace u1(t) \rbrace} \]
+
+\subsubsection{Differentiationssatz}
+\[ \boxed{\mathcal{L}\lbrace \dot{u}(t) \rbrace = s \cdot U(s) - u(0^-)} \]
+\[ \boxed{\dot{u}(t) ~ \laplace ~ s \cdot U(s) - u(0^-)} \]
+\[ \boxed{\dddot{u}(t) ~ \laplace ~ s^3 \cdot U(s) - s^2 \cdot u(0^-) 
+- s \cdot \dot{u}(0^-) - \ddot{u}(0^-)} \]
+Häufig: Anfangsbedingungen $= 0$. 
+Dann: 
+\[ \boxed{\frac{d^n}{dt^n} u(t) ~ \laplace ~ s^n \cdot U(S)} \]
+
+
+\subsection{Laplace Transformation einiger Grundfunktionen}
+\[ \begin{array}{ccc}
+u(t) & \laplace & U(s) \\\\
+\delta(t) & 
+    & 1 \\\\
+\sigma(t) & 
+    & \frac{1}{s} \\\\
+t \cdot \sigma(t) & 
+    & \frac{1}{s^2} \\\\
+t^2 \cdot \sigma(t) & 
+    & \frac{2}{s^3} \\\\
+\vdots & 
+    & \vdots \\\\
+e^{a \cdot t} & 
+    & \frac{1}{s - a} \\\\
+\sin(t) & 
+    & \frac{1}{s^2 + 1} \\\\
+\cos(t) & 
+    & \frac{s}{s^2 + 1} \\\\
+\end{array} \]

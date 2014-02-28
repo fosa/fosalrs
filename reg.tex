@@ -38,6 +38,7 @@ $r$ & Sollwert, Führungsgrösse (manchmal $w$) \\
 $e$ & Regeldifferenz \\
 $u$ & Stellgrösse \\
 $y$ & Regelgrösse, Ausgangsgrösse \\
+$d$ & Störgrösse (Eher v bei Rauschen)
 \end{tabular}
 \[ \boxed{e = r - y} \]
 \[ \boxed{e(t) = r(t) - y(t)} \]
@@ -85,6 +86,13 @@ P-Anteil: Grundsätzliche Stabilisierung \\
 I-Anteil: Reduktion der Regeldifferenz auf 0 \\
 D-Anteil: Becshleunigung des Reglers
 
+\subsection{Prüfung auf Linearität}
+\begin{enumerate}
+  \item Übertragungsprinzip erfüllt 
+        \[ y = f(u) \qquad f(u_1 + u_2) = y_1 + y_2 \]
+  \item Verstärkungsprinzip erfüllt
+        \[ y = f(u) \qquad f(k \cdot u) = k \cdot y \]
+\end{enumerate}
 
 \[ \boxed{} \]
 \[ \boxed{} \]

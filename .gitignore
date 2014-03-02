@@ -1,9 +1,41 @@
-*.aux
-*.log
-*.toc
-*.out
+# Builded fosa
+fosalrs_main.pdf
+
+# temporary files
 *.tmp
 *.bak
-fosalrs_main.pdf
 *.swp
 
+# temporary LaTaX build files
+*.acn
+*.acr
+*.alg
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.nlo
+*.out
+*.pdfsync
+*.ps
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdy
+*.tdo

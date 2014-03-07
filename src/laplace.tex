@@ -72,8 +72,8 @@ u(t) & \laplace & U(s)
 \subsubsection{Linearität}
 \[ \boxed{\mathcal{L}\lbrace c \cdot u(t) \rbrace 
 = c \cdot \mathcal{L}\lbrace u(t) \rbrace} \]
-\[ \boxed{\mathcal{L}\lbrace u_1(t) \cdot u2(t) \rbrace 
-= \mathcal{L}\lbrace u1(t) \rbrace + \mathcal{L}\lbrace u1(t) \rbrace} \]
+\[ \boxed{\mathcal{L}\lbrace u_1(t) \cdot u_2(t) \rbrace 
+= \mathcal{L}\lbrace u_1(t) \rbrace + \mathcal{L}\lbrace u_2(t) \rbrace} \]
 
 \subsubsection{Differentiationssatz}
 \[ \boxed{\mathcal{L}\lbrace \dot{u}(t) \rbrace = s \cdot U(s) - u(0^-)} \]
@@ -111,3 +111,101 @@ e^{a \cdot t} &
 \cos(t) & 
     & \frac{s}{s^2 + 1} \\\\
 \end{array} \]
+
+\section{Inverse Laplace Transformation}
+\begin{enumerate}
+  \item Laplace Transformation anwenden\\
+        Wende $\mathcal{L}$ auf $(*)$ an und schreibe 
+        $U(s) = \mathcal{L} \{ u(t) \}$ \\
+        $V(s) = \mathcal{L} \{ v(t) \}$ \\
+        \[\mathcal{L} \{ \dot{v} + \frac{1}{RC} \cdot v \} 
+        = \mathcal{L} \{ \dot{u} \}\]
+        Linearität
+        \[\mathcal{L} \{ \dot{v} \} + \frac{1}{RC} \cdot \mathcal{L} \{ v \} 
+        = \mathcal{L} \{ \dot{u} \}\]
+        Diff-Satz
+        \[s \mathcal{L} \{ \dot{v} \} - v(0^-) 
+        + \frac{1}{RC} \cdot \mathcal{L} \{ v \} 
+        = s \mathcal{L} \{ \dot{u} \} - u(0^-) \]
+        \[ s V + \frac{1}{RC} V = s U - u(0^-) \]
+        \[ \boxed{V = \frac{s U - u(0^-)}{s + \frac{1}{RC}}} \]
+        Das ist die Beschreibung des Systems im Bildraum für jedes 
+        Eingabesignal $u(t)$. 
+  \item Eingabesignal transformieren und einsetzen
+        \[ u(t) = \sigma(t) \Rightarrow U(s) = \frac{1}{s} \qquad u(0^-) = 0 \]
+        \[ \Rightarrow V = \frac{s \cdot \frac{1}{s} - 0}{s + \frac{1}{RC}} \]
+        \[ \boxed{V(s) = \frac{1}{s + \frac{1}{RC}}} 
+        \quad \text{Lösung im Bildbereich} \]
+  \item Zurücktransformieren\\
+        Finde $v(t)$ mit 
+        \[ v(t) ~ \laplace ~ \frac{1}{s + \frac{1}{RC}} \]
+        Tabelle: 
+        \[ e^{at}\sigma(t) ~ \laplace ~ \frac{1}{s - a} \]
+        Also: 
+        \[ v(t) = e^{-\frac{1}{RC} t} \sigma(t) \]
+\end{enumerate} 
+Schritt 3 ist die Berechnung der inversen Laplace Transformation
+
+\subsection{Eindeutigkeitssatz}
+\[ U(s) = V(s) \]
+\[ u(t) = v(t) \forall t \geq 0 \]
+Notation: 
+\[ \mathcal{L} \{ u(t) \} = U(s) \]
+\[ u(t) = \mathcal{L}^{-1} \{ U(s) \} \]
+
+\subsection{Dämpfungssatz / Frequenzverschiebungssatz}
+\[ e^{at} \cdot u(t) ~ \laplace ~ U(s - a) \]
+Vorsicht! Vorzeichen anders als beim Zeitverschiebungssatz. 
+
+\subsection{Partialbruchzerlegung}
+Erinnerung: \\
+\begin{itemize}
+  \item Rationale Funktion
+        \[ R(s) = \frac{Z(s)}{N(s)} \]
+        mit Polynomen $Z(s), N(s)$
+  \item Polstellen = Definitionlücken = Nullstellen von $N(s)$
+  \item Faktorisierung
+        \[ N(s) = (s - s_1) \cdot (s - s_2) \cdot \ldots \cdot (s - s_n) \]
+        wobei $s_1, \ldots, s_n$ alle Nullstellen von $N(s)$ 
+        I.a. $s_i \in \mathbb{C}$
+  \item Vielfachheiten\\
+        Sind mehrere $s_i$ gleich, so nennt man die Anzahl der gleichen $s_i$ 
+        die Vielfachheit der Polstelle $s_i$. 
+\end{itemize}
+\begin{enumerate}
+  \item Einfache Polstellen \\
+        Annahme: Alle Polstellen haben Vielfachheit 1
+        \[ R(s) = \frac{Z(s)}{(s - s_1) \cdot \ldots \cdot (s - s_n} \]
+        Wobei $s_1, \ldots, s_n$ paarweise verschieden \\
+        Annahme: Grad von Z(s) < n \\
+        Dann: 
+        \[ R(s) = \frac{a_1}{s - s_1} + \frac{a_2}{s - s_2} + \ldots 
+        + \frac{a_n}{s - s_2} \]
+        mit Konstanten $a_1, \ldots, a_n$\\
+        Berechnung der $a_i$: 
+        \[ a_i = \lbrack R(s) (s - s_i \rbrack_{s = s_i} \]
+  \item Mehrfache Polstellen
+        \[ R(s) = \frac{Z(s)}{(s - a)^n} \]
+        Dann: 
+        \[ R(s) = \frac{a1}{s - a} + \frac{a_2}{(s - a)^2} + \ldots 
+        + \frac{a_n}{(s - a)^n} \]
+\end{enumerate}
+
+\section{Grenzwertsätze}
+
+\subsection{Anfangswertsatz}
+Sei $u(t)$ an der Stelle $t = 0$ sprungstetig. Dann gilt 
+\[ u(0^+) = \lim\limits_{s \to \infty} s \cdot U(s) \]
+Bemerkung: \\
+Wenn $U(s) = \dfrac{Z(s)}{N(s)}$ eine rationale Funktion mit 
+$\text{Grad}(Z(s)) < \text{Grad}(N(s)$, dann ist u(t) sprungstetig
+
+\subsection{Endwertsatz}
+Sein $u(t)$ ein Signal, für das der Endwert 
+$u(\infty) = \lim\limits_{t \to \infty} u(t)$ existiert. \\
+Dann gilt: 
+\[ u(\infty) = \lim\limits_{s \to 0} s \cdot U(s) \]
+Kriterium: \\
+Wenn alle Polstellen von $s \cdot U(s)$ links von der imaginären Achse liegen, 
+dann existiert der Endwert $u(\infty)$. \\
+Mit anderen Worten: Der Realteil aller Nullstellen muss negativ sein. 

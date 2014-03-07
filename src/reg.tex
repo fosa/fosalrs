@@ -98,5 +98,53 @@ D-Anteil: Becshleunigung des Reglers
 \[ y(t) = f(u(t) \]
 \[ y(t - T) = f(u(t - T)) \]
 
+\section{Wichtige Gleichungen für die Modellierung dynamischer Systeme}
+
+Bilanzgleichungen, Erhaltungssätze
+\subsection{Elektrisches Netzwerk}
+Ladungserhaltung \\
+Energieerhaltung \\
+$\Rightarrow$ Kirchhoffsche Regeln \\
+Knotenregel $\sum I = 0$ \\
+Maschenregel $\sum U = 0$ \\\\
+Widerstand R
+\[ \boxed{u_R(t) = R \cdot i_R(t)} \]
+\[ \boxed{i_R(t) = \frac{1}{R} \cdot u_R(t)} \]
+Kapazität
+\[ \boxed{u_C(t) 
+= \frac{1}{C} \cdot \int\limits_{0}^{t} i_C(\tau) ~ d\tau + u_C(0)} \]
+\[ \boxed{\dot{u}_C(t) = \frac{1}{C} \cdot i_C(t)} \]
+\[ \boxed{i_C(t) = C \cdot \frac{d u_C(t)}{d t}} \]
+Induktivität
+\[ \boxed{u_L(t) = L \cdot \frac{d i}{d t}} \]
+\[ \boxed{i_L(t) 
+= \frac{1}{L} \cdot \int\limits_{0}^{t} u_L(\tau) ~ d\tau + i_L(0)} \]
+
+\subsection{Mechanisch (Translation)}
+Newton'sche Gesetze (skalar)
+\[ \boxed{\frac{d(m \cdot v)}{dt} = \sum F_i} \]
+\[ \boxed{\dot{m} \cdot v + m \cdot \dot{v} = \sum F_i} \]
+m = konst: 
+\[ \boxed{m \cdot \dot{v} = \sum F_i} \]
+\[ \boxed{x, \qquad \dot{x} = v, \qquad \ddot{x} = \dot{v} = a} \]
+\[ \boxed{m \cdot \ddot{x} = \sum F_i} \]
+
+\subsection{Mechanisch (Rotation)}
+\[ \boxed{\frac{d(I \cdot \omega}{dt} = \sum M_i} \]
+\[ \boxed{I = konst. } \]
+\[ \boxed{I \cdot \dot{\omega} = \sum M_i} \]
+\[ \boxed{\varphi, \qquad \dot{\varphi} = \omega, 
+\qquad \ddot{\varphi} = \dot{\omega} = \alpha} \]
+
+\subsection{Thermisch}
+\[ \boxed{\frac{d(c \cdot M \cdot \vartheta)}{dt} = \sum Q_i} \]
+
+\subsection{Hydraulisches System}
+inkompressibel \\
+Volumen / Massenbilanz
+\[ \boxed{\frac{dV}{dt} = \sum q_i} \]
+
+\subsection{pneumatisch}
 \[ \boxed{} \]
+\subsection{Konzentration}
 \[ \boxed{} \]

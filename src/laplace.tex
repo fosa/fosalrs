@@ -209,3 +209,46 @@ Kriterium: \\
 Wenn alle Polstellen von $s \cdot U(s)$ links von der imaginären Achse liegen, 
 dann existiert der Endwert $u(\infty)$. \\
 Mit anderen Worten: Der Realteil aller Nullstellen muss negativ sein. 
+
+\section{Lösen von DGL}
+Beispiel:
+\[ \mathcal{L} \{ R C \dot{v} + v = u \} \]
+\[ v(0^-) = v_0 \]
+\begin{enumerate}
+  \item Laplace Transformation anwenden
+        \[ U(s) = \mathcal{L} \{ u(t) \} \qquad V(s) = \mathcal{L} \{ v(t) \} \]
+        Laplace Transformation
+        \[ \mathcal{L} \{ R C \dot{v} + v \} = \mathcal{L} \{ u \} \]
+        Linearität
+        \[ R C \cdot \mathcal{L} \{ \dot{v} \} + \mathcal{L} \{ v \} 
+        = \mathcal{L} \{ u \} \]
+        Differentiationssatz
+        \[ R C \cdot ( s \cdot V(s) - v_0 )  + V(s) = U(s) \]
+  \item Auflösen nach $V(s)$
+        \[ \boxed{V(s) = \frac{U(s) + R \cdot C}{R \cdot C \cdot s + 1}} \]
+  \item Eingangssignal transformieren und einsetzen
+        \[ u(t) = 2 \cdot \sigma(t) \cdot v_0 = 0 \]
+        \[ U(s) = \frac{2}{s} \]
+        \[ V(s) = \frac{\frac{2}{s} + RC}{RC \cdot s + 1} \]
+  \item Rücktransformation
+        \[ V(s) = \frac{2}{s (RC \cdot s + 1)}  + \frac{RC}{RC \cdot s + 1} \]
+        Eintrag 41 in grosser Tabelle: 
+        \[ \boxed{1 - e^{-\frac{t}{a}} ~ \laplace ~ \frac{1}{s(1 + a s}} 
+        \qquad \text{Hier mit }a = RC \]
+        1. Term: 
+        \[ \mathcal{L}^{-1} \{ \frac{2}{s(RC \cdot s + 1} \} 
+        = 2 \cdot (1 - e^{-\frac{t}{RC}}) \]
+        2. Term: \\
+        Eintrag 36
+        \[ \boxed{\frac{1}{a} e^{-\frac{a}{t}} ~ \laplace ~ \frac{1}{1 + a s}} 
+        \qquad \text{Hier mit }a = RC \]
+        \[ \mathcal{L}^{-1} \{ \frac{RC}{RC \cdot s} \} 
+        = RC \cdot \frac{1}{RC} \cdot e^{-\frac{t}{RC}} = e^{-\frac{t}{RC}} \]
+        Resultat: 
+        \[ v(t) = 2 (1 - e^{-\frac{t}{RC}}) + e^{-\frac{t}{RC}} 
+        = 2 - e^{-\frac{t}{RC}} \qquad \text{für }t \geq 0 \]
+        Annahme: 
+        \[ v(t) = const \forall t < 0 \]
+        AW: 
+        \[ v(0^-) = 1 \Rightarrow v(t) = 1 \forall t < 0 \] 
+\end{enumerate}

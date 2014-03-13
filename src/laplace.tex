@@ -270,3 +270,25 @@ Ein System ist genau dann LZI, wenn sein Übertragungsverhalten sich durch
 \[ V(s) = G(s) \cdot U(s) \]
 beschreiben lässt, wobei $G(s)$ eine feste Funktion ist. Diese nennen wir 
 Übertragungsfunktion. 
+
+\section{Faltung}
+Definition: Die Faltung zweier Signale $u(t)$ und $v(t)$ ist 
+\[ (u * v)(t) = \int\limits_{-\infty}^{\infty} u(\tau) v(t - \tau) ~ d \tau \]
+Bemerkung: Sind die Signale $u(t)$ und $v(t)$ sprungstetig und kausal, dann 
+gilt: 
+\[ (u * v)(t) = \int\limits_{0}^{t} u(\tau) v(t - \tau) ~ d \tau \]
+Faltungssatz: 
+Sind $u(t), v(t)$ kausal, so gilt: 
+\[ (u * v) (t) ~ \laplace ~ U(s) \cdot V(s) \]
+
+\subsection{Impulsantwort}
+Ist $g(t)$ die Gewichtsfunktion eines LZI Systems, so gilt
+\[ v(t) = (g * u)(t) \]
+Fazit: Impulsantwort = Gewichtsfunktion
+
+\subsection{Sprungantwort}
+Definition: Sprungantwort = Antwort auf $\sigma(t) = h(t)$ 
+(AW nicht unbedingt 0) \\
+Bemerkung: Bei LZI Systemen: 
+\[ h(t) = \int\limits_{0}^{t} g(\tau) ~d \tau \]
+(folgt aus Integrationssatz)

@@ -252,3 +252,21 @@ Beispiel:
         AW: 
         \[ v(0^-) = 1 \Rightarrow v(t) = 1 \forall t < 0 \] 
 \end{enumerate}
+
+\section{Übergangsgleichung und spezielle Antworten}
+Beispiel von oben mit AW $v_0 = 0$
+\[ V(s) = \underbrace{\frac{1}{RC \cdot s + 1}}_{G(s)} \cdot U(s) \]
+$G(s)$: Übertragungsfunktion\\
+Die Zeitfunktion $g(t)$ von $G(s)$ heisst Gewichtsfunktion\\
+Bemerkung: Ist ein System durch eine lineare DGL mit konstanten Koeffizienten 
+beschrieben, dann ist das System LZI \emph{nur}, wenn alle Anfangsbedingungen
+\emph{null} sind. \\
+d.h. 
+\[ u(0^-) = \dot{u}(0^-) = \ddot{u}(0^-) = \ldots = 0 \]
+\[ v(0^-) = \dot{v}(0^-) = \ddot{v}(0^-) = \ldots = 0 \]
+Nur dann wird das System durch eine Übertragungsfunktion beschreiben. \\
+Theorem: 
+Ein System ist genau dann LZI, wenn sein Übertragungsverhalten sich durch 
+\[ V(s) = G(s) \cdot U(s) \]
+beschreiben lässt, wobei $G(s)$ eine feste Funktion ist. Diese nennen wir 
+Übertragungsfunktion. 

@@ -164,7 +164,7 @@ Beispiel:
 \[ \Delta y = 2 \cdot u_0 \cdot \Delta u + \underbrace{\Delta u^2}_{\approx 0} \]
 \[ \underline{\underline{\Delta y = 2 \cdot u_0 \cdot \Delta u}} \]
 %
-Neues Beispiel: 
+Anderes Beispiel: 
 \[ v = \sin(u) \]
 \[ u = u_0 + \Delta u \]
 \[ v = v_0 + \Delta v \]
@@ -186,3 +186,23 @@ Neues Beispiel:
 \[ = y_0 - {u_0}^2 + 1 \cdot \Delta y - 2 \cdot u_0 \cdot \Delta u = 0 \]
 \[ \Delta y - 2 \cdot u_0 \cdot \Delta u = 0 \]
 \[ \Delta y = 2 \cdot u_0 \cdot \Delta u \]
+%
+Anderes Beispiel: 
+\[ f(v, u) = v - \sin(u) = 0 \]
+\[ \frac{\partial f}{\partial v} = 1 \]
+\[ \frac{\partial f}{\partial u} = - \cos(u) \]
+eingesetzt: 
+\[ f(v, u) = v_0 - \sin(u_0) + 1 \cdot \Delta v - \cos(u_0) \cdot \Delta u = 0 \]
+\[ \Delta v = \cos(u_0) \cdot \Delta u \]
+
+\subsection{Weitere Variante: }
+\[ \dot{y} = u^2 - \sin(v) \]
+\[ 1 \cdot \delta y = 2 \cdot u_0 \cdot \delta u - \cos(v_0) \cdot \delta v \]
+\[ \delta y = \Delta y \qquad \delta u = \Delta u \]
+\[ \Delta y = 2 \cdot u_0 \cdot \Delta u - \cos(v_0) \cdot \Delta v \]
+Anderes Beispiel: 
+\[ z = x^2 \cdot y^2 \]
+\begin{itemize}
+  \item Wie lautet die linearisierung der statischen, nichtlinearen Kennlinie? 
+  \item Visualisieren Sie die Linearisierung in Matlab. 
+\end{itemize}

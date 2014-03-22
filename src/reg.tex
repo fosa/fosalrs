@@ -206,3 +206,35 @@ Anderes Beispiel:
   \item Wie lautet die linearisierung der statischen, nichtlinearen Kennlinie? 
   \item Visualisieren Sie die Linearisierung in Matlab. 
 \end{itemize}
+
+\section{Ableiten mit der Überlagerungsfunktion}
+\[ u_1(t) = \sigma(t) \]
+\[ u_2(t) = \delta(t) \]
+\[ u_3(t) = t \]
+\[ u_4(t) = \sin(\omega t) \]
+\[ \frac{y(s)}{u(s)} = G(s) \]
+Impulsantwort: 
+\[ \delta(t) \to g(t) \]
+Sprungantwort: 
+\[ \sigma(t) \to h(t) \]
+
+\[ u_3(t) = t \to  \]
+>>>FOSA Grafik zu Impulsantwort, Sprungantwort, ...\\
+Im Laplace Bereich werden die mathematischen Operationen vereinfacht: //
+Ableiten $\to$ Miltiplizieren mit $s$\\
+Int egrieren $\to$ Multiplizieren mit $\frac{1}{s}$\\
+>>>FOSA Grafik Blöcke in Serie\\
+\[ \frac{Y(s)}{U(s)} = G_1(s) \cdot G_2(s) = G(s) \]
+>>>FOSA Grafik Blöcke parallel\\
+\[ \frac{Y(s)}{U(s)} = G_1(s) - G_2(s) = G(s) \]
+>>>FOSA Grafik Block mit Gegenkopplung / Kreisschaltung\\
+\[ E(s) = U(s) - Y(s) \]
+\[ Y(s) = G_1(s) \cdot E(s) \]
+\[ E(s) = \frac{Y(s)}{G_1(s)} \]
+\[ \frac{Y(s)}{G_1(s)} = U(s) - Y(s) \]
+\[ Y(s) = G_1(s) \cdot U(s) - G_1(s) \cdot Y(s) \]
+\[ (1 + G_1(s)) \cdot Y(s) = G_1(s) \cdot U(s) \]
+\[ \frac{Y(s)}{U(s)} = \frac{G_1(s)}{1 + G(s)} \]
+Hilfe: \\
+Zähler: Vorwärtspfad\\
+Nenner: 1 $\pm$ Kreisverstärkung

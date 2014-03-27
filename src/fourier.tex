@@ -143,3 +143,32 @@ Bsp 4
 \[ u(t) = \delta(t) \]
 \[ U(\omega) = \mathbb{F}\{\delta (t)\} = \int\limits_{-\infty}^{\infty} 
 \delta (t) e^{-\omega t j} ~dt = 1 \]
+
+\subsection{Repetition / Zusammenfassung}
+Fourieranalyse: Welche Frequenzen sind in einem Signal vorhanden? 
+\begin{itemize}
+  \item Periodische Signale $\to$ Fourier-Reihe
+        \[ u(t) = \sum\limits_{n = -\infty}^{\infty} c_n \cdot e^{n \omega_0 t j} 
+        \qquad \omega_0 = \frac{2 \pi}{T} \]
+        Falls $u(t)$ reell ist, gilt: 
+        \[ c_{-n} = \overline{c_n} \]
+        \[ |c_{-n}| = |c_n| \]
+        \[ \varphi_{-n} = - \varphi_n \]
+        \[ c_n = |c_n| \cdot e^{\varphi n j} \]
+        >>>FOSA Grafik zu diskretem Amplituden- und Phasenspektrum
+                (Spektrallinien, Diskretes Spektrum)
+  \item Nicht periodische Signale $\to$ Fourier-Transformation
+        \[ u(t) = \frac{1}{2 \pi} \int\limits_{-\infty}^{\infty} U(\omega) 
+        \cdot e^{\omega t j} ~ d\omega \]
+        \[ U(\omega) = \mathcal{F}\{ u(t) \} =  \int\limits_{-\infty}^{\infty} 
+        u(t) \cdot e^{-\omega t j} ~ dt \]
+        Fourier-Transformierte oder Spektraldichte von $u(t)$
+        \[ U(\omega) = A(\omega) \cdot e^{\varphi(\omega) j} \]
+        \[ A(\omega) = |U(\omega)| \leq 0 \]
+        \[ \varphi(\omega) = arg ~ U(\omega) \in (-\pi , \pi \rbrack \]
+        \[ \tan(\varphi(\omega)) = \frac{Im(U(\omega))}{Re(U(\omega))} \]
+        Falls $u(t)$ reell ist, gilt: 
+        \[ A(-\omega) = A(\omega) \qquad \varphi(-\omega) = -\varphi(\omega) \]
+        >>>FOSA Grafik zu kontinuierlichem Amplituden- und Phasenspektrum
+        \[ \fourier \]
+\end{itemize}

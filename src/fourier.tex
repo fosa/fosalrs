@@ -191,3 +191,23 @@ Kriterium: Falls
 \[ \int\limits_{-\infty}^{\infty} |u(t)| ~ dt < \infty \]
 dann funktioniert das Rezept. 
 Dies gilt insbesondere, wenn das Signal eine endliche Dauer hat. 
+
+\section{Inverse Fouriertransformation}
+Siehe HErleitung der Fouriertransformation: 
+\[ u(t) = \frac{1}{2 \pi}  \int\limits_{-\infty}^{\infty} U(\omega) \cdot e^{\omega t j} ~ d\omega \]
+\[ U(\omega) = \mathcal{F} \{ u(t) \} \]
+\[ u(t) = \mathcal{F}^{-1} \{ U(\omega) \} \]
+
+\subsection{Symmetrie}
+\[ U(\omega) = \int\limits_{-\infty}^{\infty} u(t) \cdot e^{-\omega t j} ~ dt \]
+Variabeln umbenennnen: 
+\[ t \to -\omega \qquad \omega \to t \]
+\[ u(-\omega) = \frac{1}{2 \pi} \underbrace{\int\limits_{-\infty}^{\infty} 
+U(t) \cdot e^{t (-\omega) j} ~ dt}_{\mathcal{F} \{ U(t) \}} \]
+\[ \mathcal{F} \{ U(t) \} = 2 \pi \cdot u(-\omega) \]
+Also: 
+\[ \boxed{\begin{array}{lll}
+u(t) & \laplace & U(\omega)\\
+U(t) & \laplace & 2 \pi \cdot u(-\omega)
+\end{array}} \]
+

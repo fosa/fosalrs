@@ -175,3 +175,19 @@ Fourieranalyse: Welche Frequenzen sind in einem Signal vorhanden?
 \subsection{Unschärferelation}
 \[ \Delta t \cdot \Delta \omega = const \]
 \[ \Rightarrow \Delta \omega \text{ umgekehrt proportional zu } \Delta t \]
+
+\subsection{Fouriertransformation als Spezialfall der Laplacetransformation}
+Beidseitige Laplacetransformation: 
+\[ \mathcal{L}_{II} \{ u(t) \} = \int\limits_{-\infty}^{\infty} u(t) \cdot e^{-s t} ~ dt \]
+Fouriertransformation: 
+\[ \mathcal{F}      \{ u(t) \} = \int\limits_{-\infty}^{\infty} u(t) \cdot e^{-s t} ~ dt \]
+Rezept: funktioniert nicht immer! 
+\begin{enumerate}
+  \item Laplacetransformation berechnen
+  \item $s = \omega j$ ersetzen
+  \item Ergebnis ist Fouriertransformation
+\end{enumerate}
+Kriterium: Falls 
+\[ \int\limits_{-\infty}^{\infty} |u(t)| ~ dt < \infty \]
+dann funktioniert das Rezept. 
+Dies gilt insbesondere, wenn das Signal eine endliche Dauer hat. 

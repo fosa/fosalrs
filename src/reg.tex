@@ -238,3 +238,41 @@ Int egrieren $\to$ Multiplizieren mit $\frac{1}{s}$\\
 Hilfe: \\
 Zähler: Vorwärtspfad\\
 Nenner: 1 $\pm$ Kreisverstärkung
+
+\section{P-Regler}
+\[ u = k_p \cdot e(t) \]
+\[ e(t) = v_{soll}(t) - v(t) \]
+
+\subsubsection{Einfluss von $k_p$ auf die Zeitkonstante}
+Die Übertragungsfunktion des geschlossenen Kreises lautet
+\[ G_{CL} = \frac{50 \cdot k_p}{25 \cdot s + 1 + 50 \cdot k_p} \cdot 
+\frac{\frac{1}{1} + 50 \cdot k_p}{\frac{1}{1} + 50 \cdot k_p} 
+= \frac{\frac{50 \cdot k_p}{1 + 50 \cdot k_p}}
+{\frac{25}{1 + 50 \cdot k_p} \cdot s + 1} \]
+(Führungsverhalten)
+
+\section{I-Regler}
+\[ u = k_p \cdot e(t) + k_i \cdot \int\limits_0^t (e(t)) ~ dt \]
+\[ e(t) = v_{soll}(t) - v(t) \]
+\[ U(s) = k_p \cdot E(s) + k_i \cdot \frac{1}{s} \cdot E(s) \]
+\[ U(s) = \left( k_p + \frac{k_i}{s} \right) \cdot \left( V_{soll}(s) - V(s) \right) \]
+
+\subsection{Bestimmung der Reglerkoeffizienten durch Polynomvergleich}
+\[ 2 D \omega_0 = 0.04 + 2 k_p \]
+\[ {\omega_0}^2 = 2 k_i \]
+Vorgabe von $\omega_0$ und $D$
+\[ \omega_0 = 0.1 \qquad D = 1 \]
+\[ k_i = \frac{{\omega_0}^2}{2} = 0.005 \]
+\[ k_p = \frac{2 D \omega_0 - 0.04}{2} = 0.08 \]
+
+\section{Nullstellen}
+\[ 0.16 \cdot s + 0.01 \stackrel{!}{=} 0 \]
+\[ 0.16 \cdot s = -0.01 \]
+\[ n_1 = s = -\frac{0.01}{0.16} = 0.0625 \]
+>>>FOSA Grafik Pol/Nullstellenplan
+
+\section{Pole}
+bestimmen BIBO-Stabilität
+\[ s^2 + 0.2 s + 0.01 = 0 \]
+\[ s_{1,2} = \frac{-0.2 \pm \sqrt{0.2^2 - 4 \cdot 0.01}}{2} \]
+

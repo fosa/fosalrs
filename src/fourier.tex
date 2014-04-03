@@ -232,3 +232,18 @@ Symmetrie
 \[ \sin(\omega_t t) ~ \laplace 
 ~ \pi j (\delta(\omega - \omega_0) - \delta(\omega + \omega_0)) \]
 
+\section{Transformationsregeln}
+\subsubsection{Zeitverschiebung}
+\[ u(t - t_0) ~ \laplace ~ e^{-t_0 \omega j} \cdot U(\omega) \]
+\subsubsection{Ableitungssatz}
+\[ \dot{u}(t) ~ \laplace ~ \omega j \cdot U(\omega) \]
+Mehrmalige Anwendung
+\[ \ddot{u}(t) ~ \laplace ~ (\omega j)^2 \cdot U(\omega) = -\omega^2 U(\omega) \]
+\[ u^{(n)}(t) ~ \laplace ~ (\omega j)^n \cdot U(\omega) \]
+\subsection{Faltungssätze}
+Faltung: 
+\[u(t) * v(t) = \int\limits_{-\infty}^{\infty} u(\tau) \cdot v(\tau) ~ d \tau  \]
+Zeitbereich: 
+\[ u(t) * v(t) ~ \laplace ~ U(\omega) \cdot V(\omega) \]
+Frequenzbereich:
+\[ u(t) \cdot v(t) ~ \laplace ~ \frac{1}{2 \pi} U(\omega) * V(\omega) \]

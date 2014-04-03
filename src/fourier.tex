@@ -247,3 +247,26 @@ Zeitbereich:
 \[ u(t) * v(t) ~ \laplace ~ U(\omega) \cdot V(\omega) \]
 Frequenzbereich:
 \[ u(t) \cdot v(t) ~ \laplace ~ \frac{1}{2 \pi} U(\omega) * V(\omega) \]
+
+\section{Frequenzgang}
+>>>FOSA Grafik LZI System mit Zeitbereich und Frequenzbereich
+\[ V(s) = U(s) \cdot G(s) \]
+Frage: Wie antwortet das System auf eine harmonische Schwingung? 
+\subsubsection{Bsp. RC-Schaltkreis}
+\[ u(t) = \sigma(t) \cdot \sin(\omega t) \]
+\[ v(t) = \underbrace{a \cdot \cos(\omega t) + b \cdot \sin(\omega t)}_
+{c \cdot \cos(\omega t + \varphi)} + \underbrace{d \cdot e^{-\frac{1}{R C}t}}_
+{\text{abklingend}} \]
+Theorem: Gegeben sei ein asymptotisch stabiles LZI-System mit Übertragungsfunktion 
+$G(s)$. Die Antwort des Systems auf $u(t) = A \cdot \sin(\omega t + \varphi_0)$
+ist nach einem Einschwingvorgang  
+\[ A \cdot A_0 \cdot \sin(\omega t + \varphi_0 + \varphi) \]
+Hierbei gilt für $A = A(\omega)$ und $\varphi = \varphi(\omega)$: 
+\[ G(\omega j) = A(\omega) \cdot e^{\varphi(\omega) j} \]
+\[ A(\omega) = |G(\omega j)| \]
+\[ \varphi(\omega) = arg(G(\omega j)) \]
+Bemerkung: Da das System asymptotisch stabil ist, liegen alle Pole von $G(s)$ 
+links der imaginären Achse. 
+\[ G(\omega j) = \mathcal{F}\{ g(t) \} \]
+Definition: $G(\omega j)$ heisst der Frequenzgang des Systems. 
+

@@ -303,3 +303,34 @@ Bsp.
 \[ s_{Z_1} = -1 \qquad s_{Z_2} = -4 \]
 \[ s_{N_1} = -2 \qquad s_{N_2} = -3 + j 2 \qquad s_{N_3} = -3 - j 2 \]
 
+\section{Stabilität}
+>>>FOSA Grafik Stabilität
+\[ a_n y^{(n)} + a_{n-1} y^(n-1) + \ldots + a_1 \dot{y} + a_0 y = 0 \]
+\[ y = c_1 e^{s_1 t} + c_2 e^{s_2 t} + \ldots \]
+\[ s_{1, 2} = \sigma \pm j \omega \]
+\[ y = c_1 e^{(\sigma + j \omega)t} + {c_1}^* e^{(\sigma - j \omega)t} + \ldots \]
+\[ e^{\pm j \omega t} = \omega s \omega t \pm j sin(\omega t) \]
+\[ y = e^{\sigma t}(c_1 e^{j \omega t} + {c_1}^* e^{-j \omega t}) 
+= e^{\sigma t}(c_2 \cos(\omega t + \varphi))\ldots \]
+
+\subsection{Hurwitz-Kriterium}
+\[ a_n s^n + a_{n-1} s^{n-1} + \ldots + a_1 s + a_0 = 0 \]
+\[ \begin{array}{cccc}
+a_1 & a_3 & a_5 & a_7 \\
+a_0 & a_2 & a_4 & a_6 \\
+0   & a_1 & a_3 & a_5 \\
+0   & a_2 & a_4 & a_6 \\
+\end{array} \]
+Alle Nullstellen von (*) haben einen negativen Realteil, wenn 
+\begin{enumerate} 
+  \item alle Koeffizienten $a_1, a_1, \ldots, a_n$ ungleich null sind uns ein 
+        positives Vorzeichen haben und 
+  \item die Hurwitz-Determinante sowie die 
+  \item Unterdeterminante grösser sind. 
+\end{enumerate}
+Weiteres Verfahren: Routh-Schema
+
+
+
+
+

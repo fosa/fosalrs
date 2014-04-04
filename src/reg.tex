@@ -276,3 +276,30 @@ bestimmen BIBO-Stabilität
 \[ s^2 + 0.2 s + 0.01 = 0 \]
 \[ s_{1,2} = \frac{-0.2 \pm \sqrt{0.2^2 - 4 \cdot 0.01}}{2} \]
 
+\section{Pol / Nullstellenplan}
+\[ G(s) = \frac{Z(s)}{N(s)} \]
+Pole: 
+\[ N(s) = 0 \qquad s_{N_1}, s_{n_2}, \ldots \]
+Nullstellen: 
+\[ Z(s) = 0 \qquad s_{Z_1}, s_{Z_2}, \ldots \]
+Eine Übertragungsfunktion n-ter Ordnung besitzt n Pole. Diese können reell, 
+konjugiert-komplex, einfach ider mehrfach sein. \\
+Bsp. 
+\[ G(s) = \frac{b_0}{s^2 + a_1 s + a_0} \]
+keine Nullstellen (kein s im Zähler)\\
+\[ s^2 + a_1 s + a_0 = 0 \]
+\[ s_{1, 2} = -\frac{a_1}{2} \pm \sqrt{\frac{{a_1}^2}{4} - a_0} \]
+Annahme: 
+\[ a_1 = 4 \qquad s_{1, 2} = -2 \pm \sqrt{4 - a_0} \]
+\[ a_0 = 3 \qquad s_1 = - 1 \qquad s_2 = -3 \]
+>>>FOSA Grafik Pole Annahme 1\\
+Annahme: 
+\[ a_0 = 8 \qquad s_{1, 2} = -2 \pm 2 j \]
+>>>FOSA Grafik Pole Annahme 2\\
+\subsection{P/N - Darstellung}
+Bsp. 
+\[ G(s) = \frac{4 s^2 + 20s + 16}{2 s^3 + 16 s^2 + 50 s + 52} 
+= 2 \cdot \frac{(s+4)(s+1)}{(s+2)(s+3-2j)(s+3+2j)} \]
+\[ s_{Z_1} = -1 \qquad s_{Z_2} = -4 \]
+\[ s_{N_1} = -2 \qquad s_{N_2} = -3 + j 2 \qquad s_{N_3} = -3 - j 2 \]
+

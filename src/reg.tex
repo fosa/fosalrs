@@ -323,12 +323,73 @@ a_0 & a_2 & a_4 & a_6 \\
 \end{array} \]
 Alle Nullstellen von (*) haben einen negativen Realteil, wenn 
 \begin{enumerate} 
-  \item alle Koeffizienten $a_1, a_1, \ldots, a_n$ ungleich null sind uns ein 
+  \item alle Koeffizienten $a_1, a_1, \ldots, a_n$ ungleich null sind und ein 
         positives Vorzeichen haben und 
   \item die Hurwitz-Determinante sowie die 
   \item Unterdeterminante grösser sind. 
 \end{enumerate}
 Weiteres Verfahren: Routh-Schema
+
+\section{Frequenzgang}
+\subsubsection{Definition}
+Wir betrachten ein lineares zeitinvariantes System, das in Ruhe ist. 
+Dann gibt man eine harmonische Schwingung auf den Eingang und beobachtet die 
+Ausgangsschwingung nach unendlich langer Zeit. Es interessiert uns das 
+Verhältnis zwischen Ausgangsschwingung und Eingangsschwingung im 
+eingeschwungenen Zustand. Einschwingvorgänge werden nicht berücksichtigt im 
+Gegensatz zur Laplacetransformation. \\
+>>>FOSA Grafik zu Sinussignalen am Linearen System
+\[ u(t) = \hat{u} \cos(\omega t + \vartheta) \]
+\[ y(t) = \hat{y} \cos(\omega t + \varphi) \]
+\begin{tabular}{ll}
+$\hat{u}$, $\hat{y}$ & Amplitude \\
+$\omega$          & Kreisfrequenz \\
+\end{tabular}
+\[ \omega = \frac{2 \pi}{T} = 2 \pi f \]
+>>>FOSA Grafik zu Phasenvershiebung\\
+Phasenverschiebung in Zeit oder in rad, nach rechts ist Phase negativ, da 
+verzögert. 
+\subsubsection{Darstellung}
+Tabelle: \\
+\begin{tabular}{lcccc}
+Frequenz   & Amplitude Eingang & Phase Eingang & Amplitude Ausgang & Phase Ausgang \\
+$\omega_1$ &
+  $\hat{u}(\omega_1)$ &
+  $0$ &
+  $\hat{y}(\omega_1)$ &
+  $\varphi(\omega_1)$ \\
+$\omega_2$ &
+  $\hat{u}(\omega_2)$ & 
+  $0$ & 
+  $\hat{y}(\omega_2)$ & 
+  $\varphi(\omega_2)$ \\
+
+\end{tabular}
+
+\subsection{Bodediagramm}
+Man trägt das Amplitudenverhältnis und den Phasengang $\varphi(\omega) - 0$ 
+in zwei verschiedene Diagramme ein. 
+
+\subsubsection{Amplitudengang}
+doppelt logarithmisch\\
+x-Achse: $\log \omega$ \\
+y-Achse: $\frac{\hat{y}}{\hat{u}}$ in $dB$\\
+\[ dB = 20 \cdot \log\left( \frac{\hat{y}(\omega)}{\hat{u}(\omega)} \right) \]
+
+\subsubsection{Phasengang}
+Einfach logarithmisch\\
+x-Achse: $\log(\omega)$ \\
+y-Achse: $\varphi(\omega)$ \\
+
+\subsection{Ortskurve, Nyguistdiagramm}
+Man Zeichnet die beiden Grössen Amplitudenverhältnis $|G(j \omega)|$ und 
+Phase $\varphi(\omega)$ als Zeiger in die komplexe G-Ebene ein. 
+\[ Q(j \omega) = |G(j \omega)| \cdot e^{j \varphi(\omega)} \]
+\[ Re =  |G(j \omega)| \cdot \cos(\varphi(\omega)) \]
+\[ Im =  |G(j \omega)| \cdot \sin(\varphi(\omega)) \]
+\[ |G(j \omega)| = \sqrt{Re^2 + Im^2} \]
+\[ \varphi(\omega) = \arctan(\frac{Im}{Re}) \]
+>>>FOSA Grafik Ortskurve \\
 
 
 

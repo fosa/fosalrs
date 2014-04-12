@@ -16,7 +16,7 @@
 
 \newpage
 \section{Grosse Tabelle zur Laplace Transformation}
-\[ \begin{array}{l@{ ~ \laplace ~ }l}
+\[ \begin{array}{@{}l@{ ~ \laplace ~ }l@{}}
 % 1
 \frac{1}{a} f(\frac{t}{a}) &
     F(a s) \qquad (a > 0) \\
@@ -53,6 +53,35 @@ f(at - b) & \text{ für } & t > \frac{b}{a} \\
 0        & \text{ für } & t < \frac{b}{a}
 \end{array} \right. &
     \frac{1}{a} e^{-\frac{b}{a}s} F(\frac{s}{a}) \qquad (a, b > 0) \\
-
+% 11
+f(t + a) \qquad (a \geq 0) &
+    e^{as} \left(F(s) - \int\limits_0^a e^{-s \tau} f(\tau) ~ d\tau\right) \\
+% 12
+y(t + k) \qquad y(t) = y_n, n \leq t < n < 1 &
+    e^{ks} \left(Y(s) - \frac{1 - e^{-s}}{s} \sum\limits_{v=0}{k-1} y_v e^{-vs}\right) \\
+% 13
+-t f(t) &
+    \frac{d F(s)}{ds} \\
+% 14
+(-t)^n f(t) &
+    \frac{d^n F(s)}{d s^n} \\
+% 15
+\frac{d f(t)}{dt} &
+    s F(s) - f(0^+) \\
+% 16
+\frac{d^n f(t)}{d t^n} &
+    s^n F(s) - \sum\limits_{k=0}^{n-1} f^{(k)} (0^+) s^{n-k-1} \\
+% 17
+\frac{f(t)}{t} &
+    \int\limits_s^\infty F(\sigma) ~ d\sigma \\
+% 18
+\frac{f(t)}{t^n} &
+    \left(\int\limits_s^\infty d\sigma\right)^n F(\sigma) \\
+% 19
+\int\limits_0^t \frac{f(\tau)}{\tau} ~ d \tau &
+    \frac{1}{s} \int\limits_s^\infty F(\sigma) ~ d\sigma \\
+% 20
+\int\limits_t^\infty \frac{f(\tau)}{\tau} ~ d\tau &
+    \frac{1}{s} \int\limits_0^s F(\sigma) ~ d\sigma \\
 \end{array} \]
 

@@ -17,11 +17,42 @@
 \newpage
 \section{Grosse Tabelle zur Laplace Transformation}
 \[ \begin{array}{l@{ ~ \laplace ~ }l}
+% 1
 \frac{1}{a} f(\frac{t}{a}) &
     F(a s) \qquad (a > 0) \\
+% 2
 e^{a t} f(t) &
     F(s - a) \\
+% 3
 e^{- a t} f(t) & 
     F(s + a) \\
+% 4
+\frac{1}{a} e^{\frac{\beta}{a}t} f\left(\frac{t}{a}\right) & 
+    F(as - \beta) \qquad (a > 0, \beta \in \mathcal{C})\\
+% 5
+f(t) \sin(at) &
+    \frac{1}{2 j}(F(s - ja) - F(s + ja)) \\
+% 6
+f(t) cos(at) &
+    \frac{1}{2} (F(s - a) - F(s + a)) \\
+% 7
+f(t) \sinh(at) & 
+    \frac{1}{2} (F(s - a) - F(s + a)) \\
+% 8
+f(t) \cosh(at) & 
+    \frac{1}{2} (F(s - a) + F(s + a)) \\
+% 9
+\left\lbrace \begin{array}{c@{}c@{}l} 
+f(t - a) & \text{ für } & t > a \geq 0 \\
+0        & \text{ für } & t < a
+\end{array} \right. &
+    e^{-as} F(s) \\
+% 10
+\left\lbrace \begin{array}{c@{}c@{}l} 
+f(at - b) & \text{ für } & t > \frac{b}{a} \\
+0        & \text{ für } & t < \frac{b}{a}
+\end{array} \right. &
+    \frac{1}{a} e^{-\frac{b}{a}s} F(\frac{s}{a}) \qquad (a, b > 0) \\
+
 \end{array} \]
 

@@ -85,3 +85,36 @@ y(t + k) \qquad y(t) = y_n, n \leq t < n < 1 &
     \frac{1}{s} \int\limits_0^s F(\sigma) ~ d\sigma \\
 \end{array} \]
 
+\[ \begin{array}{@{}l@{ ~ \laplace ~ }l@{}}
+% 21
+\int\limits_0^t f(\tau) ~ d \tau = f(t) * 1 &
+    \frac{1}{s} F(s) \\
+% 22
+\left(\int\limits_0^t d\tau\right)^n f(\tau) &
+    \frac{1}{s^n} F(s) \\
+% 23
+f_1(t) * f_2(t) = \int\limits_0^t f_1(\tau) f_2(t - \tau) ~ d \tau &
+    F_1(s) \cdot F_2(s) \\
+% 24
+f_1(t) \cdot f_2(t) &
+    \frac{1}{2 \pi j} \int\limits_{x-j\infty}^{x+j\infty} F_1(\sigma) F_2(s - \sigma) ~ d\sigma \\
+% 25
+\int\limits_0^\infty \frac{\cos(2 \sqrt{t \tau})}{\sqrt{\pi t}} f(\tau) ~ d\tau &
+    \frac{1}{\sqrt{s}} F\left(\frac{1}{s}\right) \\
+% 26
+\int\limits_0^\infty \frac{\sin(2 \sqrt{t \tau})}{\sqrt{\pi t}} f(\tau) ~ d\tau &
+    \frac{1}{s\sqrt{s}} F\left(\frac{1}{s}\right) \\
+% 27
+\int\limits_0^\infty J_0(2 \sqrt{t \tau}) f(\tau) ~ d\tau &
+    \frac{1}{s} F\left(\frac{1}{s}\right) \\
+% 28
+\int\limits_0^t J_0(2 \sqrt{(t - \tau)\tau}) f(\tau) ~ d\tau &
+    \frac{1}{s} F\left(s + \frac{1}{s}\right) \\
+% 29
+\int\limits_0^\infty \frac{\tau}{2 \sqrt{\pi} t^{\frac{3}{2}}} e^{-\frac{\tau^2}{4 t}} f(\tau) ~ d\tau &
+    F(\sqrt{s}) \\
+% 30 >>>FOSA Achtung! Zeichen T muss durch korrektes Zeichen ersetzt werden. 
+\int\limits_0^\infty \frac{t^{\tau - 1}}{T(\tau)} f(\tau) ~ d\tau &
+    F(\log(s) \\
+\end{array} \]
+

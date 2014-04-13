@@ -42,13 +42,13 @@ f(t) \sinh(at) &
 f(t) \cosh(at) & 
     \frac{1}{2} (F(s - a) + F(s + a)) \\
 % 9
-\left\lbrace \begin{array}{c@{}c@{}l} 
+\left\lbrace \begin{array}{@{}c@{}c@{}l} 
 f(t - a) & \text{ für } & t > a \geq 0 \\
 0        & \text{ für } & t < a
 \end{array} \right. &
     e^{-as} F(s) \\
 % 10
-\left\lbrace \begin{array}{c@{}c@{}l} 
+\left\lbrace \begin{array}{@{}c@{}c@{}l} 
 f(at - b) & \text{ für } & t > \frac{b}{a} \\
 0        & \text{ für } & t < \frac{b}{a}
 \end{array} \right. &
@@ -146,5 +146,41 @@ t &
 % 40
 \frac{1}{a} (e^{at} - 1) &
 \frac{1}{s (s - a)} \\
+\end{array} \]
+
+\[ \begin{array}{@{}l@{ ~ \laplace ~ }l@{}}
+% 41
+1 - e^{-\frac{t}{a}} &
+    \frac{1}{s (1 + as)} \\
+% 42
+t e^{at} &
+    \frac{1}{(s - a)^2} \\
+% 43
+\frac{1}{a^2} t e^{-\frac{t}{a}} &
+    \frac{1}{(1 + as)^2} \\
+% 44
+\frac{e^{at} - e^{bt}}{a - b} &
+    \frac{1}{(s - a) (s - b)} \\
+% 45
+\frac{e^{-\frac{t}{a}} - e^{-\frac{t}{b}}}{a - b} &
+    \frac{1}{(1 + as) (1 + bs)} \\
+% 46
+\left\lbrace\begin{array}{@{}l}
+\frac{1}{\sqrt{-D}} e^{-\frac{c_1}{2}t} \sinh\left(\sqrt{-Dt}\right) \qquad (D < 0) \\
+\frac{1}{\omega} e^{-\frac{c_1}{2}t} \sin(\omega t)                  \qquad (D > 0, \sqrt{-D} = j \omega)
+\end{array}\right. &
+    \frac{1}{s^2 + c_1 s + c_0} \qquad \left(D = c_0 - \frac{{c_1}^2}{4}\right) \\
+% 47
+\frac{1}{\omega} e^{-\delta t} \sin(\omega t) &
+    \frac{1}{s^2 + 2 \delta s + (\delta^2 + \omega^2)} \\
+% 48
+\cos(a t) &
+    \frac{s}{s^2 + a^2} \\
+% 49
+\cosh(a t) &
+    \frac{s}{s^2 - a^2} \\
+% 50
+(1 + a t) e^{a t} &
+    \frac{s}{(s - a)^2} \\
 \end{array} \]
 

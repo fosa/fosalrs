@@ -720,6 +720,66 @@ t \sigma(t) - t \sigma(t - a) \\
 \end{array} \]
 
 \[ \begin{array}{@{}l@{ ~ \laplace ~ }l@{}}
+% 201
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik \\
+1 - \frac{t}{a}\sigma(t) + \frac{t}{a}\sigma(t - a) \\
+\end{array}\right. &
+    \frac{e^{-as} + as - 1}{as^2} \\
+% 202
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik \\
+\sin(at) \cdot \left(\sigma(t) - \sigma\left(t - \frac{2n\pi}{a}\right)\right) \\
+\end{array}\right. &
+    \frac{a \left(1 - e^{-\frac{2n\pi s}{a}}\right)}{s^2 + a^2} \\
+% 203
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik \\
+\cos(at) \cdot \left(\sigma(t) - \sigma\left(t - \frac{2n\pi}{a}\right)\right) \\
+\end{array}\right. &
+    \frac{s \left(1 - e^{-\frac{2n\pi s}{a}}\right)}{s^2 + a^2} \\
+% 204
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik \\
+\end{array}\right. &
+    f_p(s) = \frac{f(s)}{1 - e^{-as}} \\
+% 205
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik \\
+|\sin(at)| \sigma(t) \\
+\end{array}\right. &
+    \frac{a}{s^2 + a^2} \cdot \frac{1 + e^{-\frac{\pi}{a}s}}{1 - e^{-\frac{\pi}{s}s}} \\
+% 206
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik \\
+\sin(at) \text{ für } \frac{2n\pi}{a} < t \frac{(2n + 1)\pi}{a} \\
+0        \text{ für } \frac{(2n + 1)\pi}{a} < t < \frac{(2n + 2)\pi}{a} \\
+n = 0, 1, \ldots \\
+\end{array}\right. &
+    \frac{a}{s^2 + a^2} \cdot \frac{1}{1 - e^{-\frac{\pi}{a}s}} \\
+% 207
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik \\
+0        \text{ für } \frac{2n\pi}{a} < t \frac{(2n + 1)\pi}{a} \\
+\sin(at) \text{ für } \frac{(2n + 1)\pi}{a} < t < \frac{(2n + 2)\pi}{a} \\
+n = 0, 1, \ldots \\
+\end{array}\right. &
+    \frac{a}{s^2 + a^2} \cdot \frac{1}{e^{\frac{\pi}{a}s} - 1} \\
+% 208
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik \\
+\end{array}\right. &
+    \frac{1}{s (1 + e^{-as})} \\
+% 209
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik \\
+\end{array}\right. &
+    \frac{e^{-as} + as - 1}{as^2 (1 - e^{-as})} \\
+% 210
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik \\
+\end{array}\right. &
+    \frac{1}{s (1 + e^{as})} \\
 
 %\left\lbrace\begin{array}{l}
 %\end{array}\right.

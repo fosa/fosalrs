@@ -563,5 +563,41 @@ X(a, t) &
 % 170
 \frac{1}{b} erfc\left(\frac{a}{2 \sqrt{t}}\right) - \frac{1}{b} e^{b^2 t + ab} erfc\left(\frac{a}{2 \sqrt{t}} + b \sqrt{t}\right) &
     \frac{1}{s (b + \sqrt{s})} e^{-a \sqrt{s}} \\
+% 171
+e^{b^2 t + ab} erfc\left(\frac{a}{2 \sqrt{t}} + b \sqrt{t}\right) &
+    \frac{1}{\sqrt{s} (b + \sqrt{s})} \\
+% 172
+\left\lbrace\begin{array}{@{}l@{}}
+0 \qquad (0 \leq t \leq \sqrt{a}x) \\
+\sqrt{\frac{d}{a}} x e^{-\left(\frac{b}{2a}\right)t} \frac{I_1\left(\frac{\sqrt{d}}{a} \sqrt{t^2 - a x^2}\right)}{\sqrt{t^2 - a x^2}} \qquad (t \geq \sqrt{a}x) \\
+\end{array}\right. &
+    \begin{array}{@{}l@{}}
+    e^{-x \sqrt{a s^2 + bs + e}} - e^{-\left(\frac{b}{2 \sqrt{a}}\right)x} e^{-\sqrt{a}xs} \\
+    \left(d = \left(\frac{b}{2}\right)^2 - ac\right)
+    \end{array} \\
+% 173
+\frac{\sinh(\sqrt{2 at}) \sin(\sqrt{2 at})}{\sqrt{\pi t}} &
+    \frac{1}{\sqrt{s}} \sin\left(\frac{a}{s}\right) \\
+% 174
+\frac{\cosh(\sqrt{2 at}) \sin(\sqrt{2 at})}{\sqrt{a \pi}} &
+    \frac{1}{s \sqrt{2 s}} \left(\cos\left(\frac{a}{s}\right) + \sin\left(\frac{a}{s}\right)\right) \\
+% 175
+\frac{\cosh(\sqrt{2 at}) \cos(\sqrt{2 at})}{\sqrt{\pi t}} &
+    \frac{1}{\sqrt{s}} \cos\left(\frac{a}{s}\right) \\
+% 176
+\frac{\sinh(\sqrt{2 at}) \cos(\sqrt{2 at})}{\sqrt{a \pi}} &
+    \frac{1}{s \sqrt{2 s}} \left(\cos\left(\frac{a}{s}\right) - \sin\left(\frac{a}{s}\right)\right) \\
+% 177
+\frac{\cosh(2 \sqrt{at}) - \cos(2 \sqrt{at})}{2 \sqrt{\pi t}} &
+    \frac{1}{\sqrt{s}} \sinh\left(\frac{a}{s}\right) \\
+% 178
+\frac{\sinh(2 \sqrt{at}) - \sin(2 \sqrt{at})}{2 \sqrt{a \pi}} &
+    \frac{1}{s \sqrt{s}} \sinh\left(\frac{a}{s}\right) \\
+% 179
+\frac{\cosh(2 \sqrt{at}) + \cos(2 \sqrt{at})}{2 \sqrt{\pi t}} &
+    \frac{1}{\sqrt{s}} \cosh\left(\frac{a}{s}\right) \\
+% 180
+\frac{\sinh(2 \sqrt{at}) + \sin(2 \sqrt{at})}{2 \sqrt{a \pi}} &
+    \frac{1}{s \sqrt{s}} \cosh\left(\frac{a}{s}\right) \\
 \end{array} \]
 

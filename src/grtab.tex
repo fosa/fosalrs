@@ -601,3 +601,61 @@ e^{b^2 t + ab} erfc\left(\frac{a}{2 \sqrt{t}} + b \sqrt{t}\right) &
     \frac{1}{s \sqrt{s}} \cosh\left(\frac{a}{s}\right) \\
 \end{array} \]
 
+\[ \begin{array}{@{}l@{ ~ \laplace ~ }l@{}}
+% 181
+\frac{\sin(at)}t{} &
+    \arctan\left(\frac{a}{s}\right) \\
+% 182
+\frac{2}{t} \sin(at) \cos(bt) &
+    \arctan\left(\frac{2 as}{s^2 - a^2 + b^2}\right) \\
+% 183
+\frac{e^{at} - 1}{t} \sin(bt) &
+    \arctan\left(\frac{ab}{s^2 - as + b^2}\right) \\
+% 184
+\theta_3(v, t) &
+    \frac{\cosh(2 v - 1) \sqrt{s}}{\sqrt{s} \sinh(\sqrt{s})} \qquad (0 \leq v \leq 1) \\
+% 185
+\left\lbrace\begin{array}{l}
+\frac{1}{l} \frac{\partial}{\partial x} \theta_3\left(\frac{l - x}{2 l}, \frac{t}{l^2}\right) \\
+= \sum\limits_{n=-\infty}^{+\infty} \psi(2 nl + l - x, t) \\
+= -\frac{2 \pi}{l^2} \sum\limits_{n=1}^{\infty} (-1)^n n \sin\left(n \frac{\pi}{l} x e^{-n^2 \frac{\pi^2}{l^2}t}\right) \\
+\end{array}\right.&
+    \frac{\sinh(x \sqrt{s})}{\sinh(l \sqrt{s})} \qquad (-l < x < +l) \\
+% 186
+\left\lbrace\begin{array}{l}
+-\frac{1}{l} \frac{\partial}{\partial x} \theta_3\left(\frac{x}{2 l}, \frac{t}{l^2}\right) \\
+= \sum\limits_{n=-\infty}^{+\infty} \psi(2nl + x, t) \\
+= \frac{2 \pi}{l^2} \sum\limits_{n=1}^{\infty} n \sin\left(n \frac{\pi}{l} x e^{-n^2 \frac{\pi^2}{l^2} t}\right) \\
+\end{array}\right. &
+    \frac{\sinh(l - x) \sqrt{s}}{\sinh(l \sqrt{s})} \qquad (0 < x < 2l) \\
+% 187
+\frac{1}{2} (X(x - \xi, t) - X(x + \xi, t)) &
+    \left\lbrace\begin{array}{l}
+    \frac{1}{\sqrt{s}} e^{-x \sqrt{s}} \sinh(\xi \sqrt{s}) \\ \qquad (0 \leq \xi \leq x) \\
+    \frac{1}{\sqrt{s}} e^{-\xi \sqrt{s}} \sinh(x \sqrt{s}) \\ \qquad (x \leq \xi < \infty) \\
+    \end{array}\right. \\
+% 188
+\left\lbrace\begin{array}{l}
+\frac{1}{2} \sum\limits_{n=-\infty}^{+\infty} (X(2nl + x - \xi, t) - X(2nl + x + \xi, t)) \\
+= \frac{2}{l} \sum\limits_{n=1}^{\infty} e^{-n^2 \frac{\pi^2}{l^2} t} \sin\left(n \frac{\pi}{l} x\right) \sin\left(n \frac{\pi}{l} \xi\right) \\
+\end{array}\right. &
+    \left\lbrace\begin{array}{l}
+    \frac{\sinh(\xi \sqrt{s}) \sinh(l - x) \sqrt{s}}{\sqrt{s} \sinh(l \sqrt{s})} \\
+    \qquad (0 \leq \xi \leq x) \\
+    \frac{\sinh(x \sqrt{s}) \sinh(l - \xi) \sqrt{s}}{\sqrt{s} \sinh(l \sqrt{s})} \\
+    \qquad (x \leq \xi \leq l) \\
+    \end{array}\right. \\
+% 189
+e^{-t^2} &
+    \frac{\sqrt{\pi}}{2} e^{\left(\frac{s}{2}\right)^2} erfc\left(\frac{s}{2}\right) \\
+% 190
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik Einheitssprung \\
+\sigma(t - a) \\
+\end{array}\right. &
+    \frac{e^{-as}}{s} \\
+
+%\left\lbrace\begin{array}{l}
+%\end{array}\right.
+\end{array} \]
+

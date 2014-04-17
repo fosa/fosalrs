@@ -971,8 +971,39 @@ F([t]) &
 % 250
 {[t]^2} &
     \frac{e^s - 1}{s} \frac{e^s + 1}{(e^s - 1)^3} \\
-
-%\left\lbrace\begin{array}{l}
-%\end{array}\right.
+% 251
+{[t]^2} a^{[t] - 1} &
+    \frac{e^s - 1}{s} \frac{e^s + a}{(e^s - a)^3} \\
+% 252
+c a^{[t]} - d \beta^{[t]} &
+    \frac{e^s - 1}{s} \frac{(c - d) e^s - (c \beta - d a)}{(e^s - a) (e^s - \beta)} \\
+% 253
+\sin(\beta[t]) &
+    \frac{e^s - 1}{s} \frac{\sin(\beta)}{e^{2s} - 2 e^s \cos(\beta) + 1} \\
+% 254
+\cos(\beta [t]) &
+    \frac{e^s - 1}{s} \frac{e^s - \cos(\beta)}{e^{2s} - 2 e^s \cos(\beta) + 1} \\
+% 255
+a^{[t]} \sin(\beta [t]) &
+    \frac{e^s - 1}{s} \frac{a \sin(\beta)}{e^{2s} - 2 a e^s \cos(\beta) + a^2} \\
+% 256
+a^{[t]} \cos(\beta [t]) &
+    \frac{e^s - 1}{s} \frac{e^s - a \cos(\beta)}{e^{2s} - 2 a e^s \cos(\beta) + a^2} \\
+% 257
+\delta(t) &
+    1 \\
+% 258
+\delta^{(n)}(t) &
+    s^n \qquad (n = 1, 2, \ldots) \\
+% 259
+\delta(t - T) &
+    e^{-Ts} \qquad (T > 0) \\
+% 260
+\left\lbrace\begin{array}{l}
+e^{-\left(\frac{b}{2 \sqrt{a}}\right) x} \delta(t - \sqrt{a} x) \\
++ \sqrt{\frac{d}{a}} x e^{-\left(\frac{b}{2a}\right) t} \frac{I_1 \left(\frac{\sqrt{d}}{a} \sqrt{t^2 - a x^2}\right)}{\sqrt{t^2 - a x^2}} \\
+d = \left(\frac{b}{2}\right)^2 - a c \\
+\end{array}\right. &
+    e^{-x \sqrt{as^2 + bs + c}} \\
 \end{array} \]
 

@@ -113,11 +113,11 @@ f_1(t) \cdot f_2(t) &
 % 29
 \int\limits_0^\infty \frac{\tau}{2 \sqrt{\pi} t^{\frac{3}{2}}} e^{-\frac{\tau^2}{4 t}} f(\tau) ~ d\tau &
     F(\sqrt{s}) \\
-% 30 >>>FOSA Achtung! Zeichen T muss durch korrektes Zeichen ersetzt werden. 
-\int\limits_0^\infty \frac{t^{\tau - 1}}{T(\tau)} f(\tau) ~ d\tau &
+% 30
+\int\limits_0^\infty \frac{t^{\tau - 1}}{\Gamma(\tau)} f(\tau) ~ d\tau &
     F(\log(s)) \\
-% 31 >>>FOSA Achtung! Zeichen T muss durch korrektes Zeichen ersetzt werden. 
-\int\limits_0^\infty \frac{t^\tau}{T(\tau + 1)} f(\tau) ~d\tau &
+% 31
+\int\limits_0^\infty \frac{t^\tau}{\Gamma(\tau + 1)} f(\tau) ~d\tau &
     \frac{1}{s} F(\log(s)) \\
 % 32
 e^{-at} f(t) + d e^{-at} \int\limits_0^t f(\sqrt{t^2 - \tau^2}) I_1(b_\tau) ~ d\tau &
@@ -487,15 +487,15 @@ J_v(t) \qquad (\mathbb{R}(v) > -1) &
     \frac{\left(\sqrt{s^2 + 1} - s\right)^v}{\sqrt{s^2 + 1}} \\
 % 146
 t^v J_v(at) \qquad \left(\mathbb{R}(v) > -\frac{1}{2}\right) &
-    \frac{(2 a)^v T\left(v + \frac{1}{2}\right)}{\sqrt{\pi}(s^2 + a^2)^{v + \frac{1}{2}}} \\
+    \frac{(2 a)^v \Gamma\left(v + \frac{1}{2}\right)}{\sqrt{\pi}(s^2 + a^2)^{v + \frac{1}{2}}} \\
 % 147
-\frac{t^{v - 1}}{T(v)} \qquad (\mathbb{R}(v) > 0) &
+\frac{t^{v - 1}}{\Gamma(v)} \qquad (\mathbb{R}(v) > 0) &
     \frac{1}{s^v} \\
 % 148
 \frac{4^n n!}{(2 n)! \sqrt{\pi}} t^{n - \frac{1}{2}} &
     \frac{1}{s^n \sqrt{s}} \\
 % 149
-\frac{t^{v - 1}}{T(v)} e^{-at} &
+\frac{t^{v - 1}}{\Gamma(v)} e^{-at} &
     \frac{1}{(s + a)^v} \\
 % 150
 -\log(t) - C &
@@ -507,7 +507,7 @@ t^v J_v(at) \qquad \left(\mathbb{R}(v) > -\frac{1}{2}\right) &
 (\log(t) + C)^2 - \frac{\pi^2}{6} &
     \frac{(\log(s)^2}{s} \\
 % 153
-\int\limits_0^\infty \frac{t^{\tau - 1}}{T(t)} ~d\tau &
+\int\limits_0^\infty \frac{t^{\tau - 1}}{\Gamma(t)} ~d\tau &
     \frac{1}{\log(s)} \\
 % 154
 \frac{1 - e^{at}}{t} &
@@ -960,7 +960,7 @@ a^{[t]} &
 - a \beta \frac{a^{[t] - 1} - \beta^{[t] - 1}}{a - \beta} \qquad (a \neq \beta) &
     \frac{e^s - 1}{s} \frac{e^s - (a + \beta)}{(e^s - a) (e^s - \beta)} \\
 % 248
-Q^{([t] + \mu)} (0) \qquad \left(T(t) ~ \laplace ~ \frac{1}{p(s)}\right) &
+Q^{([t] + \mu)} (0) \qquad \left(Q(t) ~ \laplace ~ \frac{1}{p(s)}\right) &
     \left\lbrace\begin{array}{@{}l@{}}
     \frac{e^s - 1}{s} \frac{e^{\mu s}}{p(e^s)} \qquad (\mu = 0, 1, \ldots, r - 1) \\
     (p(z) = z^r + c_{r - s} z^{r - 1} + \ldots + c_0) \\
@@ -1005,5 +1005,36 @@ e^{-\left(\frac{b}{2 \sqrt{a}}\right) x} \delta(t - \sqrt{a} x) \\
 d = \left(\frac{b}{2}\right)^2 - a c \\
 \end{array}\right. &
     e^{-x \sqrt{as^2 + bs + c}} \\
+\end{array} \]
+
+\[ \begin{array}{@{}l@{}}
+U(t) = 
+    \left\lbrace\begin{array}{l}
+    0 \text{ für } t \leq 0 \\
+    1 \text{ für } t > 0 \\
+    \end{array}\right. \\
+\delta(t) = 
+    \text{Impuls- oder Dirac-Distribution} \\
+L_n(t) = 
+    \sum\limits_{k=0}^n (-1)^k \binom{n}{k} \frac{t^k}{k!} \qquad \text{(Laquerre-Polynom)} \\
+X(a, t) = 
+    \frac{1}{\sqrt{\pi t}} e^{-\frac{a^2}{4t}} \\
+\psi(a, t) = 
+    \frac{a}{2 \sqrt{\pi} t^{\frac{3}{2}}} e^{-\frac{a^2}{4t}} \\
+erfc(x) = 
+    \frac{2}{\sqrt{\pi}} \int\limits_x^\infty e^{-u^2} ~ du \\
+J_0(t) = 
+    \sum\limits_{k=0}^{\infty} (-1)^k \frac{\left(\frac{t}{2}\right)^{2k}}{(k!)^2} \\
+J_v(t) = 
+    \sum_{k=0}^{\infty} (-1)^k \frac{\left(\frac{t}{2}\right)^{2k + v}}{k! \Gamma(v + k + 1)} \qquad \text{(Bessel-Funktion)} \\
+I_1(t) = 
+    \sum\limits_{k=0}^{\infty} \frac{\left(\frac{t}{2}\right)^{2k + 1}}{k! (k + 1)!} \\
+\theta_3(v, t) = 
+    1 + 2 \sum\limits_{k=1}^{\infty} e^{-k^2 \pi^2 t} \cos(2 k \pi v) = 
+    \frac{1}{\sqrt{\pi t}} \sum\limits_{n=-\infty}^{+\infty} e^{-\frac{(v + n)^2}{t}} \\
+{[t]} = 
+    \text{grösste ganze Zahl } \leq t \\
+C = 
+    0.577\ldots \text{ (Eulersche Konstante)} \\
 \end{array} \]
 

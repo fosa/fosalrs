@@ -932,7 +932,45 @@ n = 0, 1, \ldots \\
 \left\lbrace\begin{array}{l}
 >>>FOSA Grafik \\
 \end{array}\right. &
-    \frac{1}{s (1 - e^{-as}} \\
+    \frac{1}{s (1 - e^{-as})} \\
+\end{array} \]
+
+\[ \begin{array}{@{}l@{ ~ \laplace ~ }l@{}}
+% 241
+\left\lbrace\begin{array}{l}
+>>>FOSA Grafik \\
+\end{array}\right. &
+    \frac{1}{s^2 (e^{as} - 1)} \\
+% 242
+\frac{a^{[t]} - 1}{a - 1} &
+    \frac{1}{s (e^s - a)} \qquad (a \neq 1) \\
+% 243
+a^{[t]} &
+    \frac{e^s - 1}{s} \frac{1}{e^s - a} \\
+% 244
+\lbrack t \rbrack a^{[t] - 1} &
+    \frac{e^s - 1}{s} \frac{1}{(e^s - a)^2} \\
+% 245
+\frac{1}{2} [t] ([t] - 1) a^{[t] - 2} &
+    \frac{e^s - 1}{s} \frac{1}{(e^s - a)^3} \\
+% 246
+\frac{a^{[t]} - \beta^{[t]}}{a - \beta} \qquad (a \neq \beta) &
+    \frac{e^s - 1}{s} \frac{1}{(e^s - a) (e^s - \beta)} \\
+% 247
+- a \beta \frac{a^{[t] - 1} - \beta^{[t] - 1}}{a - \beta} \qquad (a \neq \beta) &
+    \frac{e^s - 1}{s} \frac{e^s - (a + \beta)}{(e^s - a) (e^s - \beta)} \\
+% 248
+Q^{([t] + \mu)} (0) \qquad \left(T(t) ~ \laplace ~ \frac{1}{p(s)}\right) &
+    \left\lbrace\begin{array}{@{}l@{}}
+    \frac{e^s - 1}{s} \frac{e^{\mu s}}{p(e^s)} \qquad (\mu = 0, 1, \ldots, r - 1) \\
+    (p(z) = z^r + c_{r - s} z^{r - 1} + \ldots + c_0) \\
+    \end{array}\right. \\
+% 249
+F([t]) &
+    \frac{1 - e^{-s}}{s} \sum\limits_{k=0}^{\infty} F_k e^{-ks} \\
+% 250
+{[t]^2} &
+    \frac{e^s - 1}{s} \frac{e^s + 1}{(e^s - 1)^3} \\
 
 %\left\lbrace\begin{array}{l}
 %\end{array}\right.

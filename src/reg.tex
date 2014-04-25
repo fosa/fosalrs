@@ -391,7 +391,44 @@ Phase $\varphi(\omega)$ als Zeiger in die komplexe G-Ebene ein.
 \[ \varphi(\omega) = \arctan(\frac{Im}{Re}) \]
 >>>FOSA Grafik Ortskurve \\
 
+\section{LZI-Glieder}
 
+\subsection{Verstärker}
+\[ G(s) = K \]
 
+\subsection{Verzögerungselement 1. Ordnung (PT$_1$)}
+\[ G(s) \frac{K}{T_1 s + 1} \]
+>>>FOSA Grafik PT1
+
+\subsection{Verzögerungselement 2. Ordnung (PT$_2$)}
+\[ G(s) = \frac{K \cdot {\omega_0}^2}{s^2 + 2 d \omega_0 s + {\omega_0}^2} \]
+\begin{tabular}{ll@{$ ~ \rightarrow ~ $}l}
+$K$ & Verstärkungsfaktor & Endwert \\
+$d$ & Dämpfung & Überschwingen \\
+$\omega_0$ & Eigenkreisfrequenz & Schwingfrequenz \\
+\end{tabular}
+\[ \frac{Y(s)}{U(s)} = \frac{K \cdot {\omega_0}^2}{s^2 + 2 d \omega_0 s + {\omega_0}^2} \]
+\[ Y(s) (s^2 + 2 d \omega_0 s + {\omega_0}^2) = K \cdot {\omega_0}^2 \cdot U(s) \]
+\[ \ddot{y}(t) + 2 d \omega_0 \dot{y}(t) + {\omega_0}^2 y(t) = K \cdot {\omega_0}^2 \cdot u(t) \]
+\[ \ddot{y}(t) = K \cdot {\omega_0}^2 \cdot u(t) - 2 d \omega_0 \dot{y}(t) - {\omega_0}^2 \cdot y(t) \]
+Pole des PT$_2$ Elementes
+\[ s^2 + 2 d \omega_0 s + {\omega_0}^2 \]
+\[ s_{1/2} = \frac{-2 d \omega_0 \pm \sqrt{4 d^2 {\omega_0}^2 - 4 {\omega_0}^2}}{2} \]
+\[ s_{1/2} = -d \omega_0 \pm \omega_0 \cdot \sqrt{d^2 - 1} \]
+Fallunterscheidung: 
+\[ d > 1: \]
+\[ s_1 = -d \omega_0 + \omega_0 \sqrt{d^2 - 1} \]
+\[ s_1 = -d \omega_0 - \omega_0 \sqrt{d^2 - 1} \]
+\[ s^2 + 2 d \omega_0 s + {\omega_0}^2 = (s - s_1) (s - s_2) \]
+
+\[ d = 1: \]
+\[ s_{1/2} = -d\omega_0 \]
+
+\[ d < 1: \]
+\[ s_1 = -d\omega_0 + j \omega_0 \sqrt{1 - d^2} \]
+\[ s_1 = -d\omega_0 - j \omega_0 \sqrt{1 - d^2} \]
+
+Das PT$_2$-Element mit Dämpfung $d = \frac{\sqrt{2}}{2}$ entspricht einer 
+"'perfekten"' Antwort für einen geschlossenen Regelkreis. 
 
 

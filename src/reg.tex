@@ -451,7 +451,42 @@ damit folgt:
 
 \section{Regelstrecken}
 >>>FOSA Grafik Grafik Regelstrecken mit / ohne Ausgleich
+\[ G(s) = \frac{K (T_1 s + 1) (T_2 s + 1) (\ldots)}{s^r (T_{N_1} s + 1) (T_{N_2} s + 1)} \]
+Mit Ausgleich: 
+\[ G_s(s) = \frac{K_{Ps}}{{T_n}^n s^n + \ldots + {T_2}^2 s^2 + T_1 s + 1} \]
+\[ y_\infty = k_{PS} \cdot u\infty \qquad u(t) = \sigma(t) \]
+Ohne Ausgleich: 
+\[ G_s(s) = \frac{K_{Is}}{({T_n}^n s^n + \ldots + {T_2}^2 s^2 + T_1 s + 1) s} \]
+\[ \dot{y}_\infty = K_{Is} \cdot u_\infty \qquad \text{$K_{Is}$: Integrierbeiwert der Strecke} \]
 
-\subsection{Regelstrecken mit Ausgleich}
+\subsection{Einfaches System mit Ausgleich}
+$PT_1$ Element
+\[ G(s) = \frac{K}{T_1 s + 1} \]
+>>>FOSA Grafik PT1
+\[ h(t) = K \left(1 - e^{-\frac{t}{T_1}}\right) \]
+\[ t = T_1 \]
+\[ h(  T_1) = K \left( 1 - e^{-1} \right) = 0.6321 K \]
+\[ h(2 T_1) = K \left( 1 - e^{-2} \right) = 0.849 K \]
+\[ h(3 T_1) = K \left( 1 - e^{-3} \right) = 0.9502 K \]
+>>>FOSA Grafik T1, T2 beim PT1 (Siehe Buch Seite 123)
+\\\\
+höherer Ordnung: $PT_n$ Element\\
+>>>FOSA Grafik PTn Element\\
+>>>FOSA Grafik Blockschaltbild PTn Element\\
+$PT_n$ Element
+\[ G(s) = \frac{K}{(T_1 s + 1)^n} \qquad \text{$n$-te Ordnung} \]
+Wie kann man mit der erhaltenen Schrittantwort $n$, $k$, $T_1$ bestimmen? 
+\[ K = \frac{y_\infty}{u_\infty} \]
+\[ n = ? \quad T_1 = ? \]
+Einfluss von $n$ beim $PT_n$ Element: 
+>>>FOSA Grafik zum Einfluss von n beim PTn Element (Setie 126)
 
-\subsection{Regelstrecken ohne Ausgleich}
+\subsubsection{Einfluss einer Totzeit}
+\[ PT_1 \rightarrow PT_1 - T_t \text{ Element} \]
+\[ PT_2 \rightarrow PT_2 - T_t \text{ Element} \]
+Lösung zur Bestimmung von $n$, $T_t$, $T_1$ 
+\begin{itemize}
+    \item Wendetangentenverfahren
+    \item Zeit-Prozent-Kennwert-Verfahren
+\end{itemize}
+

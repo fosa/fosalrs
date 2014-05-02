@@ -431,4 +431,27 @@ Fallunterscheidung:
 Das PT$_2$-Element mit Dämpfung $d = \frac{\sqrt{2}}{2}$ entspricht einer 
 "'perfekten"' Antwort für einen geschlossenen Regelkreis. 
 
+\subsection{$PT_2$ im geschlossenen Regelkreis}
+\[ G_o(s) = \frac{K}{s (T_1 s + 1)} \]
+\[ G_{CL}(s) = \frac{G_o}{1 + G_o(s)} = \frac{\frac{K}{1 (T_1 s + 19}}{1 + \frac{K)}{1 + (T_1 s + 1)}} = \frac{K}{s (T_1 s + 1) + K} \]
+\[ G_{CL}(s) = \frac{K}{T_1 s^2 + s + K} = \frac{\frac{K}{T_1}}{s^2 + \frac{1}{T_1} s + \frac{K}{T_1}} \stackrel{!}{=} \frac{K \cdot {\omega_0}^2}{s^2 + 2 d \omega_0 s + {\omega_0}^2} \]
+Koeffizientenvergleich:
+\[ \frac{K}{T_1} = {\omega_0}^2 \]
+\[ \omega_0 = \sqrt{\frac{K}{T_1}} \]
+\[ 2 d \omega_0 = \frac{1}{T_1} \]
+\[ d = \frac{1}{2 T_1 \omega_0} = \frac{1}{2 \sqrt{T_1 \cdot K}} \]
+Wunsch: 
+\[ d_{soll} = \frac{\sqrt{2}}{2} \]
+\[ \frac{\sqrt{2}}{2} = \frac{1}{2 \sqrt{T_1 K}} \]
+\[ \sqrt{2} = \frac{1}{\sqrt{T_1 K}} \]
+\[ \sqrt{T_1 K} = \frac{1}{\sqrt{2}} \]
+\[ T_1 \stackrel{!}{=} \frac{1}{2 K} \]
+damit folgt:
+\[ \omega_0 = \sqrt{2 K^2} = \sqrt{2} K \]
 
+\section{Regelstrecken}
+>>>FOSA Grafik Grafik Regelstrecken mit / ohne Ausgleich
+
+\subsection{Regelstrecken mit Ausgleich}
+
+\subsection{Regelstrecken ohne Ausgleich}

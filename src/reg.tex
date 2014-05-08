@@ -494,6 +494,26 @@ Lösung zur Bestimmung von $n$, $T_t$, $T_1$
 >>>FOSA Grafik Regelstrecke ohne Ausgleich
 \[ G_s = \frac{KIs}{s (T_1 s + 1)^n} \]
 
+\subsection{Totzeit}
+\[ G(s) = e^{-T_t s} \]
+\[ \angle G(s) = -T_t \omega \]
+Ziel: 
+\[ G(s) = \frac{Z(s)}{N(s)} \]
+
+\subsubsection{Padé Approximation}
+\[ e^{\eta} \approx \frac{1 + b_1 \eta + b_2 \eta^2 + \ldots + b_n \eta^n}
+{1 + a_1 \eta + a_2 \eta^2 + \ldots +  a_n \eta^n} \]
+\[ \eta = T_t s \]
+\[ e^{-\eta} = 1 - \frac{\eta}{1!} + \frac{\eta^2}{2!} - \frac{\eta^3}{3!} + \ldots \]
+1. Ordnung ergibt sich: 
+\[ \frac{1 + b_1 \eta}{1 + a_1 \eta} \approx 1 - \eta + \frac{\eta^2}{2!} - \ldots \]
+\[ 1 + a_1 = b_1 \qquad b_1 = -0.5 \]
+\[ 0.5 - a_1 = 0 \qquad a_1 = 0.5 \]
+\[ G(s)  = \frac{1 - 0.5 T_t s}{1 + 0.5 T_t s} = \frac{2 - T_t s}{2 + T_t s} \]
+Padé Approximation 3. Ordnung: 
+\[ G(s) = \frac{-{T_t}^3 s^3 + 12 {T_t}^2 s^2 - 60 T_t s + 120}
+{{T_t}^3 s^3 + 12 {T_t}^2 s^2 + 60 T_t s + 120} \]
+in Matlab: \verb?[z,n] = pade(It,n)?
 
 \subsection{Regelbarkeit von Strecken}
 \[ \frac{T_g}{T_u} < 1.2: \text{sehr schlecht} \]

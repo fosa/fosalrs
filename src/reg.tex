@@ -520,3 +520,49 @@ in Matlab: \verb?[z,n] = pade(It,n)?
 \[ \frac{T_g}{T_u} = 5: \text{gut} \]
 \[ \frac{T_g}{T_u} = 10: \text{sehr gut} \]
 
+\section{Welcher Reglertyp passt zu welcher Reglstrecke?}
+P-Regler: 
+\[ G_R(s) = k_R \cdot E(s) \]
+I-Regler: 
+\[ G_R(s) = k_{IR} \cdot \frac{E(s)}{s} \]
+D-Regler: 
+\[ G_R(s) = k_{DR} \cdot s \cdot E(s) \]
+\[  G_R(s) = \frac{1}{s^r} \cdot k_R\]
+\begin{tabular}{ll}
+$r =  0$ & P-Regler \\
+$r =  1$ & I-Regler \\
+$r = -1$ & D-Regler \\
+\end{tabular}
+>>>FOSA Grafik Regelkreis\\
+Führungsübertragungsfunktion: 
+\[ \frac{Y(s)}{W(s)} = \frac{G_R(s) G(s)}{1 + G_R(s) G(s)} \]
+Störübertragungsfunktion: 
+\[ \frac{Y(s)}{Z(s)} = \frac{-G(s)}{1 + G_R(s) G(s)} \]
+Regelfehler: 
+\[ \frac{E(s)}{W(s)} = \frac{1}{1 + G_R(s) G(s)} \]
+Stationäre Endwerte betrachten in Abhängigkeit von Regler, Strecke und 
+Anregung $w(s)$: 
+\[ \lim\limits_{t\to \infty} y(t) = \lim\limits_{s \to \infty} s Y(s) 
+= \lim\limits_{s \to 0} s \frac{G_R(s) G(s)}{1 + G_R(s) G(s)} \]
+\[ W_1(s) = \frac{1}{s} \qquad W_2(s) = \frac{1}{s^2} \]
+\[ G_0(s) = G_R(s) G(s) \]
+\[ G_0(0) = G_R(0) G(0) = \frac{K_0}{s^r} \frac{(~)(~)}{(~)(~)} 
+\frac{(~)(~)(~)}{(~)(~)(~)} \]
+\[ K_0 = K_R K_s \]
+\[ r = \ldots, -2, -1, 0, 1, 2, \ldots \]
+\[ \lim\limits_{s \to 0} \frac{G_0(s)}{1 + G_0(s)} \cdot \frac{1}{s} 
+= \lim\limits_{s \to 0} s \frac{\frac{K_0}{s^r}}{1 + \frac{K_0}{s^r}} \frac{1}{s} 
+= \lim\limits_{s \to 0} s \frac{K_0}{s^r + K_0} \frac{1}{s} 
+= \lim\limits_{s \to 0} \frac{K_0}{s^r + K_0} \]
+Führugnsverhalten
+\[ r = 0 \qquad \frac{K_0}{1 + K_0} \qquad \infty \]
+\[ r = 1 \qquad 1 \qquad \infty \]
+\[ r = 2 \qquad 1 \]
+\[ r = -1 \qquad 0 \qquad K_0 \]
+
+für Regelfehler: 
+\[ E(s) = U(s) - Y(s) \]
+\[ \lim\limits_{+ \to \infty} e(t) = \lim\limits_{+ \to \infty} w(t) 
+- \lim\limits_{y(t)} = \lim\limits_{s \to 0} s E(s) = \lim\limits_{s \to 0} s \frac{1}{1 + G_0(s)} \cdot W(s) \]
+
+

@@ -565,4 +565,33 @@ für Regelfehler:
 \[ \lim\limits_{+ \to \infty} e(t) = \lim\limits_{+ \to \infty} w(t) 
 - \lim\limits_{y(t)} = \lim\limits_{s \to 0} s E(s) = \lim\limits_{s \to 0} s \frac{1}{1 + G_0(s)} \cdot W(s) \]
 
+\subsection{Nyquist Stabilitätsanalyse / -Kriterium}
+\[ G_{CL}(s) = \frac{G_0(s)}{1 + G_0(s)} \qquad G_0(s) = -1 \]
+\[ X(s) = - G_R(s) G_S(s) X_e(s) = -G_0(s) X_e(s) \stackrel{!}{=} X_e(s) \]
+\[ G_0(s) = -1 \]
+\[ s = j \omega \qquad 0 < \omega < \infty \]
+Nennerpolynom $ 1 + G_0(s) = 0 $ des geschlossenen Kreises\\
+Jeder Pol des geschlossenen Kreises erfüllt die Gleichung $1 + G_0(s_i) = 0$ 
+$G_0(s_i) = -1$ d.h. jeder Pol wird durch die Abbildung $Z = G_0(s_i)$ auf 
+den Punkt $(-1, j 0)$ abgebildet. 
+>>>FOSA Grafik zu Nyquist Stabilitätskriterium\\\\
+Linke Hand Regel anwendbar, wenn
+\[ G_0(s) = \frac{Z_0(s)}{N_0(s)} e^{-T_t s} = G_R(s) G_S(s) \]
+\begin{enumerate}
+    \item $grad(Z_0(s)) < grad(N_0(s))$
+    \item Pole von $N_0(s)$ haben negativen Realteil mit Ausnahme max 2 Pole 
+        bei $s = 0$. 
+\end{enumerate}
+Der Abstand vom Nyquist Punkt $(-1, j 0)$ ist entscheidend! \\\\
+>>>FOSA Grafik Amplituden- und Amplitudenreserve
+
+\subsubsection{Amplitudenreserve}
+$\omega = \omega_\pi$\\
+Gutes Regelverhalten: $A_R \geq 2$
+
+\subsubsection{Phasenreserve}
+$\omega = \omega_0$\\
+Gutes Regelverhalten: $\varphi_R \geq 60^\circ$\\
+Gutes Störverhalten: $\varphi_R \geq 30^\circ$
+
 

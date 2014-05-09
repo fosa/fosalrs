@@ -609,6 +609,38 @@ Gutes Störverhalten: $\varphi_R \geq 30^\circ$
 >>>FOSA Grafik Delta Phi
 \[ \Delta\varphi_s = [2 (P - N) + \mu - \nu] \frac{\pi}{2} \]
 Unser Ziel ist ein stabiler geschlossener Kreis, d. h. wir fordern $N = 0$ und $\nu = 0$. Eingesetzt: 
-\[ \Delta\varphi_s = [2 P + \mu] \frac{\pi}{2} \]
-\[ \Delta\varphi_s = P \pi + \mu \frac{\mu}{2} \]
+\[ \Delta\varphi_s = [2 P + \mu] \frac{\pi}{2} = P \pi + \mu \frac{\mu}{2} \]
+
+\subsection{Einstellregeln P, PI, PID Regler}
+Buch, s. 215\\\\
+
+\subsection*{Beispiel 5.1}
+$I-T_1-T_t$
+\[ G_S(s) = \frac{K_{PS}}{s (s T_1 + 1)} e^{-T_t s} \]
+PI-Regler
+\[ G_R(s) = K_{PS} \left(1 + \frac{1}{T_n s}\right) \]
+\[ G_0(s) = \frac{K_{PS} K_{PR} (T_n s + 1)}{s (s T_1 + 1) T_n s} \]
+
+\subsection*{Beispiel 5.3}
+\[ G = \frac{1}{T_1 s + 1} \]
+\[ G_R = K_{PR} \]
+\[ \varphi_R = ? \qquad A_R = ? \]
+\[ K_{PR} = 10 \qquad T_1 = 2 \]
+>>>FOSA Grafik
+\[ A_R = \infty \]
+\[ \varphi_R > 90^\circ \]
+\[ |G_0(j \omega_D)| = 1 \]
+\[ \frac{K_{PR}}{\sqrt{1 + (T_1 \omega_D)^2}} \stackrel{!}{=} 1 \]
+\[ K_{PR} = \sqrt{1 + (T_1 \omega_D)^2} \]
+\[ 100 - 1 = (T_1 \omega_D)^2 \]
+\[ \sqrt{\frac{99}{{T_1}^2}} = \omega_D \]
+\[ \omega_D = 4.97 \frac{rad}{s} \]
+\[ \angle G_0(j \omega_D) = \arctan\left(\frac{Im(G_(j\omega_D))}{Re(G_(G_0(j\omega_D)))}\right) \] 
+\[ G_0(j\omega) = \frac{K_{PR}}{1 + (\omega T_1)^2} + j \frac{-K_{PR}\omega T_1}{1 + (\omega T_1)^2} \]
+\[ \angle G_0(j\omega_D) = \arctan\left(\frac{-K_{PR} \omega_D T_1}{K_{PR}}\right) \frac{108^\circ}{\pi} = -84.25^\circ \]
+\[ \varphi_R = 95.7^\circ \]
+
+\subsubsection{Totzeitreserve}
+\[ T_t = \frac{\varphi_R}{\omega_d} \]
+
 

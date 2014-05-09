@@ -575,7 +575,7 @@ Jeder Pol des geschlossenen Kreises erfüllt die Gleichung $1 + G_0(s_i) = 0$
 $G_0(s_i) = -1$ d.h. jeder Pol wird durch die Abbildung $Z = G_0(s_i)$ auf 
 den Punkt $(-1, j 0)$ abgebildet. 
 >>>FOSA Grafik zu Nyquist Stabilitätskriterium\\\\
-Linke Hand Regel anwendbar, wenn
+Linke Hand Regel (Buch s. 182) anwendbar, wenn
 \[ G_0(s) = \frac{Z_0(s)}{N_0(s)} e^{-T_t s} = G_R(s) G_S(s) \]
 \begin{enumerate}
     \item $grad(Z_0(s)) < grad(N_0(s))$
@@ -586,12 +586,29 @@ Der Abstand vom Nyquist Punkt $(-1, j 0)$ ist entscheidend! \\\\
 >>>FOSA Grafik Amplituden- und Amplitudenreserve
 
 \subsubsection{Amplitudenreserve}
-$\omega = \omega_\pi$\\
+\[ \omega = \omega_\pi \]
+\[ |G_0(j \omega_D)| = 1 \]
+\[ \varphi_R = \angle G_0(j\omega_D) + \pi \]
 Gutes Regelverhalten: $A_R \geq 2$
 
 \subsubsection{Phasenreserve}
-$\omega = \omega_0$\\
+\[ \omega = \omega_0 \]
+\[ Im(G_0(j \omega_\pi)) = 0 \quad \to \omega_{\pi_1}, \omega_{\pi_2} , \ldots \]
+\[ A_R = \frac{1}{|G_0(j \omega_R)|} \]
 Gutes Regelverhalten: $\varphi_R \geq 60^\circ$\\
 Gutes Störverhalten: $\varphi_R \geq 30^\circ$
 
+\subsubsection{Nyquistkriterium im Bodediagramm}
+>>>FOSA Grafik zu Nyquistkriterium im Bodediagramm (Buch s. 188)
+\[ \omega_D < \omega_R \]
+
+\subsection{Allgemeines Nyquist Kriterium}
+>>>FOSA Grafik Allgemeines Nyquist Kriterium
+\[ G'_{CL}(s) = 1 + G_0(s) \qquad \text(Nenner geschlossener Kreis) \]
+\[ = K_o' \frac{(~) (~) (~)}{(~) (~) (~)} \]
+>>>FOSA Grafik Delta Phi
+\[ \Delta\varphi_s = [2 (P - N) + \mu - \nu] \frac{\pi}{2} \]
+Unser Ziel ist ein stabiler geschlossener Kreis, d. h. wir fordern $N = 0$ und $\nu = 0$. Eingesetzt: 
+\[ \Delta\varphi_s = [2 P + \mu] \frac{\pi}{2} \]
+\[ \Delta\varphi_s = P \pi + \mu \frac{\mu}{2} \]
 

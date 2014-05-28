@@ -151,24 +151,10 @@ Sprungfunktion $\sigma(t)$.
         \end{array}
     \right.
 \]
-Die Dirac-Delta Funktion $\delta(t)$ hat die Eigenschaft, dass deren
-Integration stets $1$ ergibt.
-\[  
-        \int\limits_{-\infty}^{+\infty} \delta(t)\,dt = 1
-\]
-Diese Eigenschaft macht die Dirac-Delta Funktion zu einem Filter, welcher
-alle Werte zu $t \neq t_0$ ausblended bzw. zu $0$ transformiert.
-\[  
-        u_0 = \int\limits_{-\infty}^{+\infty} \underbrace{u(t)}_{u(t_0)} 
-                \cdot \underbrace{\delta(t-t_0)}_{1}\,dt 
-        \quad \Rightarrow \quad 
-        u_0 = u(t_0) \cdot 1
-\]
 Die Herleitung der Dirac-Delta Funktion ist anschaulich mittels eines
 Plots der Sprungfunktion. Nähert man eine Funktion an den Verlauf der
 Sprungfunktion an, so ergibt deren Ableitung eine Rechteckfunktion.
 Die Fläche $A$ unter dem Rechteck ist dabei stets $1$.
-
 \[ 
     \widetilde{\sigma}(t, \Delta t) = 
     \left\{
@@ -256,4 +242,25 @@ Die Fläche $A$ unter dem Rechteck ist dabei stets $1$.
     \label{fig:dirac-delta}
 \end{figure}
 
+\subsection{Eigenschaften der Deltafunktion}
 
+\subsubsection{Fläche}
+\[ 
+    \boxed{
+        \int\limits_{-\infty}^{\infty} \delta(t) ~ dt = 1
+    } 
+\]
+
+\subsubsection{Ausblendeeigenschaft}
+\[ 
+    \boxed{
+        \delta(t) \cdot f(t) = \delta(t) \cdot f(0)
+    } 
+\]
+
+%\subsubsection{}
+\[ 
+    \boxed{
+        \int\limits_{-\infty}^{\infty} \delta(t) \cdot f(t) ~ dt = f(0)
+    } 
+\]

@@ -1,0 +1,65 @@
+\section{Testing Control Drawings}
+
+\begin{signalflow}[node distance=15mm]{Just testing something}
+    % blocks
+    \tikzgrid{
+        \node[input]    (in)    {}          &
+        \node[adder]    (a1)    {}          &
+        \node[delay]    (d1)    {$G_1$}     &
+        \node[delay]    (d2)    {$G_2$}     &  
+        \node[node]     (n1)    {}          &
+        \node[output]   (out)   {}
+    }
+    % paths
+    \path[r>] (in) -- node[above]{$w$} (a1);
+    \path[r>] (a1) -- node[above]{$e$} (d1);
+    \path[r>] (d1) -- node[above]{$x$} (d2);
+    \path[r>] (d2) -- node[above]{$y$} (out);
+
+    \coordinate (d) at ($ (n1) + (0,-1) $);
+
+    \path[r>] (n1) -- (d) -| node[left, pos=0.95] {$-$} node[left, near end] {$y_m$} (a1);
+
+\end{signalflow}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

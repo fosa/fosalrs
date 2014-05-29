@@ -201,14 +201,15 @@ Die Fläche $A$ unter dem Rechteck ist dabei stets $1$.
     \label{fig:dirac-delta}
 \end{figure}
 \[      
-        \frac{d \widetilde{\sigma}(t)}{dt} = \left\{
-                \begin{array}{c c}
-                        0 & t > \Delta t \\
-                        \frac{1}{2 \cdot \Delta t} &
-                                - \Delta t \leq t \leq \Delta t \\
-                        0 & t < - \Delta t
-                \end{array}
-                \right.
+    \frac{d \widetilde{\sigma}(t)}{dt} = 
+    \left\{
+        \begin{array}{c c}
+            0 & t > \Delta t \\
+            \frac{1}{2 \cdot \Delta t} &
+            - \Delta t \leq t \leq \Delta t \\
+            0 & t < - \Delta t
+        \end{array}
+    \right.
 \]
 \begin{figure}[h!]
     \centering
@@ -224,16 +225,16 @@ Die Fläche $A$ unter dem Rechteck ist dabei stets $1$.
         \draw (-1,0) node[anchor=north] {$- \Delta t$};
         \draw (1,0) node[anchor=north] {$\Delta t$};
 
+        % Fläche einfärben
+        \draw[pattern=north east lines, pattern color=gray]
+            (-1,0) rectangle (1,1);
+
         % Zeigne Singalverlauf
         \draw[-, thick, red] (-1.5,0) -- (-1,0) {};
         \draw[-, thick, red] (-1,0) -- (-1,1) {};
         \draw[-, thick, red] (-1,1) -- (1,1) {};
         \draw[-, thick, red] (1,1) -- (1,0) {};
         \draw[-, thick, red] (1,0) -- (3.5,0) {};
-
-        % Fläche einfärben
-        \draw[pattern=north east lines, pattern color=gray]
-            (-1,0) rectangle (1,1);
 
         % Hinweis
         \draw[-] (0.5, 0.5) -- (2, 1) {};

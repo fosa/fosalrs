@@ -1,0 +1,152 @@
+\section{Stabilität}
+In der Regelungstechnik gibt es eine allgemeine Definition für die
+Stabilität. Diese besagt, dass ein System stabil ist, wenn sich die
+Sprungantwort einem Endwert annähert. Hierzu muss also ein Grenzwert
+existieren.
+\[ 
+    \exists\, \lim_{t \rightarrow \infty} h(t)
+\]
+
+\subsection{BIBO-Stabilität}
+Die BIBO-Stabilität (\textit{engl. ''bounded input - bounded output``}) 
+bezeichnet eine Stabilität der Art, dass eine beschränkte Eingangsgrösse 
+eine beschränkte Ausgangsgrösse zur Folge hat. 
+\[  
+    \int\limits_{0}^{\infty} \lvert g(t) \rvert \, dt < 0
+\]
+
+\subsection{Hurwitz}
+Das Hurwitzkriterium bestimmt eindeutig die Stabilitätseigenschaft einer
+Übertragungsfunktion. Eine solche ist genau dann stabil, wenn das 
+Nennerpolynom $N(s)$ der Übertragungsfunktion 
+\[  
+    G(s) 
+        = \frac{Z(s)}{N(s)} 
+        = \frac{Z(s)}{a_0s^0 + a_1s^1 + a_2s^2 + \dots + a_ns^n} 
+\]
+die folgenden Kriterien erfüllt.
+
+\begin{enumerate}
+    \item Alle Koeffizenten des Polynoms für den gegebenen Grad sind 
+        vorhanden. \[ a_n \neq 0 \]
+    \item Alle Koeffizienten des Polynoms sind grösser als null (also
+        positiv). \[ a_n > 0 \]
+    \item Die Determinante und alle Unterdeterminanten sind grösser 
+        als null. \[ \Delta_i > 0 \]
+\end{enumerate}
+
+\subsubsection{Determinanten berechnen}
+Die Determinante eines Polynoms 
+\[  
+    N(s) =  a_0s^0 + a_1s^1 + a_2s^2 + \dots + a_ns^n
+\]
+lautet
+\[ 
+    \Delta_n =
+       \begin{vmatrix}
+            a_1 & a_3 & a_5 & a_7 & \dots \\
+            a_0 & a_2 & a_4 & a_6 & \dots \\
+            0   & a_1 & a_3 & a_5 & \dots \\
+            0   & a_0 & a_2 & a_4 & \dots \\
+            0   & 0   & a_1 & a_3 & \dots \\
+            0   & 0   & a_0 & a_2 & \dots \\
+            \vdots & \vdots & \vdots & \vdots & \ddots \\
+        \end{vmatrix}
+\]
+Die Wahl der Kantengrösse hängt vom Grad des betrachteten Polynoms ab.
+Hat man ein Polynom von Grad $n$, dann muss die Matrix auch $n$ Zeilen
+und $n$ Spalten haben. 
+
+Die Unterdeterminanten dieser Determinante sind dann all jene Matrizen,
+welche eine kleinere Kantenlänge haben. Diese sind allesamt ausgehend
+von der linken oberen Ecke anzusetzen.
+\[  
+    \Delta_1 =
+        \begin{vmatrix}
+            a_1 \\
+        \end{vmatrix}
+\]
+\[  
+    \Delta_2 =
+        \begin{vmatrix}
+            a_1 & a_3 \\
+            a_0 & a_2 \\
+        \end{vmatrix}
+\]
+\[  
+    \Delta_3 =
+        \begin{vmatrix}
+            a_1 & a_3 & a_5 \\
+            a_0 & a_2 & a_4 \\
+            0   & a_1 & a_3 \\
+        \end{vmatrix}
+\]
+Die Berechnung der Determinaten kann mittels zweier Sätze erfolgen:
+\begin{itemize}
+    \item Laplace'scher Entwicklungssatz (rekursiv)
+    \item Regel von Sarrus
+\end{itemize}
+
+\subsubsection{Laplace'scher Entwicklungssatz}
+Mit dem Laplace'schen Entwicklungssatz lassen sich Determinanten
+resukrsiv berechnen. Hierzu kann nach Spalten oder Zeilen vorgegangen
+werden. Das folgenden Beispiel zeigt das Verahren nach Zeilen. 
+
+Man nimmt das erste Element $a$ und multipliziert es mit der Determinaten
+der Untermatrix. Dann subtrahiert man das Produkt des nächsten Elements 
+$b$ und der Determinante von dessen Untermatrix usw. 
+
+Bei diesem Vorgang ist zu beachten, dass das Vorzeichen zwischen den
+Summanden alterniert. 
+\[  
+    det(A)
+        =   \begin{vmatrix}
+                a & b & c \\
+                d & e & f \\
+                g & h & i \\
+            \end{vmatrix}
+        = a \cdot 
+            \begin{vmatrix} 
+                e & f \\
+                h & i \\
+            \end{vmatrix}
+            - 
+            d \cdot 
+            \begin{vmatrix}
+                b & c \\
+                h & i \\
+            \end{vmatrix}
+            + 
+            g \cdot 
+            \begin{vmatrix}
+                b & c \\
+                e & f \\
+            \end{vmatrix} 
+\]
+
+\subsubsection{Regel von Sarrus}
+Die Regel von Sarrus ermöglicht es die Determinate einer Matrix direkt
+auszudrücken. Hierzu wird jeweils diagonal durch die Matrix ein Produkt
+aufgestellt. Alle Produkte gleichgerichteter Diagonalen werden 
+aufsummiert, wobei die eine Richtung positiv und die andere negativ
+belegt wird.
+\[  
+    det(A)
+        =   \begin{vmatrix}
+                a & b & c \\
+                d & e & f \\
+                g & h & i \\
+            \end{vmatrix}
+        = (aei + dhc + gbf) - (ceg + fha + ibd)
+\]
+
+
+\subsection{Bode}
+
+\subsection{Nyquist}
+
+\subsection{Phasenreserve}
+
+\subsection{Amplitudenreserve}
+
+\subsection{Totzeitreserve}

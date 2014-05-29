@@ -62,22 +62,10 @@ $\bullet$\\[-1ex] $\bullet$\\[-1ex] $\bullet$}
 %
 % #1 = optional parameter(s)
 % #2 = title text
-\tikzstyle{signal flow diagram} =
-  [rectangle,
-   sharp corners,
-   line width=\diagramlinewidth,
-   draw=black,
-   inner sep=3mm]
-\newenvironment{signalflow}[2][]{%
+\newenvironment{signalflow}[1][]{%
 \begin{center}
   \begin{tikzpicture}
-    \node[% title
-      signal flow diagram,
-      fill=blue!90!black,
-      text=white] (title) {#2};% title text
-    \node at (title.south west) [%
-      signal flow diagram,
-      fill=blue!20!white,
+    \node [%
       anchor=north west,
       yshift=\pgflinewidth]
     \bgroup

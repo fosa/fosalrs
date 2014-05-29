@@ -25,7 +25,7 @@ Nennerpolynom $N(s)$ der Übertragungsfunktion
         = \frac{Z(s)}{a_0s^0 + a_1s^1 + a_2s^2 + \dots + a_ns^n} 
 \]
 die folgenden Kriterien erfüllt.
-
+%
 \begin{enumerate}
     \item Alle Koeffizenten des Polynoms für den gegebenen Grad sind 
         vorhanden. \[ a_n \neq 0 \]
@@ -34,6 +34,9 @@ die folgenden Kriterien erfüllt.
     \item Die Determinante und alle Unterdeterminanten sind grösser 
         als null. \[ \Delta_i > 0 \]
 \end{enumerate}
+%
+Für Polynome vom Grad $n \leq 2$ genügt die Prüfung der ersten beiden 
+Kriterien.
 
 \subsubsection{Determinanten berechnen}
 Die Determinante eines Polynoms 
@@ -144,6 +147,76 @@ belegt wird.
 \subsection{Bode}
 
 \subsection{Nyquist}
+Das Nyquist-Kriterium wird unterteilt in zwei Anwendungsfälle.
+\begin{itemize}
+    \item das allgemeine Nyquist-Kriterium (am geschlossenen Regelkreis)
+    \item das spezielle Nyquist-kriterium (am offenen Regelkreis)
+\end{itemize}
+
+\subsubsection{Allgemeines Nyquist-Kriterium}
+Das allgemeine Nyquist-Kriterium prüft die Stabilität des geschlossenen
+Regekreises anhand der Pole. 
+%
+\begin{figure}[h!]
+    \begin{signalflow}[node distance=15mm]
+        % Elemente
+        \tikzgrid{
+            \node[input]    (in)    {}          &
+            \node[adder]    (a1)    {}          &
+            \node[delay]    (d1)    {$G_0$}     &
+            \node[node]     (n1)    {}          &
+            \node[output]   (out)   {}
+        }
+        % Pfade
+        \path[r>] (in) -- (a1);
+        \path[r>] (a1) -- (d1);
+        \path[r>] (d1) -- (out);
+        \path[r>] (n1) -- ++(0,-0.5) -| node[left, pos=0.95] {$-$} (a1);
+    \end{signalflow}
+\end{figure}
+%
+Um dies zu prüfen, müssen zuerst die 
+Parameter $a$ und $r$ bestimmt werden. $a$ bezeichnet die Anzhal der Pole
+auf der imaginären Achse und $r$ die Anzhal der Pole rechtsseitig der
+imaginären Achse. Ist dann die folgende Bedingung 
+\[  
+    \Delta \varphi = a \frac{\pi}{2} + r \pi
+\]
+mit diesen Parametern erfüllt, wobei $\Delta \varphi$ den resultierenden 
+Winkel bezeichnet, dann ist $G_0$ stabil.
+
+
+\subsubsection{Spezielles Nyquist-Kriterium}
+Dasi spezielle Nyquist-Kriterium untersucht die Stabilität anhand der
+Phasenreserve des offenen Regelkreis. 
+Hierzu wird einfach die Rückführung getrennt. So wandelt sich die 
+Übertragungsfunktion zu
+\[  
+    G(s) = \frac{G_0}{1+G_0} \Rightarrow G_{\text{offen}}(s) = G_0
+\]
+%
+\begin{figure}[h!]
+    \begin{signalflow}[node distance=15mm]
+        % Elemente
+        \tikzgrid{
+            \node[input]    (in)    {}          &
+            \node[adder]    (a1)    {}          &
+            \node[delay]    (d1)    {$G_0$}     &
+            \node[node]     (n1)    {}          &
+            \node[output]   (out)   {}
+        }
+        % Pfade
+        \path[r>] (in) -- (a1);
+        \path[r>] (a1) -- (d1);
+        \path[r>] (d1) -- (out);
+        \coordinate (p1) at ($ (n1) + (-1,-0.5) $);
+        \coordinate (p2) at ($ (p1) + (-0.2,0) $);
+        \draw[thick] (n1) |- (p1) -- ++(-0.2,-0.2);
+        \path[r>] (p2) -| node[left, pos=0.95] {$-$} (a1);
+    \end{signalflow}
+\end{figure}
+%
+
 
 \subsection{Phasenreserve}
 

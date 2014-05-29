@@ -1,0 +1,86 @@
+\section{Definitionen}
+
+\subsection{Steuerung}
+Eine Steuerung ist eine Vorrichtung, welche einen Eingabewert
+auf bestimmte Weise umwandelt zu einem Ausgabewert.
+
+\begin{signalflow}[node distance=15mm]{Steuerung}
+    % Elemente
+    \tikzgrid{
+        \node[input]    (in)    {}          &
+        \node[delay]    (d1)    {$G_1$}     &
+        \node[delay]    (d2)    {$G_2$}     &  
+        \node[output]   (out)   {}
+    }
+    % Pfade
+    \path[r>] (in) -- node[above]{$w$} (d1);
+    \path[r>] (d1) -- node[above]{$x$} (d2);
+    \path[r>] (d2) -- node[above]{$y$} (out);
+\end{signalflow}
+
+\subsection{Regelung}
+
+\begin{signalflow}[node distance=15mm]{}
+    % Elemente
+    \tikzgrid{
+        \node[input]    (in)    {}          &
+        \node[adder]    (a1)    {}          &
+        \node[delay]    (d1)    {$G_1$}     &
+        \node[delay]    (d2)    {$G_2$}     &  
+        \node[node]     (n1)    {}          &
+        \node[output]   (out)   {}
+    }
+    % Pfade
+    \path[r>] (in) -- node[above]{$w$} (a1);
+    \path[r>] (a1) -- node[above]{$e$} (d1);
+    \path[r>] (d1) -- node[above]{$x$} (d2);
+    \path[r>] (d2) -- node[above]{$y$} (out);
+    %\coordinate (d) at ($ (n1) + (0,-0.5) $);
+    \path[r>] (n1) -- ++(0,-0.5)  -| node[left, pos=0.95] {$-$} (a1);
+\end{signalflow}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Führungsverhalten}
+
+\subsection{Störungsverhalten}

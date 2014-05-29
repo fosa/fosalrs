@@ -117,4 +117,30 @@ Störgrösse, sind dabei Null.
 \end{figure}
 %
 \subsection{Störungsverhalten}
+Als Störgrössenverhalten bezeichnet man das Verhalten des geschlossenen
+Regelkreises, welches sich ergibt, wenn ausschliesslich die Störgrösse
+auf den Regelkreis einwirkt. Typisch wir hierfür ein Einheitssprung
+eingespielt. Alle anderen Eingaben, wie etwa die Führungsgrösse, sind
+dabei Null.
+\begin{figure}[h!]
+    \begin{signalflow}[node distance=15mm]
+        % Elemente
+        \tikzgrid{
+            \node[input]    (in)    {}          &
+            \node[adder]    (a1)    {}          &
+            \node[delay]    (d1)    {Regler}    & &
+            \node[delay]    (d2)    {Strecke}   &  
+            \node[node]     (n1)    {}          &
+            \node[output]   (out)   {}
+        }
+        % Pfade
+        \path[r>] (in) -- node[above]{$w=0$} (a1);
+        \path[r>] (a1) -- node[above]{$e$} (d1);
+        \path[r>] (d1) -- node[above]{$x$} (d2);
+        \path[r>] (d2) -- node[above]{$y$} (out);
+        \path[r>] (n1) -- ++(0,-0.5)  -| node[left, pos=0.95] {$-$} (a1);
+        \path[r>] (d2) ++(0,1) -- node[right]{$z=\sigma(t)$} (d2); 
+    \end{signalflow}
+\end{figure}
+%
 

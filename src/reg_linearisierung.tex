@@ -1,0 +1,29 @@
+\section{Linearisierung}
+Liegt ein nicht-lineares System vor, so kann dieses für einen
+bestimmten Arbeitspunkt hin linearisiert werden. So wird das
+nicht-lineare System in ein LZI-Glied überführt.
+
+\subsection{Totales Differential}
+Um eine Linearisierung mittels des totalen Differentials durchzuführen,
+muss die Funktion hinsichtlich der fixierten veränderlichen $x$ 
+aufgestellt werden. Diese wird dann gleich null gesetzt. 
+Der Arbeitspunkt $\bar{x}$ wird dann an jeder Stelle eingesetzt für die 
+fixierte Grösse $x$. 
+\[ 
+    f(\dddot{x}, \ddot{x}, \dot{x}, x) = 0 \rightarrow \bar{x}
+\]
+\[ 
+    \begin{array}{r l} 
+		\displaystyle 
+            \left. \frac{\partial f}{\partial \dddot{x}}
+                \right\rvert_{\bar{x}} \cdot \Delta \dddot{x}
+            + \left.\frac{\partial f}{\partial \ddot{x}}
+                \right\rvert_{\bar{x}} \cdot \Delta \ddot{x}
+            + \left.\frac{\partial f}{\partial \dot{x}}
+                \right\rvert_{\bar{x}} \cdot \Delta \dot{x}
+            + \left.\frac{\partial f}{\partial x}
+                \right\rvert_{\bar{x}} \cdot \Delta x 
+            = 0\\
+    \end{array} 
+\]
+

@@ -46,7 +46,7 @@
     - [ ] Faltungsatz
   - [ ] Frequenzgang
 
-# Regelungstechnik -> ninuxlse
+# Regelungstechnik -> ninux
   - [ ] Definitionen
     - [ ] Steuerung
     - [ ] Regelung

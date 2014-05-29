@@ -84,7 +84,7 @@ Störverhalten optimiert werden.
 bounded Input $\rightarrow$ bounded output -- BIBO\\
 P-Anteil: Grundsätzliche Stabilisierung \\
 I-Anteil: Reduktion der Regeldifferenz auf 0 \\
-D-Anteil: Becshleunigung des Reglers
+D-Anteil: Beschleunigung des Reglers
 
 \subsection{Prüfung auf Linearität}
 \begin{enumerate}
@@ -95,7 +95,7 @@ D-Anteil: Becshleunigung des Reglers
 \end{enumerate}
 
 \subsection{Prüfung auf Zeitvarianz}
-\[ y(t) = f(u(t) \]
+\[ y(t) = f(u(t)) \]
 \[ y(t - T) = f(u(t - T)) \]
 
 \section{Wichtige Gleichungen für die Modellierung dynamischer Systeme}
@@ -221,8 +221,8 @@ Sprungantwort:
 \[ u_3(t) = t \to  \]
 >>>FOSA Grafik zu Impulsantwort, Sprungantwort, ...\\
 Im Laplace Bereich werden die mathematischen Operationen vereinfacht: //
-Ableiten $\to$ Miltiplizieren mit $s$\\
-Int egrieren $\to$ Multiplizieren mit $\frac{1}{s}$\\
+Ableiten $\to$ Multiplizieren mit $s$\\
+Integrieren $\to$ Multiplizieren mit $\frac{1}{s}$\\
 >>>FOSA Grafik Blöcke in Serie\\
 \[ \frac{Y(s)}{U(s)} = G_1(s) \cdot G_2(s) = G(s) \]
 >>>FOSA Grafik Blöcke parallel\\
@@ -244,6 +244,8 @@ Nenner: 1 $\pm$ Kreisverstärkung
 \[ e(t) = v_{soll}(t) - v(t) \]
 
 \subsubsection{Einfluss von $k_p$ auf die Zeitkonstante}
+Übertragungsfunktion:
+\[ G(s) = k_p \]
 Die Übertragungsfunktion des geschlossenen Kreises lautet
 \[ G_{CL} = \frac{50 \cdot k_p}{25 \cdot s + 1 + 50 \cdot k_p} \cdot 
 \frac{\frac{1}{1} + 50 \cdot k_p}{\frac{1}{1} + 50 \cdot k_p} 
@@ -252,10 +254,60 @@ Die Übertragungsfunktion des geschlossenen Kreises lautet
 (Führungsverhalten)
 
 \section{I-Regler}
+Übertragungsfunktion:
+\[ G(s) = \frac{k_i}{s} \]
 \[ u = k_p \cdot e(t) + k_i \cdot \int\limits_0^t (e(t)) ~ dt \]
 \[ e(t) = v_{soll}(t) - v(t) \]
 \[ U(s) = k_p \cdot E(s) + k_i \cdot \frac{1}{s} \cdot E(s) \]
 \[ U(s) = \left( k_p + \frac{k_i}{s} \right) \cdot \left( V_{soll}(s) - V(s) \right) \]
+
+\section{D-Regler}
+Übertragungsfunktion:
+\[ G(s) = k_d \cdot s \]
+
+\section{PI-Regler}
+Übertragungsfunktion:
+\[ G(s) = \frac{1}{s \cdot T_i} (1 + s \cdot T_d) \]
+
+\section{PD-Regler}
+Übertragungsfunktion:
+\[ G(s) = k_p (1 + s \cdot T_v) \]
+
+\section{PID-Regler}
+Übertragungsfunktion:
+\[ G(s) = \frac{k_p}{s \cdot T_n} (1 + s \cdot T_{d1})(1 + s \cdot T_{d2}) \]
+
+\section{P-T1-Regler}
+Übertragungsfunktion:
+\[ G(s) = \frac{k_p}{1 + s \cdot T_1} \]
+
+\section{P-T2-Regler}
+Übertragungsfunktion:
+\[ G(s) = \frac{k_p \cdot {\omega_0}^2}{{\omega_0}^2 + 2D{\omega_0}^2 \cdot s + s^2} \]
+
+\section{D-T1-Regler}
+Übertragungsfunktion:
+\[ G(s) = \frac{k_d \cdot s}{1 + s \cdot T_1} \]
+
+\section{I-T1-Regler}
+Übertragungsfunktion:
+\[ G(s) = \frac{k_i}{s \cdot (1 + s \cdot T_1)} \]
+
+\section{PD-T1-Regler}
+Übertragungsfunktion:
+\[ G(s) = K_p \cdot \frac{1 + s \cdot T_v}{1 + s \cdot T_1} \]
+
+\section{PID-T1-Regler}
+Übertragungsfunktion:
+\[ G(s) = \frac{k_p}{s \cdot T_n} \frac{(1 + s \cdot T_{d1})(1 + s \cdot T_{d2}) } {1 + s \cdot T_1 } \]
+
+\section{Allpass-Element}
+Übertragungsfunktion:
+\[ G(s) = \frac{1 - s \cdot T}{1 + s \cdot T} \]
+
+\section{Totzeit-Element}
+Übertragungsfunktion:
+\[ G(s) = e^{- s \cdot T_t}\]
 
 \subsection{Bestimmung der Reglerkoeffizienten durch Polynomvergleich}
 \[ 2 D \omega_0 = 0.04 + 2 k_p \]
@@ -314,6 +366,7 @@ Bsp.
 = e^{\sigma t}(c_2 \cos(\omega t + \varphi))\ldots \]
 
 \subsection{Hurwitz-Kriterium}
+Man überprüft die Koeffizienten der charakteristischen Gleichung.
 \[ a_n s^n + a_{n-1} s^{n-1} + \ldots + a_1 s + a_0 = 0 \]
 \[ \begin{array}{cccc}
 a_1 & a_3 & a_5 & a_7 \\

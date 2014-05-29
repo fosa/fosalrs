@@ -2,85 +2,119 @@
 
 \subsection{Steuerung}
 Eine Steuerung ist eine Vorrichtung, welche einen Eingabewert
-auf bestimmte Weise umwandelt zu einem Ausgabewert.
-
-\begin{signalflow}[node distance=15mm]{}
-    % Elemente
-    \tikzgrid{
-        \node[input]    (in)    {}          &
-        \node[delay]    (d1)    {$G_1$}     &
-        \node[delay]    (d2)    {$G_2$}     &  
-        \node[output]   (out)   {}
-    }
-    % Pfade
-    \path[r>] (in) -- node[above]{$w$} (d1);
-    \path[r>] (d1) -- node[above]{$x$} (d2);
-    \path[r>] (d2) -- node[above]{$y$} (out);
-\end{signalflow}
+auf bestimmte Weise umwandelt zu einem Ausgabewert. Das bedeutet,
+dass jegliche Einflüsse am Ausgang nicht berücksichtigt werden.
+%
+\begin{figure}[h!]
+	\centering
+    \begin{signalflow}[node distance=15mm]{}
+        % Elemente
+        \tikzgrid{
+            \node[input]    (in)    {}          &
+            \node[delay]    (d1)    {$G_1$}     &
+            \node[delay]    (d2)    {$G_2$}     &  
+            \node[output]   (out)   {}
+        }
+        % Pfade
+        \path[r>] (in) -- node[above]{$w$} (d1);
+        \path[r>] (d1) -- node[above]{$x$} (d2);
+        \path[r>] (d2) -- node[above]{$y$} (out);
+    \end{signalflow}
+\end{figure}
+%
+Die Übertragungsfunktion eines solchen Kreises lautet dann
+$G(s) = G_1G_2$
 
 \subsection{Regelung}
+Eine Regelung ist eine Vorrichtung, welche einen Eingabewert mit
+dem Ausgabewert vergleicht. Anhand der Differenz wird dann eine 
+Veränderung am Ausgang vorgenommen.
+%
+\begin{figure}[h!]
+    \begin{signalflow}[node distance=15mm]{}
+        % Elemente
+        \tikzgrid{
+            \node[input]    (in)    {}          &
+            \node[adder]    (a1)    {}          &
+            \node[delay]    (d1)    {$G_1$}     &
+            \node[delay]    (d2)    {$G_2$}     &  
+            \node[node]     (n1)    {}          &
+            \node[output]   (out)   {}
+        }
+        % Pfade
+        \path[r>] (in) -- node[above]{$w$} (a1);
+        \path[r>] (a1) -- node[above]{$e$} (d1);
+        \path[r>] (d1) -- node[above]{$x$} (d2);
+        \path[r>] (d2) -- node[above]{$y$} (out);
+        \path[r>] (n1) -- ++(0,-0.5)  -| node[left, pos=0.95] {$-$} (a1);
+    \end{signalflow}
+\end{figure}
+%
+Die Übertragungsfunktion eines solchen Kreises lautet
+$G(s)=\frac{G_1G_2}{1+G_2G_2}$
 
-\begin{signalflow}[node distance=15mm]{}
-    % Elemente
-    \tikzgrid{
-        \node[input]    (in)    {}          &
-        \node[adder]    (a1)    {}          &
-        \node[delay]    (d1)    {$G_1$}     &
-        \node[delay]    (d2)    {$G_2$}     &  
-        \node[node]     (n1)    {}          &
-        \node[output]   (out)   {}
-    }
-    % Pfade
-    \path[r>] (in) -- node[above]{$w$} (a1);
-    \path[r>] (a1) -- node[above]{$e$} (d1);
-    \path[r>] (d1) -- node[above]{$x$} (d2);
-    \path[r>] (d2) -- node[above]{$y$} (out);
-    %\coordinate (d) at ($ (n1) + (0,-0.5) $);
-    \path[r>] (n1) -- ++(0,-0.5)  -| node[left, pos=0.95] {$-$} (a1);
-\end{signalflow}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsection{Grössen eines Regelkreises}
+\begin{figure}[h!]
+    \begin{signalflow}[node distance=15mm]{}
+        % Elemente
+        \tikzgrid{
+            \node[input]    (in)    {}          &
+            \node[adder]    (a1)    {}          &
+            \node[delay]    (d1)    {Regler}    & &
+            \node[delay]    (d2)    {Strecke}   &  
+            \node[node]     (n1)    {}          &
+            \node[output]   (out)   {}
+        }
+        % Pfade
+        \path[r>] (in) -- node[above]{$w$} (a1);
+        \path[r>] (a1) -- node[above]{$e$} (d1);
+        \path[r>] (d1) -- node[above]{$x$} (d2);
+        \path[r>] (d2) -- node[above]{$y$} (out);
+        \path[r>] (n1) -- ++(0,-0.5)  -| node[left, pos=0.95] {$-$} (a1);
+        \path[r>] (d2) ++(0,1) -- node[right]{$z$} (d2); 
+    \end{signalflow}
+\end{figure}
+%
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c l l}
+        Variable    & Bezeichnung       & Beschreibung \\
+        \hline
+        $w$         & Führungsgrösse    & Was zu erreichen ist (SOLL) \\
+        $e$         & Regelfehler       & Differenz von SOLL und IST \\
+        $x$         & Stellgrösse       & erfolderliche Steuergrösse \\
+        $y$         & Regelgrösse       & Was aktuell gilt (IST) \\
+        $z$         & Störgrösse        & Störungen \\
+    \end{tabular}
+\end{table}
 
 \subsection{Führungsverhalten}
+Als Führungsverhalten bezeichnet man das Verhalten des geschlossenen
+Regelkreises, welches sich ergibt, wenn ausschliesslich die 
+Führungsgrösse auf den Regelkreis einwirkt. Typisch wird hierfür ein 
+Einheitssprung eingespielt. Alle anderen Eingaben, wie etwa die 
+Störgrösse, sind dabei Null. 
 
+\begin{figure}[h!]
+    \begin{signalflow}[node distance=15mm]{}
+        % Elemente
+        \tikzgrid{
+            \node[input]    (in)    {}          &
+            \node[adder]    (a1)    {}          &
+            \node[delay]    (d1)    {Regler}    & &
+            \node[delay]    (d2)    {Strecke}   &  
+            \node[node]     (n1)    {}          &
+            \node[output]   (out)   {}
+        }
+        % Pfade
+        \path[r>] (in) -- node[above]{$w=\sigma(t)$} (a1);
+        \path[r>] (a1) -- node[above]{$e$} (d1);
+        \path[r>] (d1) -- node[above]{$x$} (d2);
+        \path[r>] (d2) -- node[above]{$y$} (out);
+        \path[r>] (n1) -- ++(0,-0.5)  -| node[left, pos=0.95] {$-$} (a1);
+        \path[r>] (d2) ++(0,1) -- node[right]{$z=0$} (d2); 
+    \end{signalflow}
+\end{figure}
+%
 \subsection{Störungsverhalten}
+

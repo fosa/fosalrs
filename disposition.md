@@ -11,7 +11,7 @@
     - [ ] Verstärkungsprinzip
   - [ ] Zeitinvarianz
 
-# Laplace-Transformation
+# Laplace-Transformation -> daniw
   - [ ] Definition
   - [ ] Eigenschaften 
     - [ ] Linearität
@@ -32,7 +32,7 @@
   - [ ] Impulsantwort
   - [ ] Sprungantwort
 
-# Fourier-Transformation
+# Fourier-Transformation -> fondue
   - [ ] Fourierreihe 
   - [ ] Definition für diskrete Spektren
   - [ ] Definition für kontinuierliche Spektren

@@ -30,30 +30,15 @@ Die Funktion lässt sich auffassen als Überlagerung von harmonischen
 Schwingungen der Grundfrequenz $\omega_0$ und ganzzahligen Vielfachen 
 $n \cdot \omega_0$ der Grundfrequenz. Dies sind die Oberschwingungen oder 
 Obertöne. \\
-Frage: Kann msn nicht periodische Signale auffassen als Überlagerung von 
-harmonischen Schwingungen? \\
-Bsp. Rechteckschwingung, $T = 2 \pi, \omega_0 = 1$\\
-\[ u(t) = \frac{1}{2} + \frac{2}{\pi} \cdot \sin(t) 
-+ \frac{2}{3\pi} \cdot \sin(3t) 
-+ \frac{2}{5\pi} \cdot \sin(5t) + \ldots \]
-\[ u(t) = \frac{1}{2} + \sum\limits_{k = 0}^{\infty} 
-\left(\frac{2}{\pi} \cdot \frac{\sin((2 k + 1) \cdot t)}{2 k + 1}\right) \]
-D.h. 
-\[ a_n = 0 \qquad \text{für alle }n = 1, 2, 3, \ldots \]
-\[ a_0 = 1 \]
-\[ b_n = \left\lbrace
-\begin{array}{l}
-\frac{2}{n \cdot \pi}, \qquad n \text{ ungerade}
-0, \qquad n \text{ gerade}
-\end{array}
-\right. \]
+
 \subsubsection{Formeln zur Berechnung der Koeffizienten}
 \[ a_0 = \frac{2}{T} \int\limits_{-\frac{T}{2}}^{\frac{T}{2}} u(t) ~ dt \]
-\[ a_0 = \frac{2}{T} \int\limits_{-\frac{T}{2}}^{\frac{T}{2}} u(t) 
+\[ a_n = \frac{2}{T} \int\limits_{-\frac{T}{2}}^{\frac{T}{2}} u(t) 
 \cos(n \cdot \omega_0 \cdot t) ~ dt \]
-\[ b_0 = \frac{2}{T} \int\limits_{-\frac{T}{2}}^{\frac{T}{2}} u(t) 
+\[ b_n = \frac{2}{T} \int\limits_{-\frac{T}{2}}^{\frac{T}{2}} u(t) 
 \sin(n \cdot \omega_0 \cdot t) ~ dt \]
-
+\[ a_n = 0 ~bei ~ungeraden ~ Funktionen ~(sinus)\]
+\[ b_n = 0 ~bei ~geraden ~ Funktionen ~(cosinus) \]
 \subsection{Komplexe oder Exponentialform der Fourier-Reihe}
 Erinnerung: Eulersche Formel: 
 \[ e^{j x} = \cos(x) + j \sin(x) \qquad , x \in \mathbb{R} \]
@@ -64,29 +49,34 @@ Erinnerung: Eulersche Formel:
 \[ \boxed{\cos(x) = \frac{1}{2} (e^{jx} + e^{-jx})} \]
 \[ e^{jx} - e^{-jx} = 2 j \sin(x) \]
 \[ \boxed{\sin(x) = \frac{1}{2j} (e^{jx} - e^{-jx})} \]
+Wendet man nun diese zwei Formeln auf die Fourier-Reihe an, ergibt sich die komplexe Form der Fourier-Reihe:
+\[ u(t) = c_0 + \sum\limits_{n = 1}^{\infty} c_n e^{j n \omega_0 t} \]
+\[ c_n = \frac{1}{T} \int\limits_{-\frac{T}{2}}^{\frac{T}{2}} 
+u(t) \cdot e^{-j n \omega_0 t} ~ dt \]
 
-\subsubsection{Definition}
- Die Fourier-Transfoermierte des Signals $u(t)$ ist 
-\[ \boxed{U(\omega) = \mathcal{F}\{ u(t) \} = \int\limits_{-\infty}^{\infty} 
-u(t) e^{-\omega t} ~dt } \]
-Man nenn $U(\omega)$ Spektraldichte oder Spektralfunktion. 
-
-\subsubsection{Umkehrformel}
-\[ \boxed{u(t) = \frac{1}{2 \pi} \int\limits_{-\infty}^{\infty} 
-U(\omega) e^{\omega t j} ~ d\omega} \]
 
 \subsection{Definition für diskrete Spektren}
 
 
 \subsection{Definition für kontinuierliche Spektren}
+ Die Fourier-Transformierte des Signals $u(t)$ ist 
+\[ \boxed{U(\omega) = \mathcal{F}\{ u(t) \} = \int\limits_{-\infty}^{\infty} 
+u(t) e^{-\omega t j} ~dt } \]
+Man nennt $U(\omega)$ Spektraldichte oder Spektralfunktion. 
 
+\subsubsection{Umkehrformel}
+\[ \boxed{u(t) = \frac{1}{2 \pi} \int\limits_{-\infty}^{\infty} 
+U(\omega) e^{\omega t j} ~ d\omega} \]
 
 \subsection{Exponentialform (komplexe Form)}
-
+\[ F(\omega) = |F(\omega)| \cdot e^{j\varphi(\omega)} = A(\omega) \cdot e^{j\varphi(\omega)}   \]
+\[ F(\omega): Spektrum ~ von ~ f(t) ~ (Frequenzspektrum, Spektraldichte) \]
+\[ A(\omega) = |F(\omega)|: Amplitudenspektrum \]
+\[ \varphi (\omega) = arg(F(\omega)): Phasenspektrum \]
 
 \subsection{Inverse Fouriertransformation}
-Siehe HErleitung der Fouriertransformation: 
-\[ u(t) = \frac{1}{2 \pi}  \int\limits_{-\infty}^{\infty} U(\omega) \cdot e^{\omega t j} ~ d\omega \]
+Siehe Herleitung der Fouriertransformation: 
+\[ u(t) = \frac{1}{2 \pi}  \int\limits_{-\infty}^{\infty} U(t) \cdot e^{\omega t j} ~ d\omega \]
 \[ U(\omega) = \mathcal{F} \{ u(t) \} \]
 \[ u(t) = \mathcal{F}^{-1} \{ U(\omega) \} \]
 
@@ -108,6 +98,8 @@ U(t) & \laplace & 2 \pi \cdot u(-\omega)
 
 \subsubsection{Zeitverschiebung}
 \[ u(t - t_0) ~ \laplace ~ e^{-t_0 \omega j} \cdot U(\omega) \]
+\subsubsection{Frequenzverschiebung (Modulation)}
+\[ e^{j\omega_0 t} \cdot u(t) ~\laplace ~U(\omega - \omega_0) \]
 \subsubsection{Differentiationssatz}
 \[ \dot{u}(t) ~ \laplace ~ \omega j \cdot U(\omega) \]
 Mehrmalige Anwendung
@@ -116,7 +108,7 @@ Mehrmalige Anwendung
 
 
 \subsubsection{Integrationssatz}
-
+\[\int\limits_{-\infty}^{t} u(\tau) ~ d \tau ~\laplace ~ \frac{1}{\omega j} U(\omega) \]
 
 \subsubsection{Faltungsatz}
 Faltung: 
@@ -127,5 +119,11 @@ Frequenzbereich:
 \[ u(t) \cdot v(t) ~ \laplace ~ \frac{1}{2 \pi} U(\omega) * V(\omega) \]
 
 \subsection{Frequenzgang}
-Definition: $G(\omega j)$ heisst der Frequenzgang des Systems. 
+
+$G(\omega j)$ ist der Frequenzgang des Systems \\
+$A(\omega) $ ist der Amplifizierungsfaktor\\
+$\varphi(\omega) $ ist die Phasenverschiebung
+\[ \boxed{G(j \omega) = A(\omega) \cdot e^{\varphi(\omega)j}}\]
+\[ A(\omega) = |G(j\omega)| \]
+\[ \varphi(\omega) = \angle G(j \omega) \]
 

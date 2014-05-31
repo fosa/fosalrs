@@ -53,13 +53,14 @@
     - [x] Grössen von Regelkreisen
     - [x] Führungsverhalten
     - [x] Störungsverhalten
-  - [ ] Gleichungen zur Modellierung -> daniw
-    - [ ] Elektrisches Netzwerk
-    - [ ] Mechanische Translation
-    - [ ] Mechanische Rotation
-    - [ ] Thermisch
-    - [ ] Hydraulisch
+  - [x] Gleichungen zur Modellierung -> daniw
+    - [x] Elektrisches Netzwerk
+    - [x] Mechanische Translation
+    - [x] Mechanische Rotation
+    - [x] Thermisch
+    - [x] Hydraulisch
     - [ ] Pneumatisch
+    - [ ] Konzentration
   - [x] Linearisierung
     - [ ] (Pertubation Theory)
     - [x] Gleichgewichtlage

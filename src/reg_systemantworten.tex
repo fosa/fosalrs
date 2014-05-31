@@ -127,9 +127,18 @@ zugehörigen Parameter.
 Es gibt einige Charakteristiken in der Sprungantwort, welche ein
 Übertragungsglied mehr oder weniger eindeutig identifizieren lassen.
 
-\
-
-
+\begin{itemize}
+    \item Gibt es eine Schwingung in der Sprungantwort, dann muss es 
+        ein Glied zweiter oder höherer Ordnung sein.
+    \item Ist die Steigung der Sprungantwort bei $t=0$ gleich $0$, dann
+        muss es eine Verzögerung im Glied haben.
+    \item Divergiert die Sprungantwort, dann muss es mindestens einen
+        Integrator im Glied haben. 
+    \item Ist die Steigung der Sprungantwort bei $t=0$ undendlich, dann
+        muss es einen Differenzierer im Glied haben.
+    \item Konvergiert der Endwert der Sprungantwort zu null, dann muss
+        es einen Differenzierer im Glied haben.
+\end{itemize}
 
 \subsection{Impulsantwort}
 

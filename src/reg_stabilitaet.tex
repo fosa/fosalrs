@@ -219,29 +219,49 @@ Hierzu wird einfach die Rückführung getrennt. So wandelt sich die
 %
 
 \subsection{Phasenreserve}
-
 \begin{figure}[h!]
     \centering
-    \begin{tikzpicture}[scale=3]
+    \begin{tikzpicture}[scale=2]
         \draw[->, name path=real] (-1.5,0) -- (1.5,0) node[below] {$Re$};
         \draw[->] (0,-1.5) -- (0,1.5) node[left] {$Im$};
         \draw[thick] 
-            (-1,-0.1) -- (-1,0.1) node[above left] {$-1$}; 
+            (-1,-0.1) node[below left] {$-1$} -- (-1,0.1);
         \draw[dotted, name path=kreis] (0,0) circle (1);
         \draw[name path=kurve] (-1.5,-1.5) 
             to [out=20, in=160] (-0.2,0.2)
             to [out=-20, in=90] (0,0);
         \draw[name intersections={of=real and kurve, name=amp}]
-            (amp-1) -- ++(0,0.5);
+            (amp-1) node[above left] {$\omega = \omega_\pi$} -- ++(0,0.5);
         \draw[<->]
             (amp-1) +(0,0.4) -- node[above] {$\dfrac{1}{A_R}$} (0,0.4);
         \draw[name intersections={of=kreis and kurve, name=arc}]
-            (arc-1) -- (0,0);
+            (arc-1) node[left] {$\omega = \omega_D$} -- (0,0);
         \draw[->] (-0.5,0) node[below right] {$\varphi_R$} arc [start angle=180, end angle=210, radius=0.5];
     \end{tikzpicture}
 \end{figure}
+\[
+    \omega = \omega_D
+\]
+\[
+    |G_0(j \omega_D)| = 1
+\]
+\[
+    \varphi_R = \angle G_0(j \omega_D) + \pi
+\]
+Gutes Regelverhalten: $\varphi_R \geq 60^\circ$ \\
+Gutes Störverhalten:  $\varphi_R \geq 30^\circ$
 
 \subsection{Amplitudenreserve}
+\[
+    \omega = \omega_\pi
+\]
+\[
+    Im(G_0(j \omega_\pi)) = 0 \quad \to \omega_{\pi_1}, \omega_ {\pi_2}, \ldots
+\]
+\[
+    A_R = \frac{1}{|G_0(j \omega_R)|}
+\]
+Gutes Regelverhalten: $A_R \geq 2$
 
 \subsection{Totzeitreserve}
 \[

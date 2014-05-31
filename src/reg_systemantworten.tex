@@ -43,6 +43,7 @@ Integral der anderen.
         \begin{scope}[shift={(b3)}]
             \draw[->] (-1,0) -- (3,0) node[below] {$t$};
             \draw[->] (0,-0.1) -- (0,2) node[left] {$x(t)$};
+            \draw[red, thick] (-0.5,0) -- (0,0);
             \draw[red, thick, samples=200] plot[id=B3]
                 function{sin(x*5)*exp(-2*x)*3};
             \draw[red] (1,2) node[right] {$g(t) \,\laplace\, G(s)$}; 
@@ -92,7 +93,7 @@ Integral der anderen.
 \subsection{Sprungantwort}
 Als Sprungantwort wird der Verlauf der Ausgangsgrösse eines
 Übertragungsgliedes oder Systems bezeichnet, welches ausgehend
-vom Gleichgewichtszustand eine Sprungfunktion an Eingang 
+vom Gleichgewichtszustand eine Sprungfunktion am Eingang 
 erfahren hat.
 %
 \begin{figure}[h!]
@@ -123,6 +124,10 @@ etwa das zu Grunde liegende Übertragiungsverhalten und die
 zugehörigen Parameter.
 
 \subsubsection{Identifikation}
+Es gibt einige Charakteristiken in der Sprungantwort, welche ein
+Übertragungsglied mehr oder weniger eindeutig identifizieren lassen.
+
+\
 
 
 

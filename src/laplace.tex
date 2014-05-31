@@ -141,10 +141,10 @@ Sei $u(t)$ an der Stelle $t = 0$ sprungstetig. Dann gilt
 \]
 Bemerkung: \\
 Wenn $U(s) = \dfrac{Z(s)}{N(s)}$ eine rationale Funktion mit
-$\text{Grad}(Z(s)) < \text{Grad}(N(s)$, dann ist u(t) sprungstetig
+$\text{Grad}(Z(s)) < \text{Grad}(N(s))$, dann ist u(t) sprungstetig
 
 \subsection{Endwertsatz }
-Sein $u(t)$ ein Signal, für das der Endwert
+Sei $u(t)$ ein Signal, für das der Endwert
 $u(\infty) = \lim\limits_{t \to \infty} u(t)$ existiert. \\
 Dann gilt:
 \[ 
@@ -156,8 +156,19 @@ dann existiert der Endwert $u(\infty)$. \\
 Mit anderen Worten: Der Realteil aller Nullstellen muss negativ sein.
 
 \subsection{DGL lösen mittels Laplace-Transformation}
+\begin{enumerate}
+    \item Laplace Transformation anwenden
+    \item Auflösen nach $V(s)$
+    \item Eingangssignal transformieren und einsetzen
+    \item Rücktransformation
+\end{enumerate}
 
 \subsection{Übertragungsfunktion, Gewichtsfunktion}
+\[ 
+    V(s) = \underbrace{\frac{1}{RC \cdot s + 1}}_{G(s)} \cdot U(s) 
+\]
+$G(s)$: Übertragungsfunktion\\
+Die Zeitfunktion $g(t)$ von $G(s)$ heisst Gewichtsfunktion\\
 
 \subsection{Faltung}
 Definition: Die Faltung zweier Signale $u(t)$ und $v(t)$ ist

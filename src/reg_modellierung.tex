@@ -1,0 +1,106 @@
+% coding:utf-8
+
+%FOSALRS, a LaTeX-Code for a electrical summary of control theory
+%Copyright (C) 2013, Daniel Winz, Ervin Mazlagic
+
+%This program is free software; you can redistribute it and/or
+%modify it under the terms of the GNU General Public License
+%as published by the Free Software Foundation; either version 2
+%of the License, or (at your option) any later version.
+
+%This program is distributed in the hope that it will be useful,
+%but WITHOUT ANY WARRANTY; without even the implied warranty of
+%MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%GNU General Public License for more details.
+%----------------------------------------
+
+\section{Gleichungen zur Modellierung}
+Bilanzgleichungen, Erhaltungssätze
+
+\subsection{Elektrisches Netzwerk}
+Ladungserhaltung \\
+Energieerhaltung \\
+$\Rightarrow$ Kirchhoffsche Regeln \\
+Knotenregel $\sum I = 0$ \\
+Maschenregel $\sum U = 0$ \\\\
+Widerstand R
+\[
+    u_R(t) = R \cdot i_R(t)
+\]
+\[ 
+    i_R(t) = \frac{1}{R} \cdot u_R(t)
+\]
+Kapazität
+\[ 
+    u_C(t) = \frac{1}{C} \cdot \int\limits_{0}^{t} i_C(\tau) ~ d\tau + u_C(0)
+\]
+\[
+    \dot{u}_C(t) = \frac{1}{C} \cdot i_C(t)
+\]
+\[
+    i_C(t) = C \cdot \frac{d u_C(t)}{d t}
+\]
+Induktivität
+\[
+    u_L(t) = L \cdot \frac{d i}{d t}
+\]
+\[
+    i_L(t) = \frac{1}{L} \cdot \int\limits_{0}^{t} u_L(\tau) ~ d\tau + i_L(0)
+\]
+
+\subsection{Mechanisch (Translation)}
+Newton'sche Gesetze (skalar)
+\[
+    \frac{d(m \cdot v)}{dt} = \sum F_i
+\]
+\[
+    \dot{m} \cdot v + m \cdot \dot{v} = \sum F_i
+\]
+m = konst:
+\[
+    m \cdot \dot{v} = \sum F_i
+\]
+\[
+    x, \qquad \dot{x} = v, \qquad \ddot{x} = \dot{v} = a
+\]
+\[
+    m \cdot \ddot{x} = \sum F_i
+\]
+
+\subsection{Mechanisch (Rotation)}
+\[
+    \frac{d(I \cdot \omega}{dt} = \sum M_i
+\]
+\[
+    I = konst. 
+\]
+\[
+    I \cdot \dot{\omega} = \sum M_i
+\]
+\[
+    \varphi, \qquad \dot{\varphi} = \omega, 
+    \qquad \ddot{\varphi} = \dot{\omega} = \alpha
+\]
+
+\subsection{Thermisch}
+\[
+    \frac{d(c \cdot M \cdot \vartheta)}{dt} = \sum Q_i
+\]
+
+\subsection{Hydraulisches System}
+inkompressibel \\
+Volumen / Massenbilanz
+\[
+    \frac{dV}{dt} = \sum q_i
+\]
+
+\subsection{pneumatisch}
+\[
+    ~
+\]
+
+\subsection{Konzentration}
+\[
+    ~
+\]
+

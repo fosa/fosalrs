@@ -1,83 +1,88 @@
 # Signale
-  - [ ] Einheitssprung
-  - [ ] Rampe
-  - [ ] Rechteckimpuls
-  - [ ] Dirac 
+  - [x] Einheitssprung
+  - [x] Rampe
+  - [x] Rechteckimpuls
+  - [x] Dirac 
 
-# Systeme
+# Systeme -> daniw
   - [ ] LZI
   - [ ] Linearität 
     - [ ] Überlagungsprinzip
     - [ ] Verstärkungsprinzip
   - [ ] Zeitinvarianz
 
-# Laplace-Transformation -> daniw
-  - [ ] Definition
-  - [ ] Eigenschaften 
-    - [ ] Linearität
-    - [ ] Differentiationssatz
-    - [ ] Integrationssatz
-    - [ ] Zeitverschiebungssatz
-  - [ ] Tabelle der wichtigsten Grundfunktionen
-  - [ ] Inverse Laplace-Transformation
-  - [ ] Eindeutigkeitssatz
-  - [ ] Dämpfungssatz
+# Laplace-Transformation -> daniw, ninux
+  - [x] Definition
+  - [x] Eigenschaften 
+    - [x] Linearität
+    - [x] Differentiationssatz
+    - [x] Integrationssatz
+    - [x] Zeitverschiebungssatz
+  - [x] Tabelle der wichtigsten Grundfunktionen
+  - [x] Inverse Laplace-Transformation
+  - [x] Eindeutigkeitssatz
+  - [x] Dämpfungssatz
   - [ ] Frequenzverschiebungssatz
-  - [ ] Partialbruchzerlegung
-  - [ ] Anfangswertsatz
-  - [ ] Endwertsatz 
+  - [ ] Partialbruchzerlegung -> ninux
+  - [x] Anfangswertsatz
+  - [x] Endwertsatz 
   - [ ] DGL lösen mittels Laplace-Transformation
-  - [ ] Übertragungsfunktion, Gewichtsfunktion
-  - [ ] Faltung
-  - [ ] Impulsantwort
-  - [ ] Sprungantwort
+  - [x] Übertragungsfunktion, Gewichtsfunktion
+  - [x] Faltung
+  - [x] Impulsantwort
+  - [x] Sprungantwort
 
 # Fourier-Transformation -> fondue
-  - [ ] Fourierreihe 
+  - [x] Fourierreihe 
   - [ ] Definition für diskrete Spektren
-  - [ ] Definition für kontinuierliche Spektren
-  - [ ] Exponentialform (komplexe Form)
-  - [ ] Inverse Fouriertransformation
-    - [ ] Symmetrie
-  - [ ] Transformationsregeln
-    - [ ] Zeitverschiebungssatz
-    - [ ] Differentiationssatz
-    - [ ] Integrationssatz
-    - [ ] Faltungsatz
-  - [ ] Frequenzgang
+  - [x] Definition für kontinuierliche Spektren
+  - [x] Exponentialform (komplexe Form)
+  - [x] Inverse Fouriertransformation
+    - [x] Symmetrie
+  - [x] Transformationsregeln
+    - [x] Zeitverschiebungssatz
+    - [x] Differentiationssatz
+    - [x] Integrationssatz
+    - [x] Faltungsatz
+  - [x] Frequenzgang
 
-# Regelungstechnik -> ninux
+# Regelungstechnik
   - [ ] Definitionen
-    - [ ] Steuerung
-    - [ ] Regelung
-    - [ ] Führungsverhalten
-    - [ ] Störungsverhalten
-  - [ ] Gleichungen zur Modellierung
+    - [x] Steuerung
+    - [x] Regelung
+    - [x] Grössen von Regelkreisen
+    - [x] Führungsverhalten
+    - [x] Störungsverhalten
+  - [ ] Gleichungen zur Modellierung -> daniw
     - [ ] Elektrisches Netzwerk
     - [ ] Mechanische Translation
     - [ ] Mechanische Rotation
     - [ ] Thermisch
     - [ ] Hydraulisch
     - [ ] Pneumatisch
-  - [ ] Linearisierung
+  - [x] Linearisierung
     - [ ] (Pertubation Theory)
-    - [ ] Totales Differential
-  - [ ] Sprung- und Impulsantwort
+    - [x] Gleichgewichtlage
+    - [x] Totales Differential
+  - [ ] Systemantworten -> ninux
+    - [x] Sprungantwort
+    - [ ] Impulsantwort
     - [ ] Eigenschaften
     - [ ] Interpretation
     - [ ] Mit Ausgleich, ohne Ausgleich
-  - [ ] Standardglieder (tabellarische Übersicht)
-  - [ ] Pol/Nullstellenplan
-  - [ ] Bodediagramm
-  - [ ] Ortskurve
-  - [ ] Stabilitätskriterien
-    - [ ] Hurwitz
+  - [ ] Standardglieder (tabellarische Übersicht) -> ninux
+  - [ ] Pol/Nullstellenplan -> ninux
+  - [ ] Bodediagramm -> ninux
+  - [ ] Ortskurve -> ninux
+  - [ ] Stabilitätskriterien -> ninux
+    - [x] BIBO
+    - [x] Hurwitz
     - [ ] Bode
-    - [ ] Nyquist (allgemeines und graphisches)
-    - [ ] Amplitudenreserve
-    - [ ] Phasenreserve
-    - [ ] Totzeitreserve
-  - [ ] Einstellregeln PID-Regler
+    - [x] Nyquist (allgemeines und graphisches)
+    - [x] Amplitudenreserve
+    - [x] Phasenreserve
+    - [x] Totzeitreserve
+  - [ ] Einstellregeln PID-Regler -> daniw
 
 # Anhang
-  - [ ] Tabelle von Laplace-Transformationen 
+  - [ ] Tabelle von Laplace-Transformationen -> daniw

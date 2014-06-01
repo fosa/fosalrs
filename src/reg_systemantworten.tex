@@ -141,4 +141,33 @@ Es gibt einige Charakteristiken in der Sprungantwort, welche ein
 \end{itemize}
 
 \subsection{Impulsantwort}
+Analog zur Sprungantwort liefert die Impulsantwort eine Charakterisierung
+eines Übertragungsglides. Die besondere Eigenschaft des Impulses ist,
+dass aufgrund der unendlichen Steigung des Stosses, ein unendlich weites
+Frequenzspektrum vorliegt. Der Ideale Impuls, also der Dirac-Stoss, kann
+jedoch nur in der Theorie erzeugt werden, weshalb die Sprungantwort
+eine übergeordnete Rolle spielt in der Praxis.
+%
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \draw[->] (-1,0) -- (3,0) node[below] {$t$};
+        \draw[->] (0,-0.1) -- (0,2) node[left] {$x(t)$};
+        \draw[thick, red] (-0.5,0) -- (2.5,0);
+        \draw[thick, red, ->] (0,0) -- (0,1.5); 
+    \end{tikzpicture} 
+    %
+    \begin{tikzpicture}[domain=0:2.5]
+        \draw[->] (-1,0) -- (3,0) node[below] {$t$};
+        \draw[->] (0,-0.1) -- (0,2) node[left] {$y(t)$};
+        \draw[red, thick] (-0.5,0) -- (0,0);
+        \draw[red, thick] (0,0) -- (0,1.5);
+        \draw[red, thick, samples=200] plot[id=dirac]
+            function{1.5*exp(-2*x)};
+        \draw[blue, thick, samples=200] plot[id=B3]
+            function{sin(1.2*x)*exp(-1.2*x)*3};
+        \draw[red, thick, samples=200] plot[id=dirac]
+            function{1.5*exp(-2*x)};
+    \end{tikzpicture}
+\end{figure}
 

@@ -42,7 +42,7 @@ wie die Stabilität zu bewerten ist.
 %
 \begin{figure}[h!]
     \centering
-    \begin{tikzpicture}[scale=2]
+    \begin{tikzpicture}[scale=2, domain=0:0.5]
         % Rasterübersicht %%%%%%%
         %   a1  b1  c1  d1  e1  %
         %   a2  b2  c2  d2  e2  %
@@ -77,11 +77,15 @@ wie die Stabilität zu bewerten ist.
         \begin{scope}[shift={(a1)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
+            \draw[green, thick, samples=200] plot[id=A]
+                function{-0.3*exp(-4*x)*(sin(50*x)+cos(50*x))+0.3};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(b1)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
+            \draw[green, thick, samples=200] plot[id=A]
+                function{-0.3*exp(-10*x)*(sin(50*x)+cos(50*x))+0.3};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(c1)}]
@@ -143,11 +147,15 @@ wie die Stabilität zu bewerten ist.
         \begin{scope}[shift={(a3)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
+            \draw[green, thick, samples=200] plot[id=A]
+                function{-0.3*exp(-4*x)*(sin(50*x)+cos(50*x))+0.3};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(b3)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
+            \draw[green, thick, samples=200] plot[id=A]
+                function{-0.3*exp(-10*x)*(sin(50*x)+cos(50*x))+0.3};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(c3)}]

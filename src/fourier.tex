@@ -17,7 +17,7 @@
 \chapter{Fouriertransformation}
 
 
-\subsection{Fourierreihe}
+\section{Fourierreihe}
 Periodische Funktionen\\
 Sei $u(t)$ eine $T$-periodische Funktion. D.h. 
 \[ u(t + T) = u(t) \]
@@ -31,7 +31,7 @@ Schwingungen der Grundfrequenz $\omega_0$ und ganzzahligen Vielfachen
 $n \cdot \omega_0$ der Grundfrequenz. Dies sind die Oberschwingungen oder 
 Obertöne. \\
 
-\subsubsection{Formeln zur Berechnung der Koeffizienten}
+\subsection{Formeln zur Berechnung der Koeffizienten}
 \[ a_0 = \frac{2}{T} \int\limits_{-\frac{T}{2}}^{\frac{T}{2}} u(t) ~ dt \]
 \[ a_n = \frac{2}{T} \int\limits_{-\frac{T}{2}}^{\frac{T}{2}} u(t) 
 \cos(n \cdot \omega_0 \cdot t) ~ dt \]
@@ -40,7 +40,7 @@ Obertöne. \\
 \[ a_n = 0 ~bei ~ungeraden ~ Funktionen ~(sinus)\]
 \[ b_n = 0 ~bei ~geraden ~ Funktionen ~(cosinus) \]
 
-\subsection{Komplexe oder Exponentialform der Fourier-Reihe}
+\section{Komplexe oder Exponentialform der Fourier-Reihe}
 Erinnerung: Eulersche Formel: 
 \[ e^{j x} = \cos(x) + j \sin(x) \qquad , x \in \mathbb{R} \]
 \[ e^{- j x} = \cos(-x) + j \sin(-x) \]
@@ -56,32 +56,32 @@ Wendet man nun diese zwei Formeln auf die Fourier-Reihe an, ergibt sich die komp
 u(t) \cdot e^{-j n \omega_0 t} ~ dt \]
 
 
-\subsection{Definition für diskrete Spektren}
+\section{Definition für diskrete Spektren}
 
 
-\subsection{Definition für kontinuierliche Spektren}
+\section{Definition für kontinuierliche Spektren}
  Die Fourier-Transformierte des Signals $u(t)$ ist 
 \[ \boxed{U(\omega) = \mathcal{F}\{ u(t) \} = \int\limits_{-\infty}^{\infty} 
 u(t) e^{-\omega t j} ~dt } \]
 Man nennt $U(\omega)$ Spektraldichte oder Spektralfunktion. 
 
-\subsubsection{Umkehrformel}
+\subsection{Umkehrformel}
 \[ \boxed{u(t) = \frac{1}{2 \pi} \int\limits_{-\infty}^{\infty} 
 U(\omega) e^{\omega t j} ~ d\omega} \]
 
-\subsection{Exponentialform (komplexe Form)}
+\section{Exponentialform (komplexe Form)}
 \[ \boxed{F(\omega) = |F(\omega)| \cdot e^{j\varphi(\omega)} = A(\omega) \cdot e^{j\varphi(\omega)}}   \]
 \[ F(\omega): Spektrum ~ von ~ f(t) ~ (Frequenzspektrum, Spektraldichte) \]
 \[ A(\omega) = |F(\omega)|: Amplitudenspektrum \]
 \[ \varphi (\omega) = arg(F(\omega)): Phasenspektrum \]
 
-\subsection{Inverse Fouriertransformation}
+\section{Inverse Fouriertransformation}
 Siehe Herleitung der Fouriertransformation: 
 \[ u(t) = \frac{1}{2 \pi}  \int\limits_{-\infty}^{\infty} U(t) \cdot e^{\omega t j} ~ d\omega \]
 \[ U(\omega) = \mathcal{F} \{ u(t) \} \]
 \[ u(t) = \mathcal{F}^{-1} \{ U(\omega) \} \]
 
-\subsection{Symmetrie}
+\section{Symmetrie}
 \[ U(\omega) = \int\limits_{-\infty}^{\infty} u(t) \cdot e^{-\omega t j} ~ dt \]
 Variabeln umbenennnen: 
 \[ t \to -\omega \qquad \omega \to t \]
@@ -95,23 +95,23 @@ U(t) & \laplace & 2 \pi \cdot u(-\omega)
 \end{array}} \]
 
 
-\subsection{Transformationsregeln}
+\section{Transformationsregeln}
 
-\subsubsection{Zeitverschiebung}
+\subsection{Zeitverschiebung}
 \[ u(t - t_0) ~ \laplace ~ e^{-t_0 \omega j} \cdot U(\omega) \]
-\subsubsection{Frequenzverschiebung (Modulation)}
+\subsection{Frequenzverschiebung (Modulation)}
 \[ e^{j\omega_0 t} \cdot u(t) ~\laplace ~U(\omega - \omega_0) \]
-\subsubsection{Differentiationssatz}
+\subsection{Differentiationssatz}
 \[ \dot{u}(t) ~ \laplace ~ \omega j \cdot U(\omega) \]
 Mehrmalige Anwendung
 \[ \ddot{u}(t) ~ \laplace ~ (\omega j)^2 \cdot U(\omega) = -\omega^2 U(\omega) \]
 \[ u^{(n)}(t) ~ \laplace ~ (\omega j)^n \cdot U(\omega) \]
 
 
-\subsubsection{Integrationssatz}
+\subsection{Integrationssatz}
 \[\int\limits_{-\infty}^{t} u(\tau) ~ d \tau ~\laplace ~ \frac{1}{\omega j} U(\omega) \]
 
-\subsubsection{Faltungsatz}
+\subsection{Faltungsatz}
 Faltung: 
 \[u(t) * v(t) = \int\limits_{-\infty}^{\infty} u(\tau) \cdot v(\tau) ~ d \tau  \]
 Zeitbereich: 
@@ -119,7 +119,7 @@ Zeitbereich:
 Frequenzbereich:
 \[ u(t) \cdot v(t) ~ \laplace ~ \frac{1}{2 \pi} U(\omega) * V(\omega) \]
 
-\subsection{Frequenzgang}
+\section{Frequenzgang}
 
 $G(\omega j)$ ist der Frequenzgang des Systems \\
 $A(\omega) $ ist der Amplifizierungsfaktor\\

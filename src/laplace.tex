@@ -17,7 +17,7 @@
 \chapter{Laplacetransformation}
 
 
-\subsection{Definition}
+\section{Definition}
 \[ 
     \mathcal{L} \lbrace u(t) \rbrace = U(s)
 \]
@@ -36,10 +36,10 @@
     \end{array} 
 \]
 
-\subsection{Eigenschaften }
+\section{Eigenschaften }
 
 
-\subsubsection{Linearität}
+\subsection{Linearität}
 \[ 
     \mathcal{L}\lbrace c \cdot u(t) \rbrace 
     = c \cdot \mathcal{L}\lbrace u(t) \rbrace 
@@ -49,7 +49,7 @@
     = \mathcal{L}\lbrace u_1(t) \rbrace + \mathcal{L}\lbrace u_2(t) \rbrace 
 \]
 
-\subsubsection{Differentiationssatz}
+\subsection{Differentiationssatz}
 \[ 
     \mathcal{L}\lbrace \dot{u}(t) \rbrace = s \cdot U(s) - u(0^-) 
 \]
@@ -66,18 +66,18 @@ Dann:
     \frac{d^n}{dt^n} u(t) ~ \laplace ~ s^n \cdot U(S) 
 \]
 
-\subsubsection{Integrationssatz}
+\subsection{Integrationssatz}
 \[ 
     \int\limits_{0^-}^{t} u(t) ~ dt ~ \laplace ~ \frac{1}{s} \cdot U(s) 
 \]
 
-\subsubsection{Zeitverschiebungssatz}
+\subsection{Zeitverschiebungssatz}
 Ein Signal u(t) heisst kausal, wenn $u(t) = 0$ für $t < 0$.
 \[ 
     u(t - t_0) \cdot \sigma(t - t_0) ~ \laplace ~ e^{-t_0s} \cdot U(s) 
 \]
 
-\subsection{Tabelle der wichtigsten Grundfunktionen}
+\section{Tabelle der wichtigsten Grundfunktionen}
 \[ 
     \begin{array}{c@{ ~ \laplace ~ }c}
         u(t) 
@@ -101,7 +101,7 @@ Ein Signal u(t) heisst kausal, wenn $u(t) = 0$ für $t < 0$.
     \end{array} 
 \]
 
-\subsection{Inverse Laplace-Transformation}
+\section{Inverse Laplace-Transformation}
 \[ 
     \mathcal{L} \lbrace u(t) \rbrace = U(s)
 \]
@@ -109,7 +109,7 @@ Ein Signal u(t) heisst kausal, wenn $u(t) = 0$ für $t < 0$.
     u(t) = \mathcal{L}^{-1} \lbrace U(s) \rbrace
 \]
 
-\subsubsection{Eindeutigkeitssatz}
+\subsection{Eindeutigkeitssatz}
 \[ 
     U(s) = V(s) 
 \]
@@ -124,18 +124,18 @@ Notation:
     u(t) = \mathcal{L}^{-1} \{ U(s) \} 
 \]
 
-\subsubsection{Dämpfungssatz}
+\subsection{Dämpfungssatz}
 \[ 
     e^{at} \cdot u(t) ~ \laplace ~ U(s - a) 
 \]
 Vorsicht! Vorzeichen anders als beim Zeitverschiebungssatz.
 
-\subsubsection{Frequenzverschiebungssatz}
+\subsection{Frequenzverschiebungssatz}
 
-%\subsection{Partialbruchzerlegung}
+%\section{Partialbruchzerlegung}
 \input{lap_partial}
 
-\subsection{Anfangswertsatz}
+\section{Anfangswertsatz}
 Sei $u(t)$ an der Stelle $t = 0$ sprungstetig. Dann gilt
 \[ 
     u(0^+) = \lim\limits_{s \to \infty} s \cdot U(s) 
@@ -144,7 +144,7 @@ Bemerkung: \\
 Wenn $U(s) = \dfrac{Z(s)}{N(s)}$ eine rationale Funktion mit
 $\text{Grad}(Z(s)) < \text{Grad}(N(s))$, dann ist u(t) sprungstetig
 
-\subsection{Endwertsatz }
+\section{Endwertsatz }
 Sei $u(t)$ ein Signal, für das der Endwert
 $u(\infty) = \lim\limits_{t \to \infty} u(t)$ existiert. \\
 Dann gilt:
@@ -156,7 +156,7 @@ Wenn alle Polstellen von $s \cdot U(s)$ links von der imaginären Achse liegen,
 dann existiert der Endwert $u(\infty)$. \\
 Mit anderen Worten: Der Realteil aller Nullstellen muss negativ sein.
 
-\subsection{DGL lösen mittels Laplace-Transformation}
+\section{DGL lösen mittels Laplace-Transformation}
 \begin{enumerate}
     \item Laplace Transformation anwenden
     \item Auflösen nach $V(s)$
@@ -164,14 +164,14 @@ Mit anderen Worten: Der Realteil aller Nullstellen muss negativ sein.
     \item Rücktransformation
 \end{enumerate}
 
-\subsection{Übertragungsfunktion, Gewichtsfunktion}
+\section{Übertragungsfunktion, Gewichtsfunktion}
 \[ 
     V(s) = \underbrace{\frac{1}{RC \cdot s + 1}}_{G(s)} \cdot U(s) 
 \]
 $G(s)$: Übertragungsfunktion\\
 Die Zeitfunktion $g(t)$ von $G(s)$ heisst Gewichtsfunktion\\
 
-\subsection{Faltung}
+\section{Faltung}
 Definition: Die Faltung zweier Signale $u(t)$ und $v(t)$ ist
 \[ 
     (u * v)(t) = \int\limits_{-\infty}^{\infty} u(\tau) v(t - \tau) ~ d \tau 
@@ -187,14 +187,14 @@ Sind $u(t), v(t)$ kausal, so gilt:
     (u * v) (t) ~ \laplace ~ U(s) \cdot V(s) 
 \]
 
-\subsection{Impulsantwort}
+\section{Impulsantwort}
 Ist $g(t)$ die Gewichtsfunktion eines LZI Systems, so gilt
 \[ 
     v(t) = (g * u)(t) 
 \]
 Fazit: Impulsantwort = Gewichtsfunktion
 
-\subsection{Sprungantwort}
+\section{Sprungantwort}
 Definition: Sprungantwort = Antwort auf $\sigma(t) = h(t)$
 (AW nicht unbedingt 0) \\
 Bemerkung: Bei LZI Systemen:

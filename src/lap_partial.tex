@@ -1,0 +1,99 @@
+\section{Partialbruchzerlegung}
+Die Partialbruchzerlegung erlaubt es komplizierte Übertragungsfunktionen
+so zu zerlegen, dass einfache Übertragungsglider daraus erkannt werden 
+können. Dies ermöglicht es, dass weitere Berechnungen auf die einzelnen
+Glieder angewandet werden können, etwa für die Rücktransformation in 
+den Zeitbereich. Um eine solche Partialbruchzerlegung durchzuführen 
+bedarf es der folgenden Schritte
+%
+\begin{enumerate}
+    \item Polstellen finden (Linearfaktorzerlegung)
+    \item Summenzerlegung
+    \item Vereinfachung
+    \item Gleichungssystem aufstellen
+    \item Koeffizientenverleich durchführen
+\end{enumerate}
+%
+Die Partialbruchzerlegung kann aber auch direkt mit dem Taschenrechner
+erfolgen in nur einem Schritt mit dem Befehl \verb?expand()?.
+
+\subsubsection{Polstellen finden}
+In einem ersten Schritt zerlegt man das Nennerpolynom der vorliegenden 
+Übertragungsfunktion mittels der Linearfaktorzerlegung.
+\[  
+    U(s) 
+        = \frac{Z(s)}{N(s)} 
+        \Rightarrow N(s) 
+        = (s+a_0)(s+a_1)(s+a_2) \dots	
+\]
+Jeder dieser Faktoren zeigt eine Polstelle der Übertragungsfunktion auf.
+
+\subsubsection{Summenzerlegung}
+Die Faktoren, welche man per Linearfaktorzerlegung erhalten hat, werden
+nun getrennt und zu separaten Nennern einer neuen Summe, welche die
+ursprüngliche Übertragungsfunktion ersetzt. Die Zähler dieser neuen
+Summanden bilden die Unbekannten, welche es zu ermitteln gilt.
+\[  
+    U(s) 
+        = \frac{Z(s)}{N(s)} 
+        = \frac{A}{(s+a_0)} + \frac{B}{(s+a_1)} + \frac{C}{(s+a_2)} + \dots 
+\]
+Sollten identische Faktoren zustandekommen und eine quadratische 
+Funktion $(s+a_n)^2$ ergeben, so können diese Faktoren in einem Nenner
+zusammengefasst werden. Hierbei gilt es zu beachten, dass
+der Ansatz für den Zähler dann keine Kosntante mehr darstellt, sondern 
+eine lineare Funktion der Art $(As + B)$. Dies lässt sich beliebig erweitern
+für höhere Grade des Nennerpolynoms.
+\[  
+    \frac{A}{(s+a_0)} 
+    \rightarrow \frac{(As + B)}{(s+a)^2}
+    \rightarrow \frac{(As^2 + Bs + C)}{(s+a)^3}
+    \rightarrow \dots
+\]
+
+\subsubsection{Vereinfachen der Übertragungsfunktion}
+Die nun vorliegende Übertragungsfunktion kann nun vereinfacht werden, indem
+die Gleichung mit dem ursprünglichen Nenner erweitert wird. Auf diese
+Weise kürzen sich bei allen Summanden die Nenner weg und es bleibt eine
+einfache Summe ohne Brüche übrig.
+\[  
+    N(s) \cdot \left( 
+        \frac{A}{(s+a)} 
+        + \frac{B}{(s+a_1)} 
+        + \frac{C}{(s+a_2)} 
+    \right) 
+\]
+%
+\[
+    = A(s+a_1)(s+a_2) + B(s+a_0)(s+a_2) + C(s+a_0)(s+a_1)
+\]
+
+\subsubsection{Gleichungssystem aufstellen}
+Die nun vorliegende Summe wird so umgeformt, dass jedem Grad von $s$ ein
+Koeffizoient zugeordnet werden kann. Die so erhaltenen Terme für den
+jeweiligen Grad werden mit dem ursprünglichen Zählerpolynom der 
+Übertragungsfunktion verglichen und als Gleichungssystem aufgestellt.
+\[ 
+    \begin{array}{r c l}  
+        s^0(m_0) & = & s^0(r_1 A + r_2 B + r_3 C) \\
+        s^1(m_1) & = & s^1(r_1 A + r_2 B + r_3 C) \\
+        s^2(m_2) & = & s^2(r_1 A + r_2 B + r_3 C) \\
+        \dots   & = & \dots
+    \end{array}
+\]
+
+
+\subsubsection{Koeffizientenvergleich}
+Das nun vorliegende Gleichungssystem kann für die Unbekannten $A,B,C$ 
+aufgelöst werden. Das beidseitige kürzen der Gleichungen mit dem 
+passenden Faktor $s^n$ ergibt direkt das zu lösende Gleichungssystem. 
+\[  
+    \left\lvert \begin{array}{r c l}
+        (m_0) & = & (r_1 A + r_2 B + r_3 C) \\
+        (m_1) & = & (r_1 A + r_2 B + r_3 C) \\
+        (m_2) & = & (r_1 A + r_2 B + r_3 C) \\
+        \dots   & = & \dots 
+    \end{array} \right\rvert
+\]
+Die so erhaltenen Ergebnisse können eingesetzt werden in die 
+summenzerlegte Übertragungsfunktion.

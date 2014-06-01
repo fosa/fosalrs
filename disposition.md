@@ -23,7 +23,7 @@
   - [x] Eindeutigkeitssatz
   - [x] Dämpfungssatz
   - [ ] Frequenzverschiebungssatz
-  - [ ] Partialbruchzerlegung -> ninux
+  - [x] Partialbruchzerlegung -> ninux
   - [x] Anfangswertsatz
   - [x] Endwertsatz 
   - [ ] DGL lösen mittels Laplace-Transformation

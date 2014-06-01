@@ -251,7 +251,130 @@ Hierzu wird einfach die Rückführung getrennt. So wandelt sich die
 Gutes Regelverhalten: $\varphi_R \geq 60^\circ$ \\
 Gutes Störverhalten:  $\varphi_R \geq 30^\circ$
 
+\subsubsection{Bode-Diagramm}
+Die Phasenreserve kann auch im Bode-Diagramm ausgelesen werden. Sie 
+beschreibt den Winkelunterschied von $-180^\circ$ und den Winkel beim
+$0$dB Punkt.
+%
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        % Coordinaten
+        \coordinate (a1) at (0,0);
+        \coordinate (a2) at (0,-3);
+        % Amplitudengang
+        \begin{scope}[shift={(a1)}]
+            % Koordinatensystem 
+            \draw[->] (-0.1,0) -- (6.5,0) node[below] {$\omega$};
+            \draw[->] (0,-2.0) -- (0,1) node[left] 
+                {$20 \log \left( \left\lvert G \right\rvert \right)$};
+            % x-Tics
+            \draw[] (1,0.1) -- (1,-0.1);
+            \draw[] (2,0.1) -- (2,-0.1);
+            \draw[] (3,0.1) -- (3,-0.1);
+            \draw[] (4,0.1) -- (4,-0.1);
+            \draw[] (5,0.1) -- (5,-0.1);
+            % y-Tics
+            \draw[] (0.1,0.5) -- (-0.1,0.5);
+            \draw[] (0.1,0.0) -- (-0.1,0.0) node[left] {$0$dB};
+            \draw[] (0.1,-0.5) -- (-0.1,-0.5);
+            \draw[] (0.1,-1.0) -- (-0.1,-1.0);
+            \draw[] (0.1,-1.5) -- (-0.1,-1.5);
+            % Amplitudengang
+            \draw[red, thick] (0,0.5) -- (2,0.5) -- (6,-1.5);
+        \end{scope}
+        % Phasengang
+        \begin{scope}[shift={(a2)}]
+            % Koordinatensystem 
+            \draw[->] (-0.1,0) -- (6.5,0) node[below] {$\omega$};
+            \draw[->] (0,-3) -- (0,0.5) node[left] {$\angle\varphi$};
+            % x-Tics
+            \draw[] (1,0.1) -- (1,-0.1);
+            \draw[] (2,0.1) -- (2,-0.1);
+            \draw[] (3,0.1) -- (3,-0.1);
+            \draw[] (4,0.1) -- (4,-0.1);
+            \draw[] (5,0.1) -- (5,-0.1);
+            % y-Tics
+            \draw[] (0.1,0) -- (-0.1,0) node[left] {$0^\circ$};
+            \draw[] (0.1,-0.5) -- (-0.1,-0.5) node[left] {$-45^\circ$};
+            \draw[] (0.1,-1.0) -- (-0.1,-1.0) node[left] {$-90^\circ$};
+            \draw[] (0.1,-1.5) -- (-0.1,-1.5) node[left] {$-135^\circ$};
+            \draw[] (0.1,-2.0) -- (-0.1,-2.0) node[left] {$-180^\circ$};
+            \draw[] (0.1,-2.5) -- (-0.1,-2.5) node[left] {$-225^\circ$};
+            % Amplitudengang
+            \draw[red, thick] (0,0) -- (1,0) -- (6,-2.5);
+        \end{scope}
+        \draw[dotted, blue] (0,-5) -- (6,-5);
+        \draw[dotted, blue] (3,-5) -- (3,0);
+        \draw[blue, thick, <->] (3,-5) -- (3,-4) 
+            node[left, midway] {$\varphi_R$};
+    \end{tikzpicture}
+\end{figure}
+%
+
+
 \subsection{Amplitudenreserve}
+Wie die Phasenreserve kann auch die Amplitudenreserve aus dem Bode-Diagramm 
+ausgelesen werden für den offenen Regelkreis. Die Amplitudenreserve
+beschreibt den Abstand vom $0$dB Punkt bis zum Punkt der 
+Amplitudenverstärkung bei einer Phase von $-180^\circ$.
+%
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        % Coordinaten
+        \coordinate (a1) at (0,0);
+        \coordinate (a2) at (0,-3);
+        % Amplitudengang
+        \begin{scope}[shift={(a1)}]
+            % Koordinatensystem 
+            \draw[->] (-0.1,0) -- (6.5,0) node[below] {$\omega$};
+            \draw[->] (0,-2.0) -- (0,1) node[left] 
+                {$20 \log \left( \left\lvert G \right\rvert \right)$};
+            % x-Tics
+            \draw[] (1,0.1) -- (1,-0.1);
+            \draw[] (2,0.1) -- (2,-0.1);
+            \draw[] (3,0.1) -- (3,-0.1);
+            \draw[] (4,0.1) -- (4,-0.1);
+            \draw[] (5,0.1) -- (5,-0.1);
+            % y-Tics
+            \draw[] (0.1,0.5) -- (-0.1,0.5);
+            \draw[] (0.1,0.0) -- (-0.1,0.0)node[left] {$0$dB};
+            \draw[] (0.1,-0.5) -- (-0.1,-0.5);
+            \draw[] (0.1,-1.0) -- (-0.1,-1.0);
+            \draw[] (0.1,-1.5) -- (-0.1,-1.5);
+            % Amplitudengang
+            \draw[red, thick] (0,0.5) -- (2,0.5) -- (6,-1.5);
+        \end{scope}
+        % Phasengang
+        \begin{scope}[shift={(a2)}]
+            % Koordinatensystem 
+            \draw[->] (-0.1,0) -- (6.5,0) node[below] {$\omega$};
+            \draw[->] (0,-3) -- (0,0.5) node[left] {$\angle\varphi$};
+            % x-Tics
+            \draw[] (1,0.1) -- (1,-0.1);
+            \draw[] (2,0.1) -- (2,-0.1);
+            \draw[] (3,0.1) -- (3,-0.1);
+            \draw[] (4,0.1) -- (4,-0.1);
+            \draw[] (5,0.1) -- (5,-0.1);
+            % y-Tics
+            \draw[] (0.1,0) -- (-0.1,0) node[left] {$0^\circ$};
+            \draw[] (0.1,-0.5) -- (-0.1,-0.5) node[left] {$-45^\circ$};
+            \draw[] (0.1,-1.0) -- (-0.1,-1.0) node[left] {$-90^\circ$};
+            \draw[] (0.1,-1.5) -- (-0.1,-1.5) node[left] {$-135^\circ$};
+            \draw[] (0.1,-2.0) -- (-0.1,-2.0) node[left] {$-180^\circ$};
+            \draw[] (0.1,-2.5) -- (-0.1,-2.5) node[left] {$-225^\circ$};
+            % Amplitudengang
+            \draw[red, thick] (0,0) -- (1,0) -- (6,-2.5);
+        \end{scope}
+        \draw[dotted, blue] (5,-5) -- (5,0);
+        \draw[dotted, blue] (0,-5) -- (5,-5);
+        \draw[blue, thick, <->] (5,0) -- (5,-1) 
+            node[right, midway] {$A_R$};
+    \end{tikzpicture}
+\end{figure}
+%
+
 \[
     \omega = \omega_\pi
 \]

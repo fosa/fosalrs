@@ -1,0 +1,73 @@
+\section{Bode-Diagramm}
+Das Bode-Diagramm ist eine kombinierte Darstellung von Amplituden- und
+Phasengang, welches zudem logarithmisch skaliert ist. Die logarithmische
+Skalierung erlaubt es Verläufe von Teilsystemen zu addieren statt zu 
+multiplizieren. Dies rührt her von der Regel
+\[
+    \log_a(x \cdot y) = \log_a(x) + \log_a(y)  
+\]
+Das Bode-Diagramm zeigt sowohl den Amplituden- als auch
+den Phasengang in Funktion der Kreisfrequenz $\omega$.
+%
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        % Coordinaten
+        \coordinate (a1) at (0,0);
+        \coordinate (a2) at (0,-3);
+        % Amplitudengang
+        \begin{scope}[shift={(a1)}]
+            % Koordinatensystem 
+            \draw[->] (-0.1,0) -- (6.5,0) node[below] {$\omega$};
+            \draw[->] (0,-2.0) -- (0,2) node[left] 
+                {$20 \log \left( \left\lvert G \right\rvert \right)$};
+            % x-Tics
+            \draw[] (1,0.1) -- (1,-0.1);
+            \draw[] (2,0.1) -- (2,-0.1);
+            \draw[] (3,0.1) -- (3,-0.1);
+            \draw[] (4,0.1) -- (4,-0.1);
+            \draw[] (5,0.1) -- (5,-0.1);
+            % y-Tics
+            \draw[] (0.1,1.5) -- (-0.1,1.5) node[left] {$60$ dB};
+            \draw[] (0.1,1.0) -- (-0.1,1.0) node[left] {$40$ dB}; 
+            \draw[] (0.1,0.5) -- (-0.1,0.5) node[left] {$20$ dB};
+            \draw[] (0.1,0.0) -- (-0.1,0.0) node[left] {$0$ dB};
+            \draw[] (0.1,-0.5) -- (-0.1,-0.5) node[left] {$-20$ dB};;
+            \draw[] (0.1,-1.0) -- (-0.1,-1.0) node[left] {$-40$ dB};;
+            \draw[] (0.1,-1.5) -- (-0.1,-1.5) node[left] {$-60$ dB};;
+            % Amplitudengang
+            \draw[blue, thick] (0,0) -- (1,0) -- (4,-1.5) 
+                node[below, midway] {$G_1$};
+            \draw[green, thick] (0,1.5) -- (2,1.5) -- (6,-0.5)
+                node[above, midway] {$G_2$};
+            \draw[red, thick] (0,1.5) -- (1,1.5) -- (2,1) -- (4.5,-1.5)
+                node[above right] {$G_1+G_2$};
+        \end{scope}
+        % Phasengang
+        \begin{scope}[shift={(a2)}]
+            % Koordinatensystem 
+            \draw[->] (-0.1,0) -- (6.5,0) node[below] {$\omega$};
+            \draw[->] (0,-3) -- (0,0.5) node[left] {$\angle\varphi$};
+            % x-Tics
+            \draw[] (1,0.1) -- (1,-0.1);
+            \draw[] (2,0.1) -- (2,-0.1);
+            \draw[] (3,0.1) -- (3,-0.1);
+            \draw[] (4,0.1) -- (4,-0.1);
+            \draw[] (5,0.1) -- (5,-0.1);
+            % y-Tics
+            \draw[] (0.1,0) -- (-0.1,0) node[left] {$0^\circ$};
+            \draw[] (0.1,-0.5) -- (-0.1,-0.5) node[left] {$-45^\circ$};
+            \draw[] (0.1,-1.0) -- (-0.1,-1.0) node[left] {$-90^\circ$};
+            \draw[] (0.1,-1.5) -- (-0.1,-1.5) node[left] {$-135^\circ$};
+            \draw[] (0.1,-2.0) -- (-0.1,-2.0) node[left] {$-180^\circ$};
+            \draw[] (0.1,-2.5) -- (-0.1,-2.5) node[left] {$-225^\circ$};
+            % Phasengang
+            \draw[blue, thick] (0,0) -- (2,-1) 
+                node[above] {$G_1$} -- (6,-1);
+            \draw[green, thick] (0,0) -- (1,0) -- (3,-1) 
+                node[above] {$G_2$} -- (6,-1);
+            \draw[red, thick] (0,0) -- (1,-0.5) -- (2,-1.5) -- (3,-2) 
+                -- (6,-2) node[above] {$G_1+G_2$};
+        \end{scope}
+    \end{tikzpicture}
+\end{figure}

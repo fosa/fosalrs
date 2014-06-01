@@ -1,0 +1,179 @@
+\section{Pol-Nullstellenplan}
+Betrachtet man eine Übertragungsfunktion als Quotient in der Form
+\[  
+    G(s) = \frac{Z(s)}{N(s)}
+\]
+so können Nullstellen sowohl für das Zählerpolynom $Z(s)$ als auch 
+für das Nennerpolynom $N(s)$ ermittelt werden. Nullstellen des 
+Zählerpolynoms sind zugleich Nullstellen der Übertragungsfunktion.
+Die Nullstellen des Nennerpolynoms werden als Polstellen der
+Übertragungsfunktion bezeichnet.
+%
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        % Koordinatensystem
+        \draw[->] (-2,0) -- (2,0) node[below] {$Re$};
+        \draw[->] (0,-2) -- (0,2) node[left] {$Im$}; 
+        % Einheitskreis
+        \draw[dotted] (0,0) circle (1);
+        % Nullstellen
+        \draw[red, thick] (0.5,0) circle (0.1);
+        % Pole
+        \node[cross out, draw=red, thick] at (-1,1) {};
+        \node[cross out, draw=red, thick] at (-1,-1) {};
+    \end{tikzpicture}
+\end{figure}
+%
+Die folgenden Regeln sind in der Grafik angedeutet.
+\begin{itemize}
+    \item Je grösser der imaginäre Anteil einer Polstelle wird, desto
+        höher wird die Frequenz der Sprungantwort.
+    \item je grösser der reelle Anteil einer Polstelle wird, desto
+        steiler wird die Sprungantwort.
+    \item Polstellen mit negativen Realteil sind stabil.
+    \item Polstellen mit einem Realteil von $\geq 0$ sind instabil.
+\end{itemize}
+%
+Anhand der Polstellen lässt sich ein Übertragungsglied oder ein System 
+bezüglich dessen Verhalten analysieren. Beispielsweise kann direkt darauf
+geschlossen werden, in welche Weise die Sprungantwort auszusehen hat und
+wie die Stabilität zu bewerten ist.
+%
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=2]
+        % Rasterübersicht %%%%%%%
+        %   a1  b1  c1  d1  e1  %
+        %   a2  b2  c2  d2  e2  %
+        %   a3  b3  c3  d3  e3  %
+        %%%%%%%%%%%%%%%%%%%%%%%%% 
+        % Koordinaten
+        \coordinate (a1) at (-1.5,  0.9);
+        \coordinate (a2) at (-1.5,  0.1);
+        \coordinate (a3) at (-1.5, -0.7);
+        %
+        \coordinate (b1) at (-0.7,  0.9);
+        \coordinate (b2) at (-0.7,  0.1);
+        \coordinate (b3) at (-0.7, -0.7);
+        %
+        \coordinate (c1) at ( 0.1,  0.9);
+        \coordinate (c2) at ( 0.1,  0.1);
+        \coordinate (c3) at ( 0.1, -0.7);
+        %
+        \coordinate (d1) at ( 0.9,  0.9);
+        \coordinate (d2) at ( 0.9,  0.1);
+        \coordinate (d3) at ( 0.9, -0.7);
+        %
+        \coordinate (e1) at ( 1.7,  0.9);
+        \coordinate (e2) at ( 1.7,  0.1);
+        \coordinate (e3) at ( 1.7, -0.7);
+        % Koordinatensystem
+        \draw[->] (-2,0) -- (2.5,0) node[below] {$Re$};
+        \draw[->] (0,-1.5) -- (0,2) node[left] {$Im$}; 
+        % Einheitskreis
+        %\draw[dotted] (0,0) circle (1);
+        % 
+        \begin{scope}[shift={(a1)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(b1)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(c1)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \draw[blue, thick] 
+                (0,0) sin (0.1,0.4) 
+                    cos (0.15,0.2) 
+                    sin (0.2,0)
+                    cos (0.25,0.2)
+                    sin (0.3,0.4)
+                    cos (0.35,0.2)
+                    sin (0.4,0.0)
+                    cos (0.45,0.2);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(d1)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(e1)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        %
+        \begin{scope}[shift={(a2)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \draw[green, thick] (0.5,0.5) parabola bend (0.2,0.5) (0,0);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(b2)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \draw[green, thick] (0.5,0.5) parabola bend (0.5,0.5) (0,0);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(c2)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \draw[blue, thick] (0,0) -- (0.5,0.5);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(d2)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \draw[red, thick] (0,0) parabola bend (0,0) (0.5,0.5);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(e2)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \draw[red, thick] (0,0) parabola bend (0,0) (0.2,0.5);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        %
+        \begin{scope}[shift={(a3)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(b3)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(c3)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \draw[blue, thick] 
+                (0,0) sin (0.1,0.4) 
+                    cos (0.15,0.2) 
+                    sin (0.2,0)
+                    cos (0.25,0.2)
+                    sin (0.3,0.4)
+                    cos (0.35,0.2)
+                    sin (0.4,0.0)
+                    cos (0.45,0.2);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(d3)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+        \begin{scope}[shift={(e3)}]
+            \draw[->] (0,0) -- (0.5,0);
+            \draw[->] (0,0) -- (0,0.5);
+            \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
+        \end{scope}
+    \end{tikzpicture}
+\end{figure}
+

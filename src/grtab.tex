@@ -1408,144 +1408,936 @@ n = 0, 1, \ldots \\
     \draw[thick, red]
         (-0.5,0)
         --
-        (5,0);
+        (0,0)
+        --
+        (0,1)
+        --
+        (1,1)
+        --
+        (1,0.25)
+        --
+        (2,0.25)
+        --
+        (2,0.625)
+        --
+        (3,0.625)
+        --
+        (3,0.4375)
+        --
+        (4,0.4375)
+        --
+        (4,0.53125)
+        --
+        (5,0.53125)
+        --
+        (5,0.484375)
+        --
+        (5.2,0.484375);
+    \draw (-0.2,0.5) node[left] {$\frac{1}{2}$} -- (5.2,0.5);
 \end{tikzpicture} &
     \frac{4 - e^{-as}}{s (4 + 2 e^{-as})} \\
 % 216
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-1.2) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[-] (-0.1,-1) node[left] {$-1$} -- (0.1,-1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0.5,0) node[below, black] {$a$}
+        --
+        (0.5,1)
+        --
+        (1,1)
+        --
+        (1,0) node[below, black] {$2a$}
+        --
+        (1.5,0) node[above, black] {$3a$}
+        --
+        (1.5,-1)
+        --
+        (2,-1)
+        --
+        (2,0) node[above, black] {$4a$}
+        --
+        (2.5,0) node[below, black] {$5a$}
+        --
+        (2.5,1)
+        --
+        (3,1)
+        --
+        (3,0)
+        --
+        (3.5,0)
+        --
+        (3.5,-1)
+        --
+        (4,-1)
+        --
+        (4,0)
+        --
+        (4.5,0)
+        --
+        (4.5,1)
+        --
+        (5,1)
+        --
+        (5,0)
+        --
+        (5.2,0);
+\end{tikzpicture} &
     \frac{1 - e^{-as}}{s (e^{as} + e^{-as})} \\
 % 217
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-1.2) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[-] (-0.1,-1) node[left] {$-1$} -- (0.1,-1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0.25,0) node[below, black] {$\frac{a}{\kappa}$}
+        --
+        (0.25,1)
+        --
+        (0.75,1)
+        --
+        (0.75,0) node[below, black] {$\frac{a}{\lambda}$}
+        --
+        (1.2,0) node[above, black] {$\frac{a}{\mu}$}
+        --
+        (1.2,-1)
+        --
+        (1.5,-1)
+        --
+        (1.5,0) node[above, black] {$a$}
+        --
+        (1.75,0)
+        --
+        (1.75,1)
+        --
+        (2.25,1)
+        --
+        (2.25,0)
+        --
+        (2.7,0)
+        --
+        (2.7,-1)
+        --
+        (3,-1)
+        --
+        (3,0) node[above] {$2a$}
+        --
+        (3.25,0)
+        --
+        (3.25,1)
+        --
+        (3.75,1)
+        --
+        (3.75,0)
+        --
+        (4.2,0)
+        --
+        (4.2,-1)
+        --
+        (4.5,-1)
+        --
+        (4.5,0) node[above] {$3a$}
+        --
+        (5,0);
+\end{tikzpicture} &
     \frac{e^{-\frac{as}{\kappa}} - e^{-\frac{as}{\lambda}} + e^{-as} - e^{-\frac{as}{\mu}}}{s (1 - e^{-as})} \\
 % 218
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (1,1)
+        --
+        (2,0)
+        --
+        (3,1)
+        --
+        (4,0)
+        --
+        (5,1);
+    \draw (1,0) node[below] {$a$};
+    \draw (2,0) node[below] {$2a$};
+    \draw (3,0) node[below] {$3a$};
+    \draw (4,0) node[below] {$4a$};
+\end{tikzpicture} &
     \frac{1 - e^{-as}}{as^2 (1 + e^{-as})} \\
 % 219
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0.75,1)
+        --
+        (1.5,0)
+        --
+        (3,0)
+        --
+        (3.75,1)
+        --
+        (4.5,0)
+        --
+        (5,0);
+    \draw (0.75,0) node[below] {$a$};
+    \draw (1.5,0) node[below] {$2a$};
+    \draw (3,0) node[below] {$4a$};
+    \draw (4.5,0) node[below] {$6a$};
+\end{tikzpicture} &
     \frac{(1 - e^{-as})^2}{as^2 (1 - e^{-4as})} \\
 % 220
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0.5,1)
+        --
+        (1,0)
+        --
+        (3,0)
+        --
+        (3.5,1)
+        --
+        (4,0)
+        --
+        (5,0);
+    \draw (0.5,0) node[below] {$\frac{a}{2v}$};
+    \draw (1,0)   node[below] {$\frac{a}{v}$};
+    \draw (3,0)   node[below] {$a$};
+    \draw (4,0)   node[below] {$a+\frac{a}{v}$};
+\end{tikzpicture} &
     \frac{2v \left(1 - e^{-\frac{as}{2v}}\right)^2}{as^2 (1 - e^{-as})} \\
 \end{array} \]
 
 \[ \begin{array}{@{}l@{ ~ \laplace ~ }l@{}}
 % 221
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0.5,0.5)
+        --
+        (1.5,0.5)
+        --
+        (2,0)
+        --
+        (2.5,0.5)
+        --
+        (3.5,0.5)
+        --
+        (4,0)
+        --
+        (4.5,0.5)
+        --
+        (5,0.5);
+    \draw[dotted] (-0.2,0.5) node[left] {$\frac{1}{\mu}$} -- (5,0.5);
+    \draw[dotted] (0.5,0.5) -- (1,1) -- (1.5,0.5);
+    \draw[dotted] (2.5,0.5) -- (3,1) -- (3.5,0.5);
+    \draw[dotted] (4.5,0.5) -- (5,1);
+    \draw[dotted] (0.5,0) node[below] {$\frac{a}{\mu}$} -- (0.5,0.5);
+    \draw (1,0) node[below] {$a$};
+    \draw[dotted] (1.3,-0.5) node[below] {$\left(2-\frac{1}{\mu}\right)a$} -- (1.5,0) -- (1.5,0.5);
+    \draw (2,0) node[below] {$2a$};
+    \draw (3,0) node[below] {$3a$};
+    \draw (4,0) node[below] {$4a$};
+\end{tikzpicture} &
     \frac{\left(1 - e^{-\frac{as}{\mu}}\right) \left(1 - e^{-\left(2 - \frac{1}{\mu}\right) as}\right)}{as^2 (1 - e^{-2as})} \\
 % 222
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0.375,0.5)
+        --
+        (1.125 ,0.5)
+        --
+        (1.5,0)
+        --
+        (3,0)
+        --
+        (3.375,0.5)
+        --
+        (4.125,0.5)
+        --
+        (4.5,0)
+        --
+        (5,0);
+    \draw[dotted] (-0.2,0.5) node[left] {$\frac{1}{\mu}$} -- (5,0.5);
+    \draw[dotted] (0.375,0.5) -- (0.75,1) -- (1.125,0.5);
+    \draw[dotted] (3.375,0.5) -- (3.75,1) -- (4.125,0.5);
+    \draw[dotted] (0.375,0) node[below] {$\frac{a}{\mu}$} -- (0.375,0.5);
+    \draw[dotted] (1.125,0) -- (1.125,0.5);
+    \draw (0.75,0) node[below] {$a$};
+    \draw (1.5,0)  node[below] {$2a$};
+    \draw (3,0)    node[below] {$4a$};
+    \draw (4.5,0)  node[below] {$6a$};
+\end{tikzpicture} &
     \frac{\left(1 - e^{-\frac{as}{\mu}}\right) \left(1 - e^{-\left(2 - \frac{1}{\mu}\right) as}\right)}{as^2 (1 - e^{-4as})} \\
 % 223
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0.25,0.5)
+        --
+        (0.75,0.5)
+        --
+        (1,0)
+        --
+        (2,0)
+        --
+        (2.25,0.5)
+        --
+        (2.75,0.5)
+        --
+        (3,0)
+        --
+        (4,0)
+        --
+        (4.25,0.5)
+        --
+        (4.75,0.5)
+        --
+        (5,0)
+        --
+        (5.2,0);
+    \draw[dotted] (0.25,0.5) -- (0.5,1) -- (0.75,0.5);
+    \draw[dotted] (2.25,0.5) -- (2.5,1) -- (2.75,0.5);
+    \draw[dotted] (4.25,0.5) -- (4.5,1) -- (4.75,0.5);
+    \draw[dotted] (0.05,-0.5) node[below] {$\frac{a}{2v\mu}$} -- (0.25,0) -- (0.25,0.5);
+    \draw[dotted] (0.6,-0.5) node[below] {$\frac{a}{2v}$} -- (0.5,0) -- (0.5,1);
+    \draw (1,0) node[below] {$\frac{a}{v}$};
+    \draw (2,0) node[below] {$a$};
+    \draw (4,0) node[below] {$2a$};
+\end{tikzpicture} &
     \frac{2v \left(1 - e^{-\frac{as}{2v\mu}} - e^{-\frac{(2\mu - 1) as}{2v\mu}} + e^{-\frac{as}{v}}\right)}{as^2 (1 - e^{-as})} \\
 % 224
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (1.5,1)
+        --
+        (2,0) node[below, black] {$a$}
+        --
+        (3.5,1)
+        --
+        (4,0) node[below, black] {$2a$}
+        --
+        (5,0.666);
+    \draw[dotted] (1.5,1) -- (1.5,0) node[below] {$\frac{a}{v}$};
+\end{tikzpicture} &
     \frac{v(v - 1) + v e^{-as} - v^2 e^{-\frac{as}{v}}}{(v - 1) as^2 (1 - e^{-as})} \\
 % 225
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (1,1)
+        --
+        (1.5,0) node[below, black] {$a$}
+        --
+        (3,0) node[below, black] {$2a$}
+        --
+        (4,1)
+        --
+        (4.5,0) node[below, black] {$3a$}
+        --
+        (5,0);
+    \draw[dotted] (1,1) -- (1,0) node[below] {$\frac{a}{v}$};
+\end{tikzpicture} &
     \frac{v(v - 1) + v e^{-as} - v^2 e^{-\frac{as}{v}}}{(v - 1) as^2 (1 - e^{-2as})} \\
 % 226
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (1,1)
+        --
+        (1.5,0) node[below, black] {$\frac{a}{\lambda}$}
+        --
+        (2,0) node[below, black] {$a$}
+        --
+        (3,1)
+        --
+        (3.5,0)
+        --
+        (4,0) node[below, black] {$2a$}
+        --
+        (5,1)
+        --
+        (5.2,0.6);
+    \draw[dotted] (1,1) -- (1,0) node[below] {$\frac{a}{v\lambda}$};
+\end{tikzpicture} &
     \frac{\lambda v (v - 1) + \lambda v e^{-\frac{as}{\lambda}} - \lambda v^2 e^{-\frac{as}{\lambda v}}}{as^2 (v - 1) (1 - e^{-as})} \\
 % 227
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (1,1)
+        --
+        (1,0) node[below, black] {$a$}
+        --
+        (2,1)
+        --
+        (2,0) node[below, black] {$2a$}
+        --
+        (3,1)
+        --
+        (3,0) node[below, black] {$3a$}
+        --
+        (4,1)
+        --
+        (4,0) node[below, black] {$4a$}
+        --
+        (5,1)
+        --
+        (5,0)
+        --
+        (5.2,0.2);
+\end{tikzpicture} &
     \frac{as + 1 - e^{as}}{as^2 (1 - e^{as})} \\
 % 228
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (1,1)
+        --
+        (1,0) node[below, black] {$a$}
+        --
+        (2,0) node[below, black] {$2a$}
+        --
+        (3,1)
+        --
+        (3,0) node[below, black] {$3a$}
+        --
+        (4,0) node[below, black] {$4a$}
+        --
+        (5,1)
+        --
+        (5,0);
+\end{tikzpicture} &
     \frac{1 - (1 + as) e^{-as}}{as^2 (1 - e^{-2as})} \\
 % 229
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0.5,1)
+        --
+        (0.5,0) node[below, black] {$\frac{a}{v}$}
+        --
+        (2,0) node[below, black] {$a$}
+        --
+        (2.5,1)
+        --
+        (2.5,0) node[below, black] {$a+\frac{a}{v}$}
+        --
+        (4,0) node[below, black] {$2a$}
+        --
+        (4.5,1)
+        --
+        (4.5,0)
+        --
+        (5,0);
+\end{tikzpicture} &
     \frac{v - (v + as) e^{-\frac{as}{v}}}{as^2 (1 - e^{-as})} \\
 % 230
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0.5,0.5)
+        --
+        (1,0.5)
+        --
+        (1,0) node[below, black] {$a$}
+        --
+        (1.5,0.5)
+        --
+        (2,0.5)
+        --
+        (2,0) node[below, black] {$2a$}
+        --
+        (2.5,0.5)
+        --
+        (3,0.5)
+        --
+        (3,0) node[below, black] {$3a$}
+        --
+        (3.5,0.5)
+        --
+        (4,0.5)
+        --
+        (4,0) node[below, black] {$4a$}
+        --
+        (4.5,0.5)
+        --
+        (5,0.5)
+        --
+        (5,0)
+        --
+        (5.2,0);
+    \draw[dotted] (-0.2,0.5) node[left] {$\frac{1}{\mu}$} -- (5,0.5);
+    \draw[dotted] (0.5,0.5) -- (1,1) -- (1,0.5);
+    \draw[dotted] (1.5,0.5) -- (2,1) -- (2,0.5);
+    \draw[dotted] (2.5,0.5) -- (3,1) -- (3,0.5);
+    \draw[dotted] (3.5,0.5) -- (4,1) -- (4,0.5);
+    \draw[dotted] (4.5,0.5) -- (5,1) -- (5,0.5);
+    \draw[dotted] (0.5,0.5) -- (0.5,0) node[below] {$\frac{a}{\mu}$};
+\end{tikzpicture} &
     \frac{\mu - \mu e^{-\frac{as}{\mu}} - as e^{-as}}{a\mu s^2 (1 - e^{-as})} \\
 % 231
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0.5,0.5)
+        --
+        (1,0.5)
+        --
+        (1,0) node[below, black] {$a$}
+        --
+        (2,0) node[below, black] {$2a$}
+        --
+        (2.5,0.5)
+        --
+        (3,0.5)
+        --
+        (3,0) node[below, black] {$3a$}
+        --
+        (4,0) node[below, black] {$4a$}
+        --
+        (4.5,0.5)
+        --
+        (5,0.5)
+        --
+        (5,0)
+        --
+        (5,0);
+    \draw[dotted] (-0.2,0.5) node[left] {$\frac{1}{\mu}$} -- (5,0.5);
+    \draw[dotted] (0.5,0.5) -- (1,1) -- (1,0.5);
+    \draw[dotted] (2.5,0.5) -- (3,1) -- (3,0.5);
+    \draw[dotted] (4.5,0.5) -- (5,1) -- (5,0.5);
+    \draw[dotted] (0.5,0.5) -- (0.5,0) node[below] {$\frac{a}{\mu}$};
+\end{tikzpicture} &
     \frac{\mu - \mu e^{-\frac{as}{\mu}} - as e^{-as}}{a \mu s^2 (1 - e^{-2as})} \\
 % 232
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0.5,0.5)
+        --
+        (1,0.5)
+        --
+        (1,0) node[below, black] {$\frac{a}{v}$}
+        --
+        (2,0) node[below, black] {$a$}
+        --
+        (2.5,0.5)
+        --
+        (3,0.5)
+        --
+        (3,0)
+        --
+        (4,0) node[below, black] {$2a$}
+        --
+        (4.5,0.5)
+        --
+        (5,0.5)
+        --
+        (5,0)
+        --
+        (5,0);
+    \draw[dotted] (-0.2,0.5) node[left] {$\frac{1}{\mu}$} -- (5,0.5);
+    \draw[dotted] (0.5,0.5) -- (1,1) -- (1,0.5);
+    \draw[dotted] (2.5,0.5) -- (3,1) -- (3,0.5);
+    \draw[dotted] (4.5,0.5) -- (5,1) -- (5,0.5);
+    \draw[dotted] (0.5,0.5) -- (0.5,0) node[below] {$\frac{a}{v\mu}$};
+\end{tikzpicture} &
     \frac{\mu v - \mu v e^{-\frac{as}{v \mu}} - as e^{-\frac{as}{v}}}{a \mu s^2 (1 - e^{-as})} \\
 % 233
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-1.2) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[-] (-0.1,-1) node[left] {$-1$} -- (0.1,-1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0,-1)
+        --
+        (2,1)
+        --
+        (2,0) node[below left, black] {$a$}
+        --
+        (2,-1)
+        --
+        (4,1)
+        --
+        (4,0) node[below left, black] {$2a$}
+        --
+        (4,-1)
+        --
+        (5,0);
+\end{tikzpicture} &
     \frac{2 - as - (2 + as) e^{-as}}{as^2 (1 - e^{-as})} \\
 % 234
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-1.2) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[-] (-0.1,-1) node[left] {$-1$} -- (0.1,-1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0,-0.5)
+        --
+        (0.5,-0.5)
+        --
+        (1.5,0.5)
+        --
+        (2,0.5)
+        --
+        (2,0) node[below left, black] {$a$}
+        --
+        (2,-0.5)
+        --
+        (2.5,-0.5)
+        --
+        (3.5,0.5)
+        --
+        (4,0.5)
+        --
+        (4,0) node[below left, black] {$2a$}
+        --
+        (4,-0.5)
+        --
+        (4.5,-0.5)
+        --
+        (5,0);
+    \draw[dotted] (-0.2, 0.5) node[left] {$ \frac{1}{\mu}$} -- (5, 0.5);
+    \draw[dotted] (-0.2,-0.5) node[left] {$-\frac{1}{\mu}$} -- (5,-0.5);
+    \draw[dotted] (1.5, 0.5) -- (2, 1) -- (2, 0.5);
+    \draw[dotted] (3.5, 0.5) -- (4, 1) -- (4, 0.5);
+    \draw[dotted] (0,-0.5) -- (0,-1) -- (0.5,-0.5);
+    \draw[dotted] (2,-0.5) -- (2,-1) -- (2.5,-0.5);
+    \draw[dotted] (4,-0.5) -- (4,-1) -- (4.5,-0.5);
+\end{tikzpicture} &
     \frac{2 \mu e^{-\frac{as}{2}} \left(e^{\frac{as}{2 \mu}} - e^{-\frac{as}{2 \mu}}\right) - as (1 + e^{-as})}{a \mu s^2 (1 - e^{-as})} \\
 % 235
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[-] (-0.1,-1) node[left] {$-1$} -- (0.1,-1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0,-1)
+        --
+        (1,1)
+        --
+        (2,-1)
+        --
+        (3,1)
+        --
+        (4,-1)
+        --
+        (5,1)
+        --
+        (5.2,0.6);
+    \draw (1,0) node[below] {$a$};
+    \draw (2,0) node[below] {$2a$};
+    \draw (3,0) node[below] {$3a$};
+    \draw (4,0) node[below] {$4a$};
+\end{tikzpicture} &
     \frac{2 (1 - e^{-as})}{as^2 (1 + e^{-as})} - \frac{1}{s} \\
 % 236
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-1.2) -- (0,1.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[-] (-0.1,-1) node[left] {$-1$} -- (0.1,-1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0,-0.5)
+        --
+        (0.25,-0.5)
+        --
+        (0.75,0.5)
+        --
+        (1.25,0.5)
+        --
+        (1.75,-0.5)
+        --
+        (2.25,-0.5)
+        --
+        (2.75,0.5)
+        --
+        (3.25,0.5)
+        --
+        (3.75,-0.5)
+        --
+        (4.25,-0.5)
+        --
+        (4.75,0.5)
+        --
+        (5.2,0.5);
+    \draw[dotted] (-0.2, 0.5) node[left] {$ \frac{1}{\mu}$} -- (5, 0.5);
+    \draw[dotted] (-0.2,-0.5) node[left] {$-\frac{1}{\mu}$} -- (5,-0.5);
+    \draw (1,0) node[below] {$a$};
+    \draw (2,0) node[below] {$2a$};
+    \draw (3,0) node[below] {$3a$};
+    \draw (4,0) node[below] {$4a$};
+    \draw[dotted] (0.75,0.5) -- (1,1) -- (1.25,0.5);
+    \draw[dotted] (2.75,0.5) -- (3,1) -- (3.25,0.5);
+    \draw[dotted] (4.75,0.5) -- (5,1) -- (5.25,0.5);
+    \draw[dotted] (0,-1) -- (0.25,-0.5);
+    \draw[dotted] (1.75,-0.5) -- (2,-1) -- (2.25,-0.5);
+    \draw[dotted] (3.75,-0.5) -- (4,-1) -- (4.25,-0.5);
+\end{tikzpicture} &
     \frac{2 \left(e^{-\frac{\mu - 1}{2 \mu}as} - e^{-\frac{\mu + 1}{2\mu}}\right)}{as^2 (1 + e^{-as})} - \frac{1}{\mu s} \\
 % 237
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,4.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[-] (-0.1,2) node[left] {$2$} -- (0.1,2);
+    \draw[-] (-0.1,3) node[left] {$3$} -- (0.1,3);
+    \draw[-] (-0.1,4) node[left] {$4$} -- (0.1,4);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (1,0)
+        --
+        (1,1)
+        --
+        (2,1)
+        --
+        (2,2)
+        --
+        (3,2)
+        --
+        (3,3)
+        --
+        (4,3)
+        --
+        (4,3.2);
+    \draw (1,0) node[below] {$1$};
+    \draw (2,0) node[below] {$2$};
+    \draw (3,0) node[below] {$3$};
+    \draw (4,0) node[below] {$4$};
+    \draw (5,0) node[below] {$5$};
+\end{tikzpicture} &
     \frac{1}{s (e^s - 1)} \\
 % 238
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,3.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[-] (-0.1,2) node[left] {$2$} -- (0.1,2);
+    \draw[-] (-0.1,3) node[left] {$3$} -- (0.1,3);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (1,0)
+        --
+        (1,1)
+        --
+        (2,1)
+        --
+        (2,2)
+        --
+        (3,2)
+        --
+        (3,3)
+        --
+        (4,3)
+        --
+        (4,3.2);
+    \draw (1,0) node[below] {$a$};
+    \draw (2,0) node[below] {$2a$};
+    \draw (3,0) node[below] {$3a$};
+    \draw (4,0) node[below] {$4a$};
+\end{tikzpicture} &
     \frac{1}{s (e^{as} - 1)} \\
 % 239
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,3.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[-] (-0.1,2) node[left] {$2$} -- (0.1,2);
+    \draw[-] (-0.1,3) node[left] {$3$} -- (0.1,3);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0,1)
+        --
+        (1,1)
+        --
+        (1,2)
+        --
+        (2,2)
+        --
+        (2,3)
+        --
+        (3,3)
+        --
+        (3,3.2);
+    \draw (1,0) node[below] {$1$};
+    \draw (2,0) node[below] {$2$};
+    \draw (3,0) node[below] {$3$};
+\end{tikzpicture} &
     \frac{1}{s (1 - e^{-s})} \\
 % 240
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,3.2) node[above left] {$f(t)$};
+    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[-] (-0.1,2) node[left] {$2$} -- (0.1,2);
+    \draw[-] (-0.1,3) node[left] {$3$} -- (0.1,3);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (0,0)
+        --
+        (0,1)
+        --
+        (1,1)
+        --
+        (1,2)
+        --
+        (2,2)
+        --
+        (2,3)
+        --
+        (3,3)
+        --
+        (3,3.2);
+    \draw (1,0) node[below] {$a$};
+    \draw (2,0) node[below] {$2a$};
+    \draw (3,0) node[below] {$3a$};
+\end{tikzpicture} &
     \frac{1}{s (1 - e^{-as})} \\
 \end{array} \]
 
 \[ \begin{array}{@{}l@{ ~ \laplace ~ }l@{}}
 % 241
-\left\lbrace\begin{array}{l}
->>>FOSA Grafik \\
-\end{array}\right. &
+\begin{tikzpicture}[domain=0:5, scale=\graphtabscale, every node/.style={scale=\graphtabscale}]
+    \draw[->] (-1,0) -- (5.5,0) node[below] {$t$};
+    \draw[->] (0,-0.1) -- (0,5.2) node[above left] {$f(t)$};
+%    \draw[-] (-0.1,1) node[left] {$1$} -- (0.1,1);
+    \draw[thick, red]
+        (-0.5,0)
+        --
+        (1,0) node[below, black] {$a$}
+        --
+        (2,0.5)
+        --
+        (3,1.5)
+        --
+        (4,3)
+        --
+        (5,5);
+    \draw[dotted] (0,0.5) node[left] {$ a$} -- (2,0.5) -- (2,0) node[below] {$2a$};
+    \draw[dotted] (0,1.5) node[left] {$3a$} -- (3,1.5) -- (3,0) node[below] {$3a$};
+    \draw[dotted] (0,3)   node[left] {$6a$} -- (4,3)   -- (4,0) node[below] {$4a$};
+\end{tikzpicture} &
     \frac{1}{s^2 (e^{as} - 1)} \\
 % 242
 \frac{a^{[t]} - 1}{a - 1} &

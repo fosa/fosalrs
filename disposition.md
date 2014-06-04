@@ -86,4 +86,4 @@
   - [ ] Einstellregeln PID-Regler -> daniw
 
 # Anhang
-  - [ ] Tabelle von Laplace-Transformationen -> daniw
+  - [x] Tabelle von Laplace-Transformationen -> daniw

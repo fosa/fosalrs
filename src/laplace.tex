@@ -22,11 +22,11 @@
     \mathcal{L} \lbrace u(t) \rbrace = U(s)
 \]
 \[ 
-    U(s) = \int\limits_{0}^{\infty} u(t) \cdot e^{-st} ~ dt 
+    U(s) = \int\limits_{0^-}^{\infty} u(t) \cdot e^{-st} ~ dt 
 \]
 \[ 
     \mathcal{L} \lbrace u(t) \rbrace 
-    = \int\limits_{0}^{\infty} u(t) \cdot e^{-st} ~ dt \qquad , s \in \mathbb{C} 
+    = \int\limits_{0^-}^{\infty} u(t) \cdot e^{-st} ~ dt \qquad , s \in \mathbb{C} 
     = U(s) 
 \]
 \[ 
@@ -45,7 +45,7 @@
     = c \cdot \mathcal{L}\lbrace u(t) \rbrace 
 \]
 \[ 
-    \mathcal{L}\lbrace u_1(t) \cdot u_2(t) \rbrace 
+    \mathcal{L}\lbrace u_1(t) + u_2(t) \rbrace 
     = \mathcal{L}\lbrace u_1(t) \rbrace + \mathcal{L}\lbrace u_2(t) \rbrace 
 \]
 
@@ -57,13 +57,17 @@
     \dot{u}(t) ~ \laplace ~ s \cdot U(s) - u(0^-) 
 \]
 \[ 
+    \ddot{u}(t) ~ \laplace ~ s^2 \cdot U(s) - s \cdot u(0^-) 
+    - \dot{u}(0^-)
+\]
+\[ 
     \dddot{u}(t) ~ \laplace ~ s^3 \cdot U(s) - s^2 \cdot u(0^-) 
     - s \cdot \dot{u}(0^-) - \ddot{u}(0^-) 
 \]
 Häufig: Anfangsbedingungen $= 0$.
 Dann:
 \[ 
-    \frac{d^n}{dt^n} u(t) ~ \laplace ~ s^n \cdot U(S) 
+    \frac{d^n}{dt^n} u(t) ~ \laplace ~ s^n \cdot U(s) 
 \]
 
 \subsection{Integrationssatz}
@@ -107,6 +111,7 @@ Ein Signal u(t) heisst kausal, wenn $u(t) = 0$ für $t < 0$.
 \]
 \[ 
     u(t) = \mathcal{L}^{-1} \lbrace U(s) \rbrace
+    = \frac{1}{2\pi j} \int\limits_{e-j\infty}^{e+j\infty} F(s) e^{st} ~ ds
 \]
 
 \subsection{Eindeutigkeitssatz}
@@ -114,14 +119,7 @@ Ein Signal u(t) heisst kausal, wenn $u(t) = 0$ für $t < 0$.
     U(s) = V(s) 
 \]
 \[ 
-    u(t) = v(t) \forall t \geq 0 
-\]
-Notation:
-\[ 
-    \mathcal{L} \{ u(t) \} = U(s) 
-\]
-\[ 
-    u(t) = \mathcal{L}^{-1} \{ U(s) \} 
+    u(t) = v(t) \qquad \forall t \geq 0 
 \]
 
 \subsection{Dämpfungssatz}
@@ -144,7 +142,7 @@ Bemerkung: \\
 Wenn $U(s) = \dfrac{Z(s)}{N(s)}$ eine rationale Funktion mit
 $\text{Grad}(Z(s)) < \text{Grad}(N(s))$, dann ist u(t) sprungstetig
 
-\section{Endwertsatz }
+\section{Endwertsatz}
 Sei $u(t)$ ein Signal, für das der Endwert
 $u(\infty) = \lim\limits_{t \to \infty} u(t)$ existiert. \\
 Dann gilt:
@@ -154,7 +152,7 @@ u(\infty) = \lim\limits_{s \to 0} s \cdot U(s)
 Kriterium: \\
 Wenn alle Polstellen von $s \cdot U(s)$ links von der imaginären Achse liegen,
 dann existiert der Endwert $u(\infty)$. \\
-Mit anderen Worten: Der Realteil aller Nullstellen muss negativ sein.
+Mit anderen Worten: Der Realteil aller Pole muss negativ sein.
 
 \section{DGL lösen mittels Laplace-Transformation}
 \begin{enumerate}
@@ -182,7 +180,7 @@ gilt:
     (u * v)(t) = \int\limits_{0}^{t} u(\tau) v(t - \tau) ~ d \tau 
 \]
 Faltungssatz:
-Sind $u(t), v(t)$ kausal, so gilt:
+Sind $u(t), v(t)$ sprungstetig und kausal, so gilt:
 \[ 
     (u * v) (t) ~ \laplace ~ U(s) \cdot V(s) 
 \]
@@ -190,12 +188,12 @@ Sind $u(t), v(t)$ kausal, so gilt:
 \section{Impulsantwort}
 Ist $g(t)$ die Gewichtsfunktion eines LZI Systems, so gilt
 \[ 
-    v(t) = (g * u)(t) 
+    y(t) = (g * u)(t) 
 \]
 Fazit: Impulsantwort = Gewichtsfunktion
 
 \section{Sprungantwort}
-Definition: Sprungantwort = Antwort auf $\sigma(t) = h(t)$
+Definition: Sprungantwort $h(t)$ = Antwort auf $\sigma(t)$
 (AW nicht unbedingt 0) \\
 Bemerkung: Bei LZI Systemen:
 \[ 

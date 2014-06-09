@@ -41,15 +41,12 @@ Obertöne. \\
 \[ b_n = 0 \quad \text{bei geraden Funktionen (Cosinus)}\]
 
 \section{Komplexe oder Exponentialform der Fourier-Reihe}
-Erinnerung: Eulersche Formel: 
 \[ e^{j x} = \cos(x) + j \sin(x) \qquad , x \in \mathbb{R} \]
-\[ e^{- j x} = \cos(-x) + j \sin(-x) \]
-\[ e^{- j x} = \cos(x) - j \sin(x) \]
-\[ e^{j x} = \cos(x) + j \sin(x) \]
+\[ e^{- j x} = \cos(-x) + j \sin(-x) = \cos(x) - j \sin(x) \]
 \[ e^{jx} + e^{-jx} = 2 \cos(x) \]
-\[ \boxed{\cos(x) = \frac{1}{2} (e^{jx} + e^{-jx})} \]
 \[ e^{jx} - e^{-jx} = 2 j \sin(x) \]
-\[ \boxed{\sin(x) = \frac{1}{2j} (e^{jx} - e^{-jx})} \]
+\[ \to \cos(x) = \frac{1}{2} (e^{jx} + e^{-jx}) \]
+\[ \to \sin(x) = \frac{1}{2j} (e^{jx} - e^{-jx}) \]
 Wendet man nun diese zwei Formeln auf die Fourier-Reihe an, ergibt sich die komplexe Form der Fourier-Reihe:
 \[ u(t) = c_0 + \sum\limits_{n = 1}^{\infty} c_n e^{j n \omega_0 t} \]
 \[ c_n = \frac{1}{T} \int\limits_{-\frac{T}{2}}^{\frac{T}{2}} 
@@ -61,13 +58,9 @@ u(t) \cdot e^{-j n \omega_0 t} ~ dt \]
 
 \section{Definition für kontinuierliche Spektren}
  Die Fourier-Transformierte des Signals $u(t)$ ist 
-\[ \boxed{U(\omega) = \mathcal{F}\{ u(t) \} = \int\limits_{-\infty}^{\infty} 
-u(t) e^{-\omega t j} ~dt } \]
+\[ U(\omega) = \mathcal{F}\{ u(t) \} = \int\limits_{-\infty}^{\infty} 
+u(t) e^{-\omega t j} ~dt \]
 Man nennt $U(\omega)$ Spektraldichte oder Spektralfunktion. 
-
-\subsection{Umkehrformel}
-\[ \boxed{u(t) = \frac{1}{2 \pi} \int\limits_{-\infty}^{\infty} 
-U(\omega) e^{\omega t j} ~ d\omega} \]
 
 \section{Exponentialform (komplexe Form)}
 \[ \boxed{F(\omega) = |F(\omega)| \cdot e^{j\varphi(\omega)} = A(\omega) \cdot e^{j\varphi(\omega)}}   \]
@@ -76,8 +69,7 @@ U(\omega) e^{\omega t j} ~ d\omega} \]
 \[ \varphi (\omega) = arg(F(\omega)): \quad \text{Phasenspektrum} \]
 
 \section{Inverse Fouriertransformation}
-Siehe Herleitung der Fouriertransformation: 
-\[ u(t) = \frac{1}{2 \pi}  \int\limits_{-\infty}^{\infty} U(t) \cdot e^{\omega t j} ~ d\omega \]
+\[ u(t) = \frac{1}{2 \pi}  \int\limits_{-\infty}^{\infty} U(\omega) \cdot e^{\omega t j} ~ d\omega \]
 \[ U(\omega) = \mathcal{F} \{ u(t) \} \]
 \[ u(t) = \mathcal{F}^{-1} \{ U(\omega) \} \]
 

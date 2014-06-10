@@ -87,6 +87,108 @@ Regelstrecken mit Verzögerung und ohne Überschwingen
         \draw[<->] (0.8,-0.3) -- node[below] {$t_g$} (2.8,-0.3);
     \end{tikzpicture}
 \end{figure}
+\\
+\begin{tabular}{@{}ll}
+    $K_s$: & Streckenverstärkung\\
+    $t_u$: & Verzugszeit\\
+    $t_g$: & Ausgleichszeit\\
+\end{tabular}
+
+\subsubsection{Optimierung des Störverhaltens, Aperiodischer Regelverlauf}
+\begin{table}[h!]
+    \[
+        \begin{array}{lccc}
+            &
+                K_R &
+                T_N &
+                T_V \\\\
+            \text{P} &
+                0.3 \cdot \frac{t_g}{t_u \cdot K_S} &
+                - &
+                - \\\\
+            \text{PI} &
+                0.6 \cdot \frac{t_g}{t_u \cdot K_S} &
+                4.0 \cdot t_u &
+                - \\\\
+            \text{PID} &
+                0.95 \cdot \frac{t_g}{t_u \cdot K_S} &
+                2.4 \cdot t_u &
+                0.42 \cdot t_u \\\\
+        \end{array}
+    \]
+\end{table}
+
+\subsubsection{Optimierung des Störverhaltens, 20\% Überschwingen}
+\begin{table}[h!]
+    \[
+        \begin{array}{lccc}
+            &
+                K_R &
+                T_N &
+                T_V \\\\
+            \text{P} &
+                0.7 \cdot \frac{t_g}{t_u \cdot K_S} &
+                - &
+                - \\\\
+            \text{PI} &
+                0.7 \cdot \frac{t_g}{t_u \cdot K_S} &
+                2.3 \cdot t_u &
+                - \\\\
+            \text{PID} &
+                1.2 \cdot \frac{t_g}{t_u \cdot K_S} &
+                2.0 \cdot t_u &
+                0.42 \cdot t_u \\\\
+        \end{array}
+    \]
+\end{table}
+
+\subsubsection{Optimierung des Führungsverhaltens, Aperiodischer Regelverlauf}
+\begin{table}[h!]
+    \[
+        \begin{array}{lccc}
+            &
+                K_R &
+                T_N &
+                T_V \\\\
+            \text{P} &
+                0.3 \cdot \frac{t_g}{t_u \cdot K_S} &
+                - &
+                - \\\\
+            \text{PI} &
+                0.35 \cdot \frac{t_g}{t_u \cdot K_S} &
+                1.2 \cdot t_g &
+                - \\\\
+            \text{PID} &
+                0.6 \cdot \frac{t_g}{t_u \cdot K_S} &
+                1.0 \cdot t_g &
+                0.5 \cdot t_u \\\\
+        \end{array}
+    \]
+\end{table}
+
+\subsubsection{Optimierung des Führungsverhaltens, 20\% Überschwingen}
+\begin{table}[h!]
+    \[
+        \begin{array}{lccc}
+            &
+                K_R &
+                T_N &
+                T_V \\\\
+            \text{P} &
+                0.7 \cdot \frac{t_g}{t_u \cdot K_S} &
+                - &
+                - \\\\
+            \text{PI} &
+                0.6 \cdot \frac{t_g}{t_u \cdot K_S} &
+                1.0 \cdot t_g &
+                - \\\\
+            \text{PID} &
+                0.95 \cdot \frac{t_g}{t_u \cdot K_S} &
+                1.35 \cdot t_g &
+                0.47 \cdot t_u \\\\
+        \end{array}
+    \]
+\end{table}
 
 \subsection{Aström}
 

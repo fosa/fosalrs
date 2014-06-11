@@ -21,56 +21,52 @@ Die Regelstrecke wird als $PT_1$ Glied mit Totzeit betrachtet.
 \[ G_S(s) = \frac{K_S \cdot e^{-T_t}}{1 + s \cdot T_S} \]
 
 \subsubsection{Übergangsmethode}
-\begin{table}[h!]
-    \[
-        \begin{array}{lccc}
-            &
-                K_R &
-                T_N &
-                T_V \\\\
-            \text{P} &
-                \frac{T_S}{K_S \cdot T_t} &
-                - &
-                - \\\\
-            \text{PI} &
-                \frac{0.9 \cdot T_S}{K_S \cdot T_t} &
-                3.3 \cdot T_t &
-                - \\\\
-            \text{PID} &
-                \frac{1.2 \cdot T_S}{K_S \cdot T_t} &
-                2.0 \cdot T_t &
-                0.5 \cdot T_t \\\\
-        \end{array}
-    \]
-\end{table}
+\[
+    \begin{array}{lccc}
+        &
+            K_R &
+            T_N &
+            T_V \\\\
+        \text{P} &
+            \frac{T_S}{K_S \cdot T_t} &
+            - &
+            - \\\\
+        \text{PI} &
+            \frac{0.9 \cdot T_S}{K_S \cdot T_t} &
+            3.3 \cdot T_t &
+            - \\\\
+        \text{PID} &
+            \frac{1.2 \cdot T_S}{K_S \cdot T_t} &
+            2.0 \cdot T_t &
+            0.5 \cdot T_t \\\\
+    \end{array}
+\]
 
 \subsubsection{Stabilitätsgrenzenmethode}
 $K_R$ wird erhöht, bis eine Schwingung auftritt. $\to K_R = K_{krit}$\\
 Dabei wird die Schwingtauer $T_{krit}$ bestimmt. \\\\
 Alternativ können $K_{krit}$ und $T_{krit}$ auch aus dem Bodediagramm oder 
 aus der Nyquist Ortskurve gelesen werden. $T_{krit} = \frac{2 \pi}{\omega_{krit}}$
-\begin{table}[h!]
-    \[
-        \begin{array}{lccc}
-            &
-                K_R &
-                T_N &
-                T_V \\\\
-            \text{P} &
-                0.5 \cdot K_{krit} &
-                - &
-                - \\\\
-            \text{PI} &
-                0.45 \cdot K_{krit} &
-                0.83 \cdot T_{krit} &
-                - \\\\
-            \text{PID} &
-                0.6 \cdot K_{krit} &
-                0.5 \cdot T_{krit} &
-                0.125 \cdot T_{krit} \\\\
-        \end{array}
-    \]
-\end{table}
+\[
+    \begin{array}{lccc}
+        &
+            K_R &
+            T_N &
+            T_V \\\\
+        \text{P} &
+            0.5 \cdot K_{krit} &
+            - &
+            - \\\\
+        \text{PI} &
+            0.45 \cdot K_{krit} &
+            0.83 \cdot T_{krit} &
+            - \\\\
+        \text{PID} &
+            0.6 \cdot K_{krit} &
+            0.5 \cdot T_{krit} &
+            0.125 \cdot T_{krit} \\\\
+    \end{array}
+\]
 
 
 \subsection{Chien, Hrones und Reswick}
@@ -95,100 +91,92 @@ Regelstrecken mit Verzögerung und ohne Überschwingen
 \end{tabular}
 
 \subsubsection{Optimierung des Störverhaltens, Aperiodischer Regelverlauf}
-\begin{table}[h!]
-    \[
-        \begin{array}{lccc}
-            &
-                K_R &
-                T_N &
-                T_V \\\\
-            \text{P} &
-                0.3 \cdot \frac{t_g}{t_u \cdot K_S} &
-                - &
-                - \\\\
-            \text{PI} &
-                0.6 \cdot \frac{t_g}{t_u \cdot K_S} &
-                4.0 \cdot t_u &
-                - \\\\
-            \text{PID} &
-                0.95 \cdot \frac{t_g}{t_u \cdot K_S} &
-                2.4 \cdot t_u &
-                0.42 \cdot t_u \\\\
-        \end{array}
-    \]
-\end{table}
+\[
+    \begin{array}{lccc}
+        &
+            K_R &
+            T_N &
+            T_V \\\\
+        \text{P} &
+            0.3 \cdot \frac{t_g}{t_u \cdot K_S} &
+            - &
+            - \\\\
+        \text{PI} &
+            0.6 \cdot \frac{t_g}{t_u \cdot K_S} &
+            4.0 \cdot t_u &
+            - \\\\
+        \text{PID} &
+            0.95 \cdot \frac{t_g}{t_u \cdot K_S} &
+            2.4 \cdot t_u &
+            0.42 \cdot t_u \\\\
+    \end{array}
+\]
 
 \subsubsection{Optimierung des Störverhaltens, 20\% Überschwingen}
-\begin{table}[h!]
-    \[
-        \begin{array}{lccc}
-            &
-                K_R &
-                T_N &
-                T_V \\\\
-            \text{P} &
-                0.7 \cdot \frac{t_g}{t_u \cdot K_S} &
-                - &
-                - \\\\
-            \text{PI} &
-                0.7 \cdot \frac{t_g}{t_u \cdot K_S} &
-                2.3 \cdot t_u &
-                - \\\\
-            \text{PID} &
-                1.2 \cdot \frac{t_g}{t_u \cdot K_S} &
-                2.0 \cdot t_u &
-                0.42 \cdot t_u \\\\
-        \end{array}
-    \]
-\end{table}
+\[
+    \begin{array}{lccc}
+        &
+            K_R &
+            T_N &
+            T_V \\\\
+        \text{P} &
+            0.7 \cdot \frac{t_g}{t_u \cdot K_S} &
+            - &
+            - \\\\
+        \text{PI} &
+            0.7 \cdot \frac{t_g}{t_u \cdot K_S} &
+            2.3 \cdot t_u &
+            - \\\\
+        \text{PID} &
+            1.2 \cdot \frac{t_g}{t_u \cdot K_S} &
+            2.0 \cdot t_u &
+            0.42 \cdot t_u \\\\
+    \end{array}
+\]
 
 \subsubsection{Optimierung des Führungsverhaltens, Aperiodischer Regelverlauf}
-\begin{table}[h!]
-    \[
-        \begin{array}{lccc}
-            &
-                K_R &
-                T_N &
-                T_V \\\\
-            \text{P} &
-                0.3 \cdot \frac{t_g}{t_u \cdot K_S} &
-                - &
-                - \\\\
-            \text{PI} &
-                0.35 \cdot \frac{t_g}{t_u \cdot K_S} &
-                1.2 \cdot t_g &
-                - \\\\
-            \text{PID} &
-                0.6 \cdot \frac{t_g}{t_u \cdot K_S} &
-                1.0 \cdot t_g &
-                0.5 \cdot t_u \\\\
-        \end{array}
-    \]
-\end{table}
+\[
+    \begin{array}{lccc}
+        &
+            K_R &
+            T_N &
+            T_V \\\\
+        \text{P} &
+            0.3 \cdot \frac{t_g}{t_u \cdot K_S} &
+            - &
+            - \\\\
+        \text{PI} &
+            0.35 \cdot \frac{t_g}{t_u \cdot K_S} &
+            1.2 \cdot t_g &
+            - \\\\
+        \text{PID} &
+            0.6 \cdot \frac{t_g}{t_u \cdot K_S} &
+            1.0 \cdot t_g &
+            0.5 \cdot t_u \\\\
+    \end{array}
+\]
 
 \subsubsection{Optimierung des Führungsverhaltens, 20\% Überschwingen}
-\begin{table}[h!]
-    \[
-        \begin{array}{lccc}
-            &
-                K_R &
-                T_N &
-                T_V \\\\
-            \text{P} &
-                0.7 \cdot \frac{t_g}{t_u \cdot K_S} &
-                - &
-                - \\\\
-            \text{PI} &
-                0.6 \cdot \frac{t_g}{t_u \cdot K_S} &
-                1.0 \cdot t_g &
-                - \\\\
-            \text{PID} &
-                0.95 \cdot \frac{t_g}{t_u \cdot K_S} &
-                1.35 \cdot t_g &
-                0.47 \cdot t_u \\\\
-        \end{array}
-    \]
-\end{table}
+\[
+    \begin{array}{lccc}
+        &
+            K_R &
+            T_N &
+            T_V \\\\
+        \text{P} &
+            0.7 \cdot \frac{t_g}{t_u \cdot K_S} &
+            - &
+            - \\\\
+        \text{PI} &
+            0.6 \cdot \frac{t_g}{t_u \cdot K_S} &
+            1.0 \cdot t_g &
+            - \\\\
+        \text{PID} &
+            0.95 \cdot \frac{t_g}{t_u \cdot K_S} &
+            1.35 \cdot t_g &
+            0.47 \cdot t_u \\\\
+    \end{array}
+\]
 
 \subsection{Aström}
 

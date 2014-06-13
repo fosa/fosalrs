@@ -1,0 +1,74 @@
+% coding:utf-8
+
+%FOSALRS, a LaTeX-Code for a electrical summary of control theory
+%Copyright (C) 2013, Daniel Winz, Ervin Mazlagic
+
+%This program is free software; you can redistribute it and/or
+%modify it under the terms of the GNU General Public License
+%as published by the Free Software Foundation; either version 2
+%of the License, or (at your option) any later version.
+
+%This program is distributed in the hope that it will be useful,
+%but WITHOUT ANY WARRANTY; without even the implied warranty of
+%MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%GNU General Public License for more details.
+%----------------------------------------
+
+\subsection{$I$}
+DGL: 
+\[
+    x_a(t) = K_I \cdot \int\limits_{0}^{t} x_e(\tau) ~ d\tau + x_a(0)
+\]
+Übertragungsfunktion: 
+\[
+    G(s) = \frac{K_I}{s}
+\]
+Sprungantwort: 
+\[
+    h(t) = K_I \cdot t 
+\]
+\begin{figure}[h!]
+    \begin{tikzpicture}
+        \draw[->] (-0.2,0) -- (5,0);
+        \draw[->] (0,-0.2) -- (0,2.2);
+        \draw[thick, red] (-0.2,0) -- (0,0) -- (5,2);
+    \end{tikzpicture}
+\end{figure}
+\FloatBarrier
+\noindent
+Pol-Nullstellen-Plan: 
+\begin{figure}[h!]
+    \begin{tikzpicture}
+        \draw[->] (-2,0) -- (2,0) node[above right] {$Re$};
+        \draw[->] (0,-2) -- (0,2) node[above right] {$Im$};
+        \node[] at (0,0) {X};
+    \end{tikzpicture}
+\end{figure}
+\clearpage
+\noindent
+Bode-Diagramm: 
+\begin{figure}[h!]
+    \begin{tikzpicture}
+        \draw[->] (-0.2,0) -- (5.2,0) node[above right] {$\omega$};
+        \draw[->] (0,-2) -- (0,2.2) node[above right] {$|g|$};
+        \draw[thick, red] (0,1) -- (5,-1);
+    \end{tikzpicture}
+\end{figure}
+\begin{figure}[h!]
+    \begin{tikzpicture}
+        \draw[->] (-0.2,0) -- (5.2,0) node[above right] {$\omega$};
+        \draw[->] (0,-2) -- (0,1.2) node[above right] {$\varphi$};
+        \draw[thick, red] (0,-1) node[left] {$-90^\circ$} -- (5,-1);
+    \end{tikzpicture}
+\end{figure}
+\FloatBarrier
+\noindent
+Ortskurve: 
+\begin{figure}[h!]
+    \begin{tikzpicture}
+        \draw[->] (-2,0) -- (2,0) node[above right] {$Re$};
+        \draw[->] (0,-2) -- (0,2) node[above right] {$Im$};
+        \draw[->, thick, red] (0,-1.5) -- (0,0);
+    \end{tikzpicture}
+\end{figure}
+\clearpage

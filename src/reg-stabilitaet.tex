@@ -148,49 +148,18 @@ belegt wird.
 
 
 \subsection{Nyquist}
-Das Nyquist-Kriterium wird unterteilt in zwei Anwendungsfälle.
+Mit dem Nyquist-Kriterium wird die Stabilität eines Regelkreises anhand des 
+offenen Kreises untersucht. 
 \begin{itemize}
-    \item das allgemeine Nyquist-Kriterium (am geschlossenen Regelkreis)
-    \item das spezielle Nyquist-Kriterium (am offenen Regelkreis)
+    \item spezielles Nyquist-Kriterium (offener Kreis stabil und maximal 
+        2 Pole mit einem Realteil von $0$)
+    \item allgemeines Nyquist-Kriterium (offener Kreis darf instabil sein)
 \end{itemize}
-
-\subsubsection{Allgemeines Nyquist-Kriterium}
-Das allgemeine Nyquist-Kriterium prüft die Stabilität des geschlossenen
-Regekreises anhand der Pole. 
-%
-\begin{figure}[h!]
-    \begin{signalflow}[node distance=15mm]
-        % Elemente
-        \tikzgrid{
-            \node[input]    (in)    {}          &
-            \node[adder]    (a1)    {}          &
-            \node[delay]    (d1)    {$G_0$}     &
-            \node[node]     (n1)    {}          &
-            \node[output]   (out)   {}
-        }
-        % Pfade
-        \path[r>] (in) -- (a1);
-        \path[r>] (a1) -- (d1);
-        \path[r>] (d1) -- (out);
-        \path[r>] (n1) -- ++(0,-0.5) -| node[left, pos=0.95] {$-$} (a1);
-    \end{signalflow}
-\end{figure}
-%
-Um dies zu prüfen, müssen zuerst die 
-Parameter $a$ und $r$ bestimmt werden. $a$ bezeichnet die Anzhal der Pole
-auf der imaginären Achse und $r$ die Anzhal der Pole rechtsseitig der
-imaginären Achse. Ist dann die folgende Bedingung 
-\[  
-    \Delta \varphi = a \frac{\pi}{2} + r \pi
-\]
-mit diesen Parametern erfüllt, wobei $\Delta \varphi$ den resultierenden 
-Winkel bezeichnet, dann ist $G_0$ stabil.
-
 
 \subsubsection{Spezielles Nyquist-Kriterium}
 Das spezielle Nyquist-Kriterium untersucht die Stabilität anhand der
 Phasenreserve des offenen Regelkreises. 
-Hierzu wird einfach die Rückführung getrennt. So wandelt sich die 
+Hierzu wird einfach die Rückführung getrennt. So wird die 
 Übertragungsfunktion zu
 \[  
     G(s) = \frac{G_0}{1+G_0} \Rightarrow G_{\text{offen}}(s) = G_0
@@ -217,6 +186,38 @@ Hierzu wird einfach die Rückführung getrennt. So wandelt sich die
     \end{signalflow}
 \end{figure}
 %
+
+\subsubsection{Allgemeines Nyquist-Kriterium}
+Das allgemeine Nyquist-Kriterium prüft die Stabilität des geschlossenen
+Regekreises anhand der Pole des offenen Kreises. 
+%
+% \begin{figure}[h!]
+%     \begin{signalflow}[node distance=15mm]
+%         % Elemente
+%         \tikzgrid{
+%             \node[input]    (in)    {}          &
+%             \node[adder]    (a1)    {}          &
+%             \node[delay]    (d1)    {$G_0$}     &
+%             \node[node]     (n1)    {}          &
+%             \node[output]   (out)   {}
+%         }
+%         % Pfade
+%         \path[r>] (in) -- (a1);
+%         \path[r>] (a1) -- (d1);
+%         \path[r>] (d1) -- (out);
+%         \path[r>] (n1) -- ++(0,-0.5) -| node[left, pos=0.95] {$-$} (a1);
+%     \end{signalflow}
+% \end{figure}
+%
+Um dies zu prüfen, müssen zuerst die 
+Parameter $a$ und $r$ bestimmt werden. $a$ bezeichnet die Anzahl der Pole
+auf der imaginären Achse und $r$ die Anzahl der Pole rechtsseitig der
+imaginären Achse. Ist dann die folgende Bedingung 
+\[  
+    \Delta \varphi = a \frac{\pi}{2} + r \pi
+\]
+mit diesen Parametern erfüllt, wobei $\Delta \varphi$ den resultierenden 
+Winkel bezeichnet, dann ist $G_0$ stabil.
 
 \subsection{Phasenreserve}
 \begin{figure}[h!]

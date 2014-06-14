@@ -18,14 +18,15 @@
 DGL: 
 \[
     x_a(t) = K_I \cdot \int\limits_{0}^{t} x_e(\tau) ~ d\tau + x_a(0)
+        = \frac{1}{T_I} \cdot \int\limits_{0}^{t} x_e(\tau) ~ d\tau + x_a(0)
 \]
 Übertragungsfunktion: 
 \[
-    G(s) = \frac{K_I}{s}
+    G(s) = \frac{K_I}{s} = \frac{1}{T_I \cdot s}
 \]
 Sprungantwort: 
 \[
-    h(t) = K_I \cdot t 
+    h(t) = K_I \cdot t = \frac{t}{T_I}
 \]
 \begin{figure}[h!]
     \begin{tikzpicture}

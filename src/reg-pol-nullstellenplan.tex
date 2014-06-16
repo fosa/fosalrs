@@ -78,14 +78,14 @@ wie die Stabilität zu bewerten ist.
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
             \draw[green, thick, samples=200] plot[id=A]
-                function{-0.3*exp(-4*x)*(sin(50*x)+cos(50*x))+0.3};
+                function{-0.3*exp(-10*x)*(sin(50*x)+cos(50*x))+0.3};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(b1)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
             \draw[green, thick, samples=200] plot[id=A]
-                function{-0.3*exp(-10*x)*(sin(50*x)+cos(50*x))+0.3};
+                function{-0.3*exp(-4*x)*(sin(50*x)+cos(50*x))+0.3};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(c1)}]
@@ -105,24 +105,28 @@ wie die Stabilität zu bewerten ist.
         \begin{scope}[shift={(d1)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
+            \draw[green, thick, samples=200] plot[id=A]
+                function{-0.02*exp(5*x)*(sin(50*x)+cos(50*x))+0.02};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(e1)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
+            \draw[green, thick, samples=200] plot[id=A]
+                function{-0.002*exp(10*x)*(sin(50*x)+cos(50*x))+0.002};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         %
         \begin{scope}[shift={(a2)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
-            \draw[green, thick] (0.5,0.5) parabola bend (0.2,0.5) (0,0);
+            \draw[red, thick] (0.5,0.5) parabola bend (0.2,0.5) (0,0);
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(b2)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
-            \draw[green, thick] (0.5,0.5) parabola bend (0.5,0.5) (0,0);
+            \draw[red, thick] (0.5,0.5) parabola bend (0.5,0.5) (0,0);
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(c2)}]
@@ -134,13 +138,15 @@ wie die Stabilität zu bewerten ist.
         \begin{scope}[shift={(d2)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
-            \draw[red, thick] (0,0) parabola bend (0,0) (0.5,0.5);
+            \draw[red, thick, samples=200] plot[id=A]
+                function{0.0282*(exp(5*x)-1)};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(e2)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
-            \draw[red, thick] (0,0) parabola bend (0,0) (0.2,0.5);
+            \draw[red, thick, samples=200] plot[id=A]
+                function{0.00282*(exp(10*x)-1)};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         %
@@ -148,14 +154,14 @@ wie die Stabilität zu bewerten ist.
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
             \draw[green, thick, samples=200] plot[id=A]
-                function{-0.3*exp(-4*x)*(sin(50*x)+cos(50*x))+0.3};
+                function{-0.3*exp(-10*x)*(sin(50*x)+cos(50*x))+0.3};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(b3)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
             \draw[green, thick, samples=200] plot[id=A]
-                function{-0.3*exp(-10*x)*(sin(50*x)+cos(50*x))+0.3};
+                function{-0.3*exp(-4*x)*(sin(50*x)+cos(50*x))+0.3};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(c3)}]
@@ -175,11 +181,15 @@ wie die Stabilität zu bewerten ist.
         \begin{scope}[shift={(d3)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
+            \draw[green, thick, samples=200] plot[id=A]
+                function{-0.02*exp(5*x)*(sin(50*x)+cos(50*x))+0.02};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
         \begin{scope}[shift={(e3)}]
             \draw[->] (0,0) -- (0.5,0);
             \draw[->] (0,0) -- (0,0.5);
+            \draw[green, thick, samples=200] plot[id=A]
+                function{-0.002*exp(10*x)*(sin(50*x)+cos(50*x))+0.002};
             \node[cross out, draw=black, thick] at (-0.1,-0.1) {};
         \end{scope}
     \end{tikzpicture}

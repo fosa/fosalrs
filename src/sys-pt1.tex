@@ -14,25 +14,25 @@
 %GNU General Public License for more details.
 %----------------------------------------
 
-\subsection{$I$}
+\subsection{$PT_1$}
 DGL: 
 \[
-    x_a(t) = K_I \cdot \int\limits_{0}^{t} x_e(\tau) ~ d\tau + x_a(0)
-        = \frac{1}{T_I} \cdot \int\limits_{0}^{t} x_e(\tau) ~ d\tau + x_a(0)
+    T_1 \cdot \dot{x}_a + x_a(t) = K_P \cdot x_e(t)
 \]
 Übertragungsfunktion: 
 \[
-    G(s) = \frac{K_I}{s} = \frac{1}{T_I \cdot s}
+    G(s) = \frac{K_P}{1 + T_1 \cdot s}
 \]
 Sprungantwort: 
 \[
-    h(t) = K_I \cdot t = \frac{t}{T_I}
+    h(t) = K_P \cdot \left(1 - e^{-\frac{t}{T_1}}\right)
 \]
 \begin{figure}[h!]
     \begin{tikzpicture}
         \draw[->] (-0.2,0) -- (5,0);
         \draw[->] (0,-0.2) -- (0,2.2);
-        \draw[thick, red] (-0.2,0) -- (0,0) -- (5,2);
+        \draw[thick, red] (-0.2,0) -- (0,0) to[out=45, in=180] (5,2);
+        \draw[-] (-0.2,2) node[left] {$K_P$} -- (0.2,2);
     \end{tikzpicture}
 \end{figure}
 \FloatBarrier
@@ -42,7 +42,8 @@ Pol-Nullstellen-Plan:
     \begin{tikzpicture}
         \draw[->] (-2,0) -- (2,0) node[above right] {$Re$};
         \draw[->] (0,-2) -- (0,2) node[above right] {$Im$};
-        \node[] at (0,0) {X};
+        \node[] at (-1.5,0) {X};
+        \node[below] at (-1.5,0) {$-\frac{1}{T_1}$};
     \end{tikzpicture}
 \end{figure}
 \clearpage
@@ -51,15 +52,16 @@ Bode-Diagramm:
 \begin{figure}[h!]
     \begin{tikzpicture}
         \draw[->] (-0.2,0) -- (5.2,0) node[above right] {$\omega$};
-        \draw[->] (0,-2) -- (0,2.2) node[above right] {$|g|$};
-        \draw[thick, red] (0,1) -- (5,-1);
+        \draw[->] (0,-2) -- (0,1.2) node[above right] {$|g|$};
+        \draw[thick, red] (0,0.5) node[left] {$K_{P_{dB}}$} -- (2.5,0.5) -- (5,-2);
     \end{tikzpicture}
 \end{figure}
 \begin{figure}[h!]
     \begin{tikzpicture}
         \draw[->] (-0.2,0) -- (5.2,0) node[above right] {$\omega$};
         \draw[->] (0,-2) -- (0,1.2) node[above right] {$\varphi$};
-        \draw[thick, red] (0,-1) node[left] {$-90^\circ$} -- (5,-1);
+        \draw[thick, red] (0,0) -- (1.5,0) -- (3.5,-1) -- (5,-1);
+        \draw[-] (-0.2,-1) node[left] {$-90^\circ$} -- (0.2,-1);
     \end{tikzpicture}
 \end{figure}
 \FloatBarrier
@@ -69,7 +71,7 @@ Ortskurve:
     \begin{tikzpicture}
         \draw[->] (-2,0) -- (2,0) node[above right] {$Re$};
         \draw[->] (0,-2) -- (0,2) node[above right] {$Im$};
-        \draw[->, thick, red] (0,-1.5) -- (0,0);
+        \draw[->, thick, red] (1.5,0) node[above] {$K_P$} to[out=-90, in=0] (0.75,-0.75) to[out=180,in=-90] (0,0);
     \end{tikzpicture}
 \end{figure}
 \clearpage

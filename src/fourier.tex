@@ -58,7 +58,11 @@ u(t) \cdot e^{-j n \omega_0 t} ~ dt \]
  Die Fourier-Transformierte des Signals $u(t)$ ist 
 \[ U(\omega) = \mathcal{F}\{ u(t) \} = \int\limits_{-\infty}^{\infty} 
 u(t) e^{-\omega t j} ~dt \]
-Man nennt $U(\omega)$ Spektraldichte oder Spektralfunktion. 
+Man nennt $U(\omega)$ Spektraldichte oder Spektralfunktion.\\
+
+\subsection{Fouriertransformation als Spezialfall der Laplacetransformation}
+Wenn ein Signal eine endliche Fläche (Dauer) hat, darf man anstelle der Fouriertransformation
+die Laplacetransformation anwenden und danach das s mit $j\omega$ ersetzen. Das Resultat ist die Fouriertransformation des Signals.
 
 \section{Exponentialform (komplexe Form)}
 \[ \boxed{F(\omega) = |F(\omega)| \cdot e^{j\varphi(\omega)} = A(\omega) \cdot e^{j\varphi(\omega)}}   \]
@@ -111,7 +115,7 @@ Frequenzbereich:
 
 \section{Frequenzgang}
 
-$G(\omega j)$ ist der Frequenzgang des Systems \\
+$G(\j omega)$ ist der Frequenzgang des Systems \\
 $A(\omega) $ ist der Amplifizierungsfaktor\\
 $\varphi(\omega) $ ist die Phasenverschiebung
 \[ \boxed{G(j \omega) = A(\omega) \cdot e^{\varphi(\omega)j}}\]

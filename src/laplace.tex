@@ -191,18 +191,17 @@ Sind $u(t), v(t)$ sprungstetig und kausal, so gilt:
     (u * v) (t) ~ \laplace ~ U(s) \cdot V(s) 
 \]
 
-\section{Impulsantwort}
-Ist $g(t)$ die Gewichtsfunktion eines LZI Systems, so gilt
+\subsection{Antworten}
+Die Antwort eines Systems ist die Faltung der Gewichtsfunktion des Systems und des Signals.
 \[ 
-    y(t) = (g * u)(t) 
+    y(t) = g(t) * u(t) 
 \]
-Fazit: Impulsantwort = Gewichtsfunktion
+Impulsantwort:
+\[ 
+    y(t) = g(t) * \delta(t) = g(t)
+\]
+Sprungantwort:
+\[
+    y(t) = g(t) * \sigma(t) = \int\limits_{0}^{t} g(\tau) ~d \tau = h(t)
+\]
 
-\section{Sprungantwort}
-Definition: Sprungantwort $h(t)$ = Antwort auf $\sigma(t)$
-(AW nicht unbedingt 0) \\
-Bemerkung: Bei LZI Systemen:
-\[ 
-    h(t) = \int\limits_{0}^{t} g(\tau) ~d \tau 
-\]
-(folgt aus Integrationssatz)
